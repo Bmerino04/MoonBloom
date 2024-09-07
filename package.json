@@ -4,7 +4,8 @@
   "description": "Link Figma:\r https://www.figma.com/design/Ix1O6INxrJjqv3e5WJtliI/Proyecto-de-Aplicaci%C3%B3n---MoonBloom?node-id=601-11&t=786ju2hlH5eK9dzH-1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "author": "",
   "license": "ISC",
