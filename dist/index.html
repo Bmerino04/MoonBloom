@@ -5,9 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="overrides.css">
+    <link rel="stylesheet" href="overrides.css"> 
 </head>
 <body>
-    <h1 class="">Hello Tailwind</h1>
+    <header>
+        <div class="Logotipo">
+            <img src="\img\logo-MoonBloom.png">
+            <h1>MoonBloom</h1>
+        </div>
+        <nav class="BotonesNavegacion">
+            <img class="BotonEstadisticas" src="\img\estadistica-blanco.png"> <!-- revisar tipo de etiqueta "class" o "id" -->
+            <div class="BotonVistaActual">
+                <img class="BotonInformacion" src="\img\info-verde.png">
+                <h6>Información</h6>
+            </div>
+            <img class="BotonPerfil" src="\img\perfil-blanco.png">
+        </nav>
+    </header>
+    <main class="ContenedorPrincipal">
+        <section class="Cuerpo">
+            <article class="PanelInformacion">  
+                <h3>¡Aprende sobre ti!</h3>
+                <ul class="ListaInformacion">
+                    <li>Ciclo Menstrual</li>
+                    <li>Métodos Anticonceptivos</li>
+                    <li>Enfermedades Reproductivas</li>
+                </ul>   
+            </article>
+            <article class="PanelTexto">
+                <h2>¡Descubre más sobre tu salud menstrual y reproductiva!</h2>
+                <p>Entender tu ciclo menstrual es clave para tomar decisiones informadas sobre tu bienestar. Aprende sobre los diferentes métodos anticonceptivos, cómo funcionan, y cuál podría ser el adecuado para ti. Además, infórmate sobre las enfermedades uterinas y del sistema reproductivo, para que puedas detectarsíntomas a tiempo y saber cuándo consultar a un profesional.</p>
+                <p class="TextoFinal">Conoce más y cuida de ti misma. Tu salud es tu poder.</p>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

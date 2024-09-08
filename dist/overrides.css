@@ -1,6 +1,6 @@
 :root {
     /* Colores Celeste */
-    --color-celeste-principal: #A6C4C2;
+    --color-celeste-fondo: #A6C4C2;
     --color-celeste-claro: #D9D9D9;
     --color-celeste-medio: #48A09F;
     --color-celeste-oscuro: #2C5D5B;
@@ -21,4 +21,44 @@
     --fuente-principal: 'Raleway', sans-serif;
     --tamaño-fuente-encabezado: 24px;
     --tamaño-fuente-texto:20px;
+}
+body{
+    background-color: var(--color-celeste-fondo) ;
+}
+header{
+    background-color: var(--color-celeste-medio);
+    display: flex;
+    width: 100%;
+    gap:100px;
+
+}
+.Logotipo{
+    display: flex;
+    align-items: flex-start; 
+}
+.Logotipo img{
+    width: 80px;
+    height: auto;
+}
+.BotonesNavegacion{
+    display: flex ;
+    gap: 100px;
+    justify-content: flex-end;
+}
+.BotonEstadisticas{
+    width: 40px;
+    height: 40px;
+}
+.BotonVistaActual{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.BotonInformacion{
+    width: 40px;
+    height: 40px;
+}
+.BotonPerfil{
+    width: 40px;
+    height: 40px;
 }

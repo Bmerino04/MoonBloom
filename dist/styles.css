@@ -554,7 +554,7 @@ video {
   --tw-contain-style:  ;
 }
 
-.bg-green-300 {
+.bg-blue-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
 }
