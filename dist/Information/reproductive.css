@@ -1,0 +1,144 @@
+@import url(dist\global.css);
+body{
+    background-color: var(--color-celeste-fondo) ;
+}
+header{
+    background-color: var(--color-header);
+    font-family: var(--fuente-principal);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding: 0 3%;
+    align-items: center;
+    justify-content: space-between;   
+}
+/*Header-Navbar*/
+.Logotipo{
+    display: flex;
+    align-items: center; 
+    gap:3%;
+}
+.Logotipo img{
+    width: 70px;
+    height: auto;
+}
+.Logotipo h1{
+    color: var(--color-blanco);
+    font-size: var(--tamaño-fuente-grande);
+    font-weight: bolder;
+    letter-spacing: 0.20em;
+}
+.Botones-Navegacion{
+    height: 80px;
+    display: flex ;
+    gap: 40px;
+    justify-content: flex-end;
+    align-items: center;
+}
+.Boton-Estadisticas{
+    width: 40px;
+    height: 40px;
+}
+.Boton-Informacion_Vista-Actual{
+    background-color: var(--color-celeste-medio);
+    height: 80px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap:5%;
+    justify-content: center;    
+}
+.Boton-Informacion_Vista-Actual h6{
+    font-family: var(--fuente-principal);
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: bold;
+    color: var(--color-celeste-oscuro);
+}
+.Boton-Informacion_Vista-Actual img{
+    width: 40px;
+    height: 40px;
+}
+.Boton-Perfil{
+    width: 40px;
+    height: 40px;
+}
+
+/*Main*/
+.Contenedor-Principal{
+    display: flex;
+    align-items: center;
+    padding: 5% 5%;
+    width: 100%;
+    height: 600px; /*fix en index*/
+    font-family: var(--fuente-principal);
+}
+.Panel-Informacion{
+    background-color: var(--color-rosado-claro);
+    border:8px solid var(--color-rosado-claro-barras);
+    border-radius: 8px;
+    height: 60%;
+    width: 25%;
+    padding: 20px;
+}
+.Panel-Informacion h3{
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: 800;
+    color: var(--color-celeste-medio-oscuro);
+    text-align: center;
+    margin: 5%;
+}
+.Panel-Informacion_Lista{
+    list-style-type: disc;
+    list-style-position: inside;
+    font-size: var(--tamaño-fuente-texto);
+    padding-left: 8%;
+    padding-right: 8%;
+    color: var(--color-celeste-medio-oscuro);
+    font-weight: 600;
+}
+.Panel-Informacion_Lista li{
+    padding: 12% 0;
+    border-bottom:3px solid var(--color-rosado-claro-barras);    
+} 
+.Panel-Informacion_Lista li:last-child{
+    border-bottom: none;
+}
+.Panel-Texto{
+    background-color:var(--color-celeste-oscuro-op);
+    width: 60%; 
+    border-radius: 8px;
+    padding:  2% 4% 2%; /*fix en index*/
+    color: var(--color-blanco);
+}
+.Panel-Texto h2{
+    font-size: var(--tamaño-fuente-grande);
+    text-decoration: underline;
+}  
+.Panel-Texto{
+    font-size: var(--tamaño-fuente-texto);
+}  
+.Container{
+    text-indent: 2%;   
+    text-align: justify; 
+    margin-top: 2%;   
+}
+.Container p{
+    font-size: var(--tamaño-fuente-texto);
+}
+.Container ul{
+    list-style-type: disc;
+    padding-left: 25px;
+}
+.Container li{
+    padding: 1% 0;
+}
+.Container img {
+    float: left; /* La imagen flota a la derecha */
+    margin-left: 20px; /* Espacio entre la imagen y el texto */
+    width: 25%; /* Ajusta el tamaño de la imagen */
+    border: 8px solid var(--color-rosado-claro-barras);
+    border-radius: 8px;
+  
+
+}
+
