@@ -1,64 +1,127 @@
-:root {
-    /* Colores Celeste */
-    --color-celeste-fondo: #A6C4C2;
-    --color-celeste-claro: #D9D9D9;
-    --color-celeste-medio: #48A09F;
-    --color-celeste-oscuro: #2C5D5B;
-  
-    /* Colores Rosado */
-    --color-rosado-medio: #FE9FA3;
-    --color-rosado-oscuro: #FF2D55;
-    --color-rosado-claro: #FFCCCB;
-    --color-rosado-claro-barras: #F88FA3;
-    --color-rosado-oscuro-barras: #FF7777;
-  
-    /* Otros Colores */
-    --color-blanco: #FFFFFF;
-    --color-blanco-opaco: #F2F2F2;
-    --color-negro: #1E1E1E;
-  
-    /* Tipografías */
-    --fuente-principal: 'Raleway', sans-serif;
-    --tamaño-fuente-encabezado: 24px;
-    --tamaño-fuente-texto:20px;
-}
 body{
     background-color: var(--color-celeste-fondo) ;
 }
 header{
-    background-color: var(--color-celeste-medio);
-    display: flex;
+    background-color: var(--color-header);
+    font-family: var(--fuente-principal);
     width: 100%;
-    gap:100px;
-
+    height: 80px;
+    display: flex;
+    padding: 0 3%;
+    align-items: center;
+    justify-content: space-between;   
 }
+/*Header-Navbar*/
 .Logotipo{
     display: flex;
-    align-items: flex-start; 
+    align-items: center; 
+    gap:3%;
 }
 .Logotipo img{
-    width: 80px;
+    width: 70px;
     height: auto;
 }
-.BotonesNavegacion{
+.Logotipo h1{
+    color: var(--color-blanco);
+    font-size: var(--tamaño-fuente-grande);
+    font-weight: bolder;
+    letter-spacing: 0.20em;
+}
+.Botones-Navegacion{
+    height: 80px;
     display: flex ;
-    gap: 100px;
+    gap: 40px;
     justify-content: flex-end;
+    align-items: center;
 }
-.BotonEstadisticas{
+.Boton-Estadisticas{
     width: 40px;
     height: 40px;
 }
-.BotonVistaActual{
+.Boton-Informacion_Vista-Actual{
+    background-color: var(--color-celeste-medio);
+    height: 80px;
+    width: 200px;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    gap:5%;
+    justify-content: center;    
+}
+.Boton-Informacion_Vista-Actual h6{
+    font-family: var(--fuente-principal);
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: bold;
+    color: var(--color-celeste-oscuro);
+}
+.Boton-Informacion_Vista-Actual img{
+    width: 40px;
+    height: 40px;
+}
+.Boton-Perfil{
+    width: 40px;
+    height: 40px;
+}
 
+/*Main*/
+.Contenedor-Principal{
+    display: flex;
+    align-items: center;
+    padding: 5% 5%;
+    width: 100%;
+    font-family: var(--fuente-principal);
 }
-.BotonInformacion{
-    width: 40px;
-    height: 40px;
+.Panel-Informacion{
+    background-color: var(--color-rosado-claro);
+    border:8px solid var(--color-rosado-claro-barras);
+    border-radius: 8px;
+    height: 60%;
+    width: 25%;
+    padding: 20px;
 }
-.BotonPerfil{
-    width: 40px;
-    height: 40px;
+.Panel-Informacion h3{
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: 800;
+    color: var(--color-celeste-medio-oscuro);
+    text-align: center;
+    margin: 5%;
+}
+.Panel-Informacion_Lista{
+    list-style-type: disc;
+    list-style-position: inside;
+    font-size: var(--tamaño-fuente-texto);
+    padding-left: 8%;
+    padding-right: 8%;
+    color: var(--color-celeste-medio-oscuro);
+    font-weight: 600;
+}
+.Panel-Informacion_Lista li{
+    padding: 12% 0;
+    border-bottom:3px solid var(--color-rosado-claro-barras);    
+} 
+.Panel-Informacion_Lista li:last-child{
+    border-bottom: none;
+}
+.Panel-Texto{
+    background-color:var(--color-celeste-oscuro-op);
+    width: 60%; 
+    border-radius: 8px;
+    padding: 2%;
+    color: var(--color-blanco);
+}
+.Panel-Texto h2{
+    font-size: var(--tamaño-fuente-grande);
+    text-decoration: underline;
+}   
+.Panel-Texto p{
+    font-size: var(--tamaño-fuente-texto);
+    margin-top: 3%;
+}
+.Panel-Texto_Parrafo{
+    text-indent: 2%;
+    text-align: justify;    
+}
+.Panel-Texto_Final{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3%;
 }
