@@ -1,0 +1,60 @@
+.Botones-Navegacion{
+    height: 80px;
+    display: flex ;
+    gap: 40px;
+    justify-content: flex-end;
+    align-items: center;
+}
+.Button{
+    width: 40px;
+    height: 40px;
+}
+.Button_actual_view{
+    background-color: var(--color-celeste-medio);
+    height: 80px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap:5%;
+    justify-content: center;    
+}
+.Button_actual_view img{
+    width: 40px;
+    height: 40px;
+}
+.Button_actual_view h6{
+    font-family: var(--fuente-principal);
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: bold;
+    color: var(--color-celeste-oscuro);
+}
+/* Ajusta el contenedor principal para centrar el carrusel */
+.w-full {
+    display: flex; /* Habilita flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 100%; /* Asegúrate de que tome el ancho completo del contenedor */
+    height: auto;
+    padding-top: 60px;
+    position: relative; /* Mantén esto si es necesario para el posicionamiento */
+}
+
+/* Ajusta el contenedor del carrusel para ocupar el tamaño adecuado */
+.swiper-container {
+    width: 100%; /* Permite que ocupe todo el ancho del contenedor flexbox */
+    max-width: 95%; /* Puedes ajustar el ancho máximo según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: max-content !important;
+    padding-bottom: 64px !important;
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    position: relative;
+}
+
+.swiper-pagination-bullet {
+    background: #4e46e5;
+}
