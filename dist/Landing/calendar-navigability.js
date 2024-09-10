@@ -16,24 +16,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for(let i=0; i<firstDays[monthIndex]; i++){  //celdas vacias antes del primer dia
             const day = document.createElement('div');
-            day.className = '';
+            day.className = 'day other-month-days';
             monthDays.appendChild(day);
         }
 
         for (let i = 1; i <= daysInMonths[monthIndex]; i++) { //dias del mes
             const day = document.createElement('div');
             day.textContent = i;
-            day.className = '';
+            day.className = 'day normal-day';
 
-            if ([8,9,10, 11].includes(i)) {//dias regla
-                day.className = '';
-            } else if ([20,21,22, 23,24, 25].includes(i)) {//dias ovulacion
-                day.className = '';
+            if ([8,9,10, 11].includes(i)) {
+                day.className = 'day menstrual-day';
+            } else if ([20,21,22, 23,24, 25].includes(i)) {
+                day.className = 'day fertile-day';
             }
             if ([22,23].includes(i)) { //dias punteados
-                day.className += '';
+            if ([22,23].includes(i)) {
+                day.className = 'day ovulation-day';
             }
-
+            if(monthIndex ===1 && i ===25){
+                day.className = 'day current-day';
+            }
             monthDays.appendChild(day);
         } 
 
@@ -41,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const remainingCells = totalCells - (firstDays[monthIndex] + daysInMonths[monthIndex]);
         for (let i = 1; i <= remainingCells; i++) {//celdas calendadio
             const day = document.createElement('div');
-            day.className = '';
+            day.className = 'other-month-days'; //Add styles to cells after last day of the month
             monthDays.appendChild(day);
         }
     }
@@ -58,6 +61,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial render
     renderCalendar(currentMonthIndex);
-
-
     });
