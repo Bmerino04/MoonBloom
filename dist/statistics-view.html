@@ -35,9 +35,8 @@
 
     <!-- Carrusel de Swiper -->
     <main>
-        <section class="w-full">
-            <div class="swiper default-carousel swiper-container">
-               
+        <section class="w-full2">
+            <div class="swiper default-carousel swiper-container" id="main-carousel">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="flex flex-col h-96 bg-indigo-50 rounded-2xl p-4">
@@ -52,7 +51,20 @@
                                 <!-- Segunda sección -->
                                 <div class="flex-1 bg-white p-4 ml-2 rounded-lg shadow-md">
                                     <h3 class="text-xl font-bold text-gray-800 mb-2">Resumen</h3>
-                                    
+                                    <h5>Promedio:</h5>
+                                    <ul>
+                                        <li>Tu ciclo suele durar 24 días.</li>
+                                    </ul>
+                                    <h5>Variaciones:</h5>
+                                    <ul>
+                                        <li>En el ciclo 27 Nov - 24 Dic se registró una menor duración.</li>
+                                        <li>Durante el ciclo 10 Jun - 7 Jul se registró una mayor duración.</li>
+                                    </ul>
+                                    <h5>Anomalías:</h5>
+                                    <ul>
+                                        <li>Riesgo de embarazo en el ciclo 10 Jun - 7 Jul.</li>
+                                    </ul>
+                                    <p>No registras un método anticonceptivo que afecte tu ciclo.</p>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +83,20 @@
                                 <!-- Segunda sección -->
                                 <div class="flex-1 bg-white p-4 ml-2 rounded-lg shadow-md">
                                     <h3 class="text-xl font-bold text-gray-800 mb-2">Resumen</h3>
-                                    <p>Contenido de la segunda sección...</p>
+                                    <h5>Promedio:</h5>
+                                    <ul>
+                                        <li>Tu fase menstrual suele durar 4 días.</li>
+                                    </ul>
+                                    <h5>Variaciones:</h5>
+                                    <ul>
+                                        <li>En el ciclo 27 Nov - 24 Dic se registró una menor duración de tu fase menstrual.</li>
+                                        <li>Durante el ciclo 8 Jun - 5 Agost se registró una mayor duración de tu fase menstrual.</li>
+                                    </ul>
+                                    <h5>Anomalías:</h5>
+                                    <ul>
+                                        <li>Tu fase menstrual no presenta anomalías.</li>
+                                    </ul>
+                                    <p>No registras un método anticonceptivo que afecte tu ciclo.</p>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +115,20 @@
                                 <!-- Segunda sección -->
                                 <div class="flex-1 bg-white p-4 ml-2 rounded-lg shadow-md">
                                     <h3 class="text-xl font-bold text-gray-800 mb-2">Resumen</h3>
-                                    <p>Contenido de la segunda sección...</p>
+                                    <h5>Tendencia:</h5>
+                                    <ul>
+                                        <li>Sueles ovular el día 12 de tu ciclo.</li>
+                                    </ul>
+                                    <h5>Variaciones:</h5>
+                                    <ul>
+                                        <li>El día 21 fue la ovulación más tardía registrada.</li>
+                                        <li>El día 9 fué la ovulación más temprana registrada.</li>
+                                    </ul>
+                                    <h5>Anomalías:</h5>
+                                    <ul>
+                                        <li>Tu fase menstrual no presenta anomalías.</li>
+                                    </ul>
+                                    <p>No registras un método anticonceptivo que afecte tu ciclo</p>
                                 </div>
                             </div>
                         </div>
@@ -99,19 +137,86 @@
                         <div class="flex flex-col h-96 bg-indigo-50 rounded-2xl p-4">
                             <!-- Título en la parte superior -->
                             <h2 class="text-2xl font-semibold text-indigo-600 mb-4 text-center">Tendencia Sexual</h2>
-                            <!-- Contenedor de las dos secciones -->
-                            <div class="flex flex-1">
-                                <!-- Primera sección -->
-                                <div class="flex-1 bg-white p-4 mr-2 rounded-lg shadow-md">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">grafico</h3>
-                                    <p>Contenido de la primera sección...</p>
+                            <section class="w-full">
+                                <div class="swiper default-carousel swiper-container" id="inner-carousel">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="flex flex-col h-96 bg-indigo-50 rounded-2xl p-4">
+                                                <!-- Contenedor de las dos secciones -->
+                                                <div class="flex flex-1">
+                                                    <!-- Primera sección -->
+                                                    <div class="flex-1 bg-white p-4 mr-2 rounded-lg shadow-md">
+                                                        <h3 class="text-xl font-bold text-gray-800 mb-2">grafico</h3>
+                                                    </div>
+                                                    <!-- Segunda sección -->
+                                                    <div class="flex-1 bg-white p-4 ml-2 rounded-lg shadow-md">
+                                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Resumen</h3>
+                                                        <h5>Cantidad:</h5>
+                                                        <ul>
+                                                            <li>13 veces de actividad sexual registrada durante el ciclo.</li>
+                                                        </ul>
+                                                        <h5>Tendencia:</h5>
+                                                        <ul>
+                                                            <li>R.S protegidas es lo más frecuente.</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li>R.S protegido x9</li>7
+                                                            <li>R.S sin protección x4</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li>En la fase ovulatoria se registró mayor actividad sexual.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="flex flex-col h-96 bg-indigo-50 rounded-2xl p-4">
+                                                <!-- Contenedor de las dos secciones -->
+                                                <div class="flex flex-1">
+                                                    <!-- Primera sección -->
+                                                    <div class="flex-1 bg-white p-4 mr-2 rounded-lg shadow-md">
+                                                        <h3 class="text-xl font-bold text-gray-800 mb-2">grafico</h3>
+                                                        <p>Contenido de la primera sección...</p>
+                                                    </div>
+                                                    <!-- Segunda sección -->
+                                                    <div class="flex-1 bg-white p-4 ml-2 rounded-lg shadow-md">
+                                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Resumen2</h3>
+                                                        <h5>Cantidad:</h5>
+                                                        <ul>
+                                                            <li>13 veces de actividad sexual registrada durante el ciclo.</li>
+                                                        </ul>
+                                                        <h5>Tendencia:</h5>
+                                                        <ul>
+                                                            <li>R.S protegidas es lo más frecuente.</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li>R.S protegido x9</li>7
+                                                            <li>R.S sin protección x4</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li>En la fase ovulatoria se registró mayor actividad sexual.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Botones de navegación -->
+                                    <div class="flex items-center gap-4 lg:justify-start justify-center w-10">
+                                        <button id="slider-button-left-inner" class="swiper-button-prev group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full !top-1/2 !-translate-y-4 !left-2 hover:bg-indigo-600" data-carousel-prev>
+                                            <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                        <button id="slider-button-right-inner" class="swiper-button-next group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full !top-1/2 !-translate-y-4 !right-2 hover:bg-indigo-600" data-carousel-next>
+                                            <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>                
                                 </div>
-                                <!-- Segunda sección -->
-                                <div class="flex-1 bg-white p-4 ml-2 rounded-lg shadow-md">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Resumen</h3>
-                                    <p>Contenido de la segunda sección...</p>
-                                </div>
-                            </div>
+                            </section>
                         </div>
                     </div>
                 </div>
@@ -136,17 +241,33 @@
     <!-- Incluyendo los scripts de Swiper -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper(".default-carousel", {
+        // Inicializar el carrusel principal
+        var mainSwiper = new Swiper("#main-carousel", {
             loop: true,
             pagination: {
-                el: ".swiper-pagination",
+                el: "#main-carousel .swiper-pagination",
                 clickable: true,
             },
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: "#main-carousel .swiper-button-next",
+                prevEl: "#main-carousel .swiper-button-prev",
             },
         });
+
+        // Inicializar el carrusel interno
+        var innerSwiper = new Swiper("#inner-carousel", {
+            loop: true,
+            pagination: {
+                el: "#inner-carousel .swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: "#inner-carousel .swiper-button-next-inner",
+                prevEl: "#inner-carousel .swiper-button-prev-inner",
+            },
+        });
+
+
     </script>
 </body>
 </html>
