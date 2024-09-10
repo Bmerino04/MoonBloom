@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonBloom-user-info</title>
+    <link rel="icon" href="\img\icono-MoonBloom.png" type="image\png">
+    <link rel="stylesheet" href="\dist\styles.css">
+    <link rel="stylesheet" href="\dist\global.css">
+    <link rel="stylesheet" href="\dist\profile-styles.css">     
+</head>
+
+<body>
+    <header class="Encabezado shadow-md">
+        <div class="Logotipo">
+            <img src="\img\logo-MoonBloom.png">
+            <h1>MOONBLOOM</h1>
+        </div>
+        <nav class="Botones-Navegacion">
+            <img class="Boton-Estadisticas" src="\img\estadistica-blanco.png"> 
+            <img class="Boton-Informacion" src="\img\info-blanco.png">
+            <div class="Boton-Perfil_Vista-Actual ">
+                <img src="\img\perfil-verde.png">
+                <h6>Perfil</h6>
+            </div>
+        </nav>
+    </header>
+
+    <main class="Contenedor-Principal">
+        <section class="Cuerpo flex gap-20 p-4 bg-white rounded-lg bg-opacity-50 justify-center">
+            <aside class="Panel-Informacion-Perfil shadow-md">
+                <div>
+                    <div class="Foto-Perfil shadow-md">
+                        <img src="\img\foto-perfil-ejemplo.jpg" alt="Foto de perfil">
+                    </div>
+                    <div class="Boton-Editar">
+                        <img src="\img\pencil.png" alt="Editar foto">
+                    </div>
+                </div>
+            </aside>            
+            <div class="Panel-Texto-Contenedor">
+                <section class="Panel-Texto shadow-md items-center justify-between">
+                    <article class="Texto-Superior">
+                        <h2>Anticonceptivos Internos</h2>
+                        <p>Los métodos anticonceptivos internos, como los dispositivos intrauterinos (DIU) y los implantes hormonales, pueden afectar el ciclo menstrual de diferentes maneras, dependiendo del tipo de método utilizado.</p>
+                    </article>
+                    <a href="#" class="btn-anticonceptivo">Registrar o eliminar un metodo Anticonceptivo</a>
+                </section>
+                <div class="Panel-Texto-Sub-Contenedor">
+                    <article class="Panel-Texto shadow-md w-1/2">
+                        <div class="Texto-Contenido">
+                            <h2 class="Titulo">Duración Periodo/Ciclo</h2>
+                            <div class="Contenido">
+                                <div class="Subtitulo">
+                                    <strong>Tu periodo suele durar:</strong> 
+                                    <span>5 días <a href="#" class="editar">[editar]</a></span>
+                                </div>
+                                <div class="Subtitulo">
+                                    <strong>Tu ciclo suele durar:</strong> 
+                                    <span>28 días <a href="#" class="editar">[editar]</a></span>
+                                </div>
+                            </div>
+                            <p class="Nota">Nota: Esta estimación se usará para poner de trasfondo previo a los registros.</p>
+                        </div>
+                    </article>                    
+                    <article class="Panel-Texto shadow-md w-1/2">
+                        <div class="Texto-Contenido">
+                            <h2 class="Titulo">Actualmente estas usando DIU hormonal:</h2>
+                            <div class="Contenido">
+                                <div class="Subtitulo">
+                                    <span>Este método suele hacer que las menstruaciones sean más ligeras y menos dolorosas, también puede causar Amenorrea (ausencia de menstruación) en algunas mujeres.</span>
+                                </div>
+                            </div>
+                            <p class="Nota">Nota: El método anticonceptivo se tomará en cuenta para futuras predicciones.</p>
+                        </div>
+                    </article>                    
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

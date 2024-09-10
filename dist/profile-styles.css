@@ -1,0 +1,254 @@
+body{
+    background-color: var(--color-celeste-fondo) ;
+}
+header{
+    background-color: var(--color-header);
+    font-family: var(--fuente-principal);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding: 0 3%;
+    align-items: center;
+    justify-content: space-between;   
+}
+
+/*Header-Navbar*/
+.Logotipo{
+    display: flex;
+    align-items: center; 
+    gap:3%;
+}
+.Logotipo img{
+    width: 70px;
+    height: auto;
+}
+.Logotipo h1{
+    color: var(--color-blanco);
+    font-size: var(--tamaño-fuente-grande);
+    font-weight: bolder;
+    letter-spacing: 0.20em;
+}
+
+.Botones-Navegacion{
+    height: 80px;
+    display: flex ;
+    gap: 40px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Boton-Estadisticas{
+    width: 40px;
+    height: 40px;
+}
+
+.Boton-Informacion{
+    width: 40px;
+    height: 40px;
+}
+
+.Boton-Perfil_Vista-Actual{
+    background-color: var(--color-celeste-medio);
+    height: 80px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap:5%;
+    justify-content: center;    
+}
+.Boton-Perfil_Vista-Actual h6{
+    font-family: var(--fuente-principal);
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: bold;
+    color: var(--color-celeste-oscuro);
+}
+
+.Boton-Perfil_Vista-Actual img{
+    width: 40px;
+    height: 40px;
+}
+
+.Contenedor-Principal{
+    display: flex;
+    align-items: center;
+    padding: 5% 5%;
+    width: 100%;
+    font-family: var(--fuente-principal);
+}
+
+.Panel-Informacion-Perfil{
+    background-color: var(--color-rosado-claro);
+    border:8px solid var(--color-rosado-claro-barras);
+    border-radius: 8px;
+    height: 60%;
+    width: 25%;
+    padding: 20px;
+}
+
+.Panel-Texto-Contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Separación entre los paneles */
+    width: 60%;
+}
+
+/* Panel individual, mismo estilo que antes */
+.Panel-Texto {
+    background-color: var(--color-celeste-oscuro-op);
+    border:8px solid var(--color-celeste-oscuro);
+    width: 100%;
+    border-radius: 8px;
+    padding: 2%;
+    color: var(--color-blanco);
+    display: flex; /* Para hacer que los hijos se alineen horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+    justify-content: space-between; /* Espacio entre article y el botón */
+    gap: 20px; /* Espacio entre article y el botón */
+}
+
+.Texto-Superior {
+    flex: 1; /* Esto permite que el artículo ocupe la mayor parte del espacio disponible */
+}
+
+.btn-anticonceptivo {
+    background-color: var(--color-celeste-oscuro);
+    border: 8px solid var(--color-celeste-oscuro);
+    width: 200px; /* Ancho fijo del botón */
+    height: 100px; /* Altura del botón para mantener la proporción 2:1 */
+    border-radius: 8px; /* Bordes redondeados */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex; /* Alinea el texto en el centro del botón */
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centra el texto horizontalmente */
+}
+.btn-anticonceptivo:hover {
+    background-color: var(--color-header);
+}
+
+.Panel-Texto h2 {
+    font-size: var(--tamaño-fuente-medio);
+    color: var(--color-rosado-medio);
+    text-align: left; /* Cambiado a izquierda */
+    margin: 5%;
+}
+
+.Panel-Texto p {
+    font-size: 20px;
+    color: var(--color-blanco-opaco);
+    text-align: left; /* Cambiado a izquierda */
+    margin: 5%;
+}
+.Panel-Texto-Sub-Contenedor {
+    display: flex;
+    gap: 20px; /* Espacio entre los paneles */
+    width: 100%;
+}
+
+/* Los paneles dentro del sub-contenedor ocuparán la mitad del espacio cada uno */
+.Panel-Texto-Sub-Contenedor .Panel-Texto {
+    flex: 1; /* Se aseguran de ocupar el mismo espacio */
+}
+
+.Texto-Contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los bloques de texto */
+}
+
+.Titulo {
+    font-size: 20px !important;
+    font-weight: bold;
+    color: var(--color-rosado-medio);
+    text-align: center;
+}
+
+.Contenido {
+    font-size: 20px !important;
+    color: var(--color-blanco);
+}
+
+.Subtitulo {
+    margin-bottom: 10px;
+}
+
+.Subtitulo strong {
+    font-weight: bold;
+}
+
+.Subtitulo span {
+    display: block; /* Hace que el texto del subtítulo y la opción de editar estén en líneas separadas */
+}
+
+.editar {
+    color: var(--color-rosado-medio) !important;
+    text-decoration: none;
+}
+
+.editar:hover {
+    text-decoration: underline;
+}
+
+.Nota {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: var(--color-blanco);
+    margin-top: 20px !important;
+    margin-bottom: 5px !important;
+}
+
+/* Estilos para el Panel de Información de Perfil */
+.Panel-Informacion-Perfil {
+    background-color: var(--color-rosado-claro);
+    border: 8px solid var(--color-rosado-claro-barras);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+}
+
+/* Estilo para la foto de perfil */
+.Foto-Perfil {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid var(--color-celeste-oscuro);
+}
+
+.Foto-Perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botón para editar la foto */
+.Boton-Editar {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-rosado-medio);
+    border: 6px solid var(--color-celeste-oscuro);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Para asegurarse de que esté por encima de la imagen */
+}
+
+.Boton-Editar img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.Boton-Editar:hover {
+    background-color: var(--color-rosado-claro);
+}
