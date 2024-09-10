@@ -55,7 +55,7 @@
                     <button class="Back">
                        <img src="\img_cal\left-arrow.png">
                     </button>
-                    <h2 class="Month">Junio</h2>
+                    <h2 class="Month"></h2>
                     <button class="Next">
                         <img src="\img_cal\right-arrow.png">
                     </button>
@@ -73,6 +73,32 @@
                     <div class="Days"></div>
                 </div>
 
+                <div class="Pop-Up hidden" aria-modal="true" role="dialog">
+                    <div class="Pop-Up-Content">
+                        <h2 class="DayDate"></h2>
+                        <h3 class="Cycle-Phase"></h3>
+                        <div class="Checkboxes"></div>
+                        <label class="Protected-Activity">
+                            <input type="radio" name="activity" value="protected" class="mr-2">
+                            <span>Actividad sexual con protección</span>
+                        </label>
+                        <label class="Unprotected-Activity">
+                            <input type="radio" name="activity" value="unprotected" class="mr-2">
+                            <span>Actividad sexual con protección</span>
+                        </label>
+                        <label class="Period">
+                            <input type="radio" name="activity" value="period" class="mr-2">
+                            <span>Periodo</span>
+                        </label>
+                    </div>
+
+                    <div class="Action-Buttons">
+                        <button class="saveBtn">Guardar</button>
+                        <button class="exitBtn">Salir</button>
+                    </div>
+                </div>
+
+                </div>
                 <script src="calendar-navigability.js"></script>
             </section>     
         </div>       
