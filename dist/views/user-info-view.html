@@ -55,7 +55,24 @@
                         <h2>Anticonceptivos Internos</h2>
                         <p>Los métodos anticonceptivos internos, como los dispositivos intrauterinos (DIU) y los implantes hormonales, pueden afectar el ciclo menstrual de diferentes maneras, dependiendo del tipo de método utilizado.</p>
                     </article>
-                    <a href="#" class="btn-anticonceptivo">Registrar o eliminar un metodo Anticonceptivo</a>
+                    <a href="#modal" class="btn-anticonceptivo">Registrar o eliminar un metodo Anticonceptivo</a>
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                          <h3>Metodo Anticonceptivo Interno</h3>
+                          <div class="mb-4">
+                            <select id="intern-method" name="intern-method" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-teal-500">
+                                <option value="" disabled selected>Seleccionar uno (opcional)</option>
+                                <option value="pildora">Inyecciones anticonceptivas</option>
+                                <option value="diu">DIU de cobre</option>
+                                <option value="diu">DIU hormonal</option>
+                                <option value="implante">Implante anticonceptivo</option>
+                                <option value="anillo">Anillo vaginal</option>
+                                <option value="anillo">Ninguna</option>
+                            </select>
+                            </div>
+                            <a href="#" class="close-modal">Continuar</a>
+                        </div>
+                      </div>
                 </section>
                 <div class="Panel-Texto-Sub-Contenedor">
                     <article class="Panel-Texto shadow-md w-1/2">
