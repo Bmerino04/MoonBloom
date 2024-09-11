@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const monthDays=document.querySelector('.Days');
     const month =document.querySelector('.Month');
-    const nextButton=document.querySelector('.Next');
-    const backButton=document.querySelector('.Back');
     const nextButton=document.querySelector('.NextBtn');
     const backButton=document.querySelector('.BackBtn');
     const popup=document.querySelector('.Popup');
@@ -29,29 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add empty cells for days before the 1st
         for(let i=0; i<firstDays[monthIndex]; i++){  ///Add styles to cells before first day of the month
             const day = document.createElement('div');
-            day.className = 'day other-month-days';
+            day.className = 'Day Other-Month-Days';
             monthDays.appendChild(day);
         }
         // Add days of the month
         for (let i = 1; i <= daysInMonths[monthIndex]; i++) { //Add styles to Normal days
             const day = document.createElement('div');
             day.textContent = i;
-            day.className = 'day normal-day';
+            day.className = 'Day Normal-Day';
             day.addEventListener('click', (event) => showPopup(i, monthIndex, event.target));
 
             //Add styles to Menstrual days and Fertile days
             if ([8,9,10, 11].includes(i)) {
-                day.className = 'day menstrual-day';
+                day.className = 'Day Menstrual-Day';
             } else if ([20,21,22, 23,24, 25].includes(i)) {
-                day.className = 'day fertile-day';
+                day.className = 'Day Fertile-Day';
             }
              //Add styles to Ovulation days
             if ([22,23].includes(i)) {
-                day.className = 'day ovulation-day';
+                day.className = 'Day Ovulation-Day';
             }
             //Add styles to the Current day
             if(monthIndex ===1 && i ===25){
-                day.className = 'day current-day';
+                day.className = 'Day Current-Day';
             }
             //Add divs to container .Days
             monthDays.appendChild(day);
