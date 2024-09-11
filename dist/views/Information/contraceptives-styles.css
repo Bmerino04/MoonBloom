@@ -31,7 +31,7 @@ header{
 .Navigation-Buttons{
     height: 5rem;
     display: flex ;
-    gap: 2.5rem;
+    gap: 0.188rem;
     justify-content: flex-end;
     align-items: center;
 }
