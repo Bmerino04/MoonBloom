@@ -13,23 +13,21 @@ header{
     justify-content: space-between;   
 }
 /*Header-Navbar*/
-.Logotipo{
     display: flex;
     align-items: center; 
     gap:3%;
 }
-.Logotipo img{
     width: 70px;
+.Logotype img{
     height: auto;
 }
-.Logotipo h1{
     color: var(--color-blanco);
     font-size: var(--tamaño-fuente-grande);
     font-weight: bolder;
     letter-spacing: 0.20em;
 }
-.Botones-Navegacion{
     height: 80px;
+.Navigation-Buttons{
     display: flex ;
     gap: 40px;
     justify-content: flex-end;
@@ -48,23 +46,20 @@ header{
     gap:5%;
     justify-content: center;    
 }
-.Boton-Informacion_Vista-Actual h6{
+.Information-Button .title{
     font-family: var(--fuente-principal);
     font-size: var(--tamaño-fuente-medio);
     font-weight: bold;
     color: var(--color-celeste-oscuro);
 }
-.Boton-Informacion_Vista-Actual img{
     width: 40px;
     height: 40px;
 }
-.Boton-Perfil{
     width: 40px;
     height: 40px;
 }
 
 /*Main*/
-.Contenedor-Principal{
     display: flex;
     align-items: center;
     padding: 5% 5%;
@@ -72,7 +67,6 @@ header{
     height: 600px; /*fix en index*/
     font-family: var(--fuente-principal);
 }
-.Panel-Informacion{
     background-color: var(--color-rosado-claro);
     border:8px solid var(--color-rosado-claro-barras);
     border-radius: 8px;
@@ -80,14 +74,12 @@ header{
     width: 25%;
     padding: 20px;
 }
-.Panel-Informacion h3{
     font-size: var(--tamaño-fuente-medio);
     font-weight: 800;
     color: var(--color-celeste-medio-oscuro);
     text-align: center;
     margin: 5%;
 }
-.Panel-Informacion_Lista{
     list-style-type: disc;
     list-style-position: inside;
     font-size: var(--tamaño-fuente-texto);
@@ -96,33 +88,29 @@ header{
     color: var(--color-celeste-medio-oscuro);
     font-weight: 600;
 }
-.Panel-Informacion_Lista li{
     padding: 12% 0;
     border-bottom:3px solid var(--color-rosado-claro-barras);    
 } 
-.Panel-Informacion_Lista li:last-child{
     border-bottom: none;
 }
-.Panel-Texto{
+
+.Text-Panel{
     background-color:var(--color-celeste-oscuro-op);
     width: 60%; 
     border-radius: 8px;
     padding:  2% 4% 2%; /*fix en index*/
     color: var(--color-blanco);
 }
-.Panel-Texto h2{
     font-size: var(--tamaño-fuente-grande);
     text-decoration: underline;
 }   
-.Panel-Texto p{
+.Text-Container{  
     font-size: var(--tamaño-fuente-texto);
 }
-.Container{
     text-indent: 2%;   
     text-align: justify; 
     margin-top: 2%;   
 }
-.Container img {
     float: right; /* La imagen flota a la derecha */
     margin-left: 20px; /* Espacio entre la imagen y el texto */
     width: 25%; /* Ajusta el tamaño de la imagen */
@@ -130,5 +118,6 @@ header{
     border-radius: 8px;
   
 
+.Text-Container img {
 }
 

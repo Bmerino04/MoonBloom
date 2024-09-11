@@ -14,16 +14,16 @@ header{
     justify-content: space-between;   
 }
 /*Header-Navbar*/
-.Logotipo{
+.Logotype{
     display: flex;
     align-items: center; 
     gap:3%;
 }
-.Logotipo img{
     width: 70px;
+.Logotype img{
     height: auto;
 }
-.Logotipo h1{
+.Logotype h1{
     color: var(--color-blanco);
     font-size: var(--tamaño-fuente-grande);
     font-weight: bolder;
@@ -63,7 +63,6 @@ header{
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.Statistics-Button .titulo, .Profile-Button .titulo, .Information-Button .titulo {
     position: absolute;
     right: 0;
     width: 100%;
@@ -82,8 +81,8 @@ header{
     width: 200px;
 }
 
-.Statistics-Button:hover .titulo, .Profile-Button:hover .titulo, .Information-Button:hover .titulo {
     transform: translateX(20px);
+.Statistics-Button:hover .title, .Profile-Button:hover .title, .Information-Button:hover .title {
     opacity: 1;
 }
 
