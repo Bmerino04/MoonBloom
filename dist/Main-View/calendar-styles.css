@@ -29,47 +29,97 @@ header{
     font-weight: bolder;
     letter-spacing: 0.20em;
 }
-.Botones-Navegacion{
+.Navigation-Buttons{
     height: 80px;
     display: flex ;
     gap: 40px;
     justify-content: flex-end;
     align-items: center;
 }
-.Botones-Navegacion img{
-    width: 40px;
-    height: 40px;
+
+.Navigation-Buttons a {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease;
+    overflow: hidden;
 }
 
+.Navigation-Buttons img {
+    width: 40px;
+    height: 40px;
+    transition: filter 0.3s ease;
+}
+
+.Statistics-Button:hover img, .Profile-Button:hover img, .Information-Button:hover img {
+    filter: invert(24%) sepia(34%) saturate(3400%) hue-rotate(125deg) brightness(35%) contrast(90%);
+}
+
+.Statistics-Button:hover img, .Profile-Button:hover img, .Information-Button:hover img {
+    transform: translateX(-70px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Statistics-Button .titulo, .Profile-Button .titulo, .Information-Button .titulo {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    color: var(--color-celeste-oscuro);
+    font-family: var(--fuente-principal);
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Statistics-Button:hover, .Profile-Button:hover, .Information-Button:hover {
+    width: 200px;
+}
+
+.Statistics-Button:hover .titulo, .Profile-Button:hover .titulo, .Information-Button:hover .titulo {
+    transform: translateX(20px);
+    opacity: 1;
+}
+
+.Information-Button:hover, .Statistics-Button:hover, .Profile-Button:hover {
+    background-color: var(--color-celeste-medio);
+}
+
+
 /*Main*/
-.Contenedor-Principal{
-    font-family:Arial, Helvetica, sans-serif;/*cambiar*/
+.Main-Container{
+    font-family:var(--fuente-principal);
     display: flex;
     align-items: center;
     padding: 3% 4% 0; 
     gap:3%;
     width: 100%;
-    height: 600px; /*fix en index*/
+    height: 600px; 
 }
-
 .Left-Panel{
     width: 40%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /*centra resumen y consejo*/
-    gap:8%;
- 
-    
+    align-items: center; 
+    gap:8%;   
 }
+
+/*Day summary*/
 .Day-Summary{
     width: 360px;
     height: 360px;
-    border: 6px dashed var(--color-celeste-oscuro-op);/*borde lineas*/
+    border: 6px dashed var(--color-celeste-oscuro-op);
     border-radius:100% ;
     display: flex;
-    justify-content: center; /*centra horizontalmente*/
-    align-items: center; /*centra verticalmente*/
+    justify-content: center;
+    align-items: center;
 }
 .Phase-Info{
     width: 320px;
@@ -77,9 +127,9 @@ header{
     background-color: var(--color-rosado-claro-barras);
     border: 6px solid var(--color-celeste-oscuro-op); 
     border-radius:100%;
-    text-align: center; /*centra el texto*/
-    align-content: center; /*centra verticalmente el texto*/
-    padding: 0 20%;   /*20% pading a cada lado*/
+    text-align: center; 
+    align-content: center; 
+    padding: 0 20%;   
 }
 .Phase-Info p{
     font-size: var(--tamaño-fuente-texto);
@@ -94,6 +144,7 @@ header{
     font-weight: bold;
 }
 
+/*Daily advice*/
 .Daily-Advice{
     background-color: var(--color-celeste-oscuro-op);
     border-radius: 8px;
@@ -108,8 +159,9 @@ header{
     font-size:  var(--tamaño-fuente-texto);
     color: var(--color-blanco);
     padding: 2% 0;
-
 }
+
+/*------------------------------------------------*/
 
 .Right-Panel{
     width: 60%;
@@ -117,31 +169,26 @@ header{
     align-content: center;
 }
 
+/*Calendar styles*/
 .Calendar{
     display: flex; 
     flex-direction: column;
     align-items: center;
-
 }
-
 .Buttons{
     width: 300px;
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-color: var(--color-rosado-claro-barras); 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
-
-
 }
 .Buttons img{ 
     width: 45px;
     padding-top: 5px;
-
 }
 .Buttons h2{
     width: 180px;
@@ -151,61 +198,71 @@ header{
 .Container{
     border: 8px solid var(--color-rosado-claro-barras);
     border-radius: 8px;
-    gap:10px;
-    
+    gap:10px;    
 }
 .Week{
     background-color: var(--color-rosado-claro);
     font-size: var(--tamaño-fuente-grande);
-
     width: 100%;
     display: grid;
     grid-template-columns: repeat(7,1fr);
     padding: 5px 20px 0;
 }
-
 .Week p{
     text-align: center;
 }
 .Days{
     background-color: var(--color-rosado-claro);
     font-size: var(--tamaño-fuente-grande);
- 
-
     width: 100%;
     display: grid;
     grid-template-columns: repeat(7,1fr);
     gap: 20px 7px;
     padding: 10px 20px 0;
 }
-
 .Day {
     text-align: center;
     align-content: center;
     width: 89px;
     height: 60px;
     border-radius: 80px;
+    opacity: 5;    
 }
 
 .Normal-Day{
     background-color: var(--color-blanco);
     text-align: center;
-    align-content: center;
-    
+    align-content: center;  
+    transition:  background-color 0.3s ease;  
+}
+.Normal-Day:hover {
+    background-color: var(--color-rosado-medio);
 }
 .Menstrual-Day{
     background-color: #ff2d5381;
     border: 4px dotted var(--color-rosado-oscuro);
+    transition:  background-color 0.3s ease; 
+}
+.Menstrual-Day:hover{
+    background-color: var(--color-rosado-oscuro);
 }
 .Ovulation-Day{
     background-color: #a6c4c2b1;
     border: 4px dotted var(--color-celeste-oscuro-op);
 }
-
 .Fertile-Day {
     background-color: #a6c4c2b1;
     border:4px dotted var(--color-celeste-fondo);
-
+    transition:  background-color 0.3s ease; 
+}
+.Fertile-Day:hover{
+    background-color: var(--color-celeste-fondo);
+}
+.Ovulation-Day, .Current-Day{
+    transition:  background-color 0.3s ease; 
+}
+.Ovulation-Day:hover, .Current-Day:hover{
+    background-color: var(--color-celeste-oscuro-op);
 }
 .Other-Month-Days{
     background-color: #ffffff78;
@@ -219,6 +276,7 @@ header{
     border: 4px solid var(--color-celeste-oscuro-op);
 }
 
+/*Pop-up styles*/
 .Popup {
     background-color: rgba(0, 0, 0, 0.456);
     position: fixed; 
@@ -249,33 +307,36 @@ header{
     padding:1.5rem 0 1.5rem;    
 }
 .Checkboxes{
-    padding: 0.5rem 2rem 1.5rem;       
+    padding: 1.5rem 2rem 1.5rem;       
     display: grid;             
     row-gap: 0.5rem; 
     font-size: var(--tamaño-fuente-texto);           
 }
-
-
 .Action-buttons {
     display: flex;
     justify-content: space-evenly ;
 }
-
-.SaveBtn {
+.Save-Button {
     background-color: #a6c4c283;
-    font-size: var(--tamaño-fuente-texto);
-    padding: 0.1rem 1rem;     
-    border-radius: 0.75rem;    
     border: 0.40rem solid var(--color-celeste-fondo);
 }
 
-.ExitBtn {
+.Exit-Button {
     background-color: #f88fa27e;
+    border: 0.40rem solid var(--color-rosado-claro-barras);
+    width: 7.25rem;
+}
+.Save-Button, .Exit-Button{
     font-size: var(--tamaño-fuente-texto);
     padding: 0.1rem 1rem;     
     border-radius: 0.75rem;    
-    border: 0.40rem solid var(--color-rosado-claro-barras);
-    width: 7.25rem;
+    transition:  background-color 0.3s ease; 
+}
+.Save-Button:hover{
+    background-color:var(--color-celeste-fondo) ;
+}
+.Exit-Button:hover{
+    background-color: var(--color-rosado-claro-barras);
 }
 .Ovulatory-Phase{          
     color: var(--color-celeste-medio); 

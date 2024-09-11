@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const monthDays=document.querySelector('.Days');
     const month =document.querySelector('.Month');
-    const nextButton=document.querySelector('.NextBtn');
-    const backButton=document.querySelector('.BackBtn');
+    const nextButton=document.querySelector('.Next-Button');
+    const backButton=document.querySelector('.Back-Button');
     const popup=document.querySelector('.Popup');
     const popupDate=document.querySelector('.Popup-Date');
     const popupPhase=document.querySelector('.Cycle-Phase');
-    const saveButton=document.querySelector('.SaveBtn');
-    const exitButton=document.querySelector('.ExitBtn');
+    const saveButton=document.querySelector('.Save-Button');
+    const exitButton=document.querySelector('.Exit-Button');
 
 
     const months = ['Junio','Julio','Agosto','Septiembre','Octubre'];
