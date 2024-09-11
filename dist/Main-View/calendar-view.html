@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonBloom | Tu Calendario Menstrual</title>
+    <link rel="icon" href="\img\icono-MoonBloom.png" type="image\png">
+    <link rel="stylesheet" href="\dist\styles.css">
+    <link rel="stylesheet" href="\dist\global.css">
+    <link rel="stylesheet" href="calendar-styles.css"> 
+       
+</head>
+<body>
+    <header class="Header shadow-md">
+        <a class="Logotype" href="..\Main-View\calendar-view.html">
+            <img src="\img\logo-MoonBloom.png">
+            <h1>MOONBLOOM</h1>
+        </a>
+        <nav class="Navigation-Buttons">
+            <a class="Statistics-Button" href=" ">
+                <img src="\img\estadistica-blanco.png" > 
+                <span class="title">Estadísticas</span>
+             </a>    
+            <a class="Information-Button" href="..\index.html">
+                <img src="\img\info-blanco.png">
+                <span class="title">Información</span>
+            </a>         
+            <a class="Profile-Button" href=" ">
+                <img src="\img\perfil-blanco.png">
+                <span class="title">Perfil</span>
+            </a>  
+        </nav>
+    </header>
+
+    <main class="Main-Container">
+        <div class="Left-Panel">
+            <section class="Day-Summary ">
+                <div class="Phase-Info shadow-lg">
+                    <p>Viernes, 25 Jul. </p>
+                    <p>Fase Ovulatoria</p>
+                    <h2>Periodo en <span>10 Días</span></h2>
+                    <p>Prob. media de Embarazo</p>
+                </div>
+            </section>
+    
+            <section class="Daily-Advice shadow-lg">
+                <h3>CONSEJO DEL DIA</h3>
+                <p>
+                    Mantente hidratada, come alimentos ricos en antioxidantes y escucha a tu cuerpo si sientes molestias.
+                </p>
+            </section>
+        </div>
+ 
+        <div class="Right-Panel">
+            <section class="Calendar">
+                <div class="Buttons">
+                    <button class="Back-Button">
+                       <img src="\img_cal\left-arrow.png">
+                    </button>
+                    <h2 class="Month"></h2>
+                    <button class="Next-Button">
+                        <img src="\img_cal\right-arrow.png">
+                    </button>
+                </div>
+                <div class="Container">
+                    <div class="Week">
+                        <p>L</p>
+                        <p>M</p>
+                        <p>M</p>
+                        <p>J</p>
+                        <p>V</p>
+                        <p>S</p>
+                        <p>D</p>
+                    </div>
+                    <div class="Days"></div>
+                </div>
+
+                <div class="Popup inset-0 flex items-center justify-center hidden" aria-modal="true" role="dialog">
+                    <div class="Popup-Content">
+                        <div class="Head-Popup">
+                            <h2 class="Popup-Date"></h2>
+                            <h3 class="Cycle-Phase"></h3>
+                        </div>
+                        <div class="Checkboxes">
+                            <label class="Protected-Activity">
+                                <input type="checkbox" name="activity" value="protected" class="mr-2">
+                                <span>Actividad sexual con protección</span>
+                            </label>
+                            <label class="Unprotected-Activity">
+                                <input type="checkbox" name="activity" value="unprotected" class="mr-2">
+                                <span>Actividad sexual con protección</span>
+                            </label>
+                            <label class="Period">
+                                <input type="checkbox" name="activity" value="period" class="mr-2">
+                                <span>Periodo</span>
+                            </label>
+                        </div>
+                        <div class="Action-Buttons flex justify-evenly">
+                            <button class="Save-Button">Guardar</button>
+                            <button class="Exit-Button">Salir</button>
+                        </div>
+                    </div>
+                </div>
+                <script src="calendar-navigability.js"></script>
+            </section> 
+        </div>         
+    </main>
+</body>
+</html>
