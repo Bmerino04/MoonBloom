@@ -1,3 +1,10 @@
+.body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 70px 40px;
+    max-height: 100%;
+}
 .Botones-Navegacion{
     height: 80px;
     display: flex ;
@@ -29,32 +36,74 @@
     color: var(--color-celeste-oscuro);
 }
 /* Ajusta el contenedor principal para centrar el carrusel */
-.w-full {
-    display: flex; /* Habilita flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    width: 100%; /* Asegúrate de que tome el ancho completo del contenedor */
-    height: auto;
-    padding-top: 60px;
-    position: relative; /* Mantén esto si es necesario para el posicionamiento */
-}
-
-/* Ajusta el contenedor del carrusel para ocupar el tamaño adecuado */
-.swiper-container {
-    width: 100%; /* Permite que ocupe todo el ancho del contenedor flexbox */
-    max-width: 95%; /* Puedes ajustar el ancho máximo según tus necesidades */
-    margin: 0 auto; /* Centra el contenedor */
-}
-
-.swiper-wrapper {
+.Slider {
+    background-color: antiquewhite;
     width: 100%;
-    height: max-content !important;
-    padding-bottom: 64px !important;
-    -webkit-transition-timing-function: linear !important;
-    transition-timing-function: linear !important;
-    position: relative;
+    height: 100%;
+    display: flex; /* Mantiene el contenedor como flex */
+    flex-direction: column; /* Alinea el contenido del slider en columna */
+    gap: 10px;
 }
 
-.swiper-pagination-bullet {
-    background: #4e46e5;
+.Slides{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 10px;
 }
+
+.Slide {
+    display: none; /* Muestra todos los slides en flex */
+    flex-direction: row; /* Alinea el contenido en fila */ /* Centra el contenido verticalmente */
+    width: 100%;
+    height: 100%;
+}
+.slide-container{
+    display:flex;
+    flex-direction: row;
+    gap: 30%;
+}
+
+
+.Chart {
+    background-color: var(--color-rosado-claro);
+    border:8px solid var(--color-rosado-claro-barras);
+    border-radius: 8px;
+}
+
+.Resume {
+    max-width: 50%;
+    border-radius: 8px;
+    background-color: var(--color-celeste-claro);
+}
+
+
+.Buttons{
+    width: 20%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15%;
+    background-color: var(--color-rosado-claro-barras); 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+.Buttons img{ 
+    width: 45px;
+    padding-top: 5px;
+
+}
+.Buttons h2{
+    width: 180px;
+    font-size: 32px;
+    color: var(--color-blanco);
+}
+.Container{
+    border: 8px solid var(--color-rosado-claro-barras);
+    border-radius: 8px;
+    gap:10px;  
+}
+
