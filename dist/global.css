@@ -1,9 +1,9 @@
-@font-face {
-    font-family: 'Raleway';
-    src: url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
-    font-style: normal;
+.raleway-font {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
-
 :root {
     /* Colores Celeste */
     --color-celeste-fondo: #A6C4C2;
