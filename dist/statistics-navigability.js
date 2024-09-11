@@ -158,9 +158,21 @@ document.addEventListener('DOMContentLoaded', () => {
                             font: {
                                 size: 14,
                             }
-                        }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Ciclo 10 Junio - 7 Julio:',
+                            font: {
+                                size: 14,
+                                
+                            },
+                            padding: {
+                                bottom: 0
+                            }
+                        },
                     }
                 },
+
                 scales: {
                     y: {
                         beginAtZero: true,
