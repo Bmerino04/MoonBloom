@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonBloom - Registrarse2</title>
+    <link rel="icon" href="\img\icono-MoonBloom.png" type="image/png">
+    <link rel="stylesheet" href="\dist\styles.css">
+    <link rel="stylesheet" href="\dist\global.css">
+    <link rel="stylesheet" href="login-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="login-page min-h-screen flex items-center justify-center">
+    <div class="login-logo flex flex-col items-center">
+        <img src="\img\logo-MoonBloom.png" alt="MoonBloom Logo" class="w-40 h-40 mb-4">
+        <h1>MOONBLOOM</h1>
+    </div>
+    <div class="bg-white bg-opacity-70 p-8 rounded-lg shadow-lg w-96">
+        <form action="#" method="POST">
+            <div class="mb-4">
+                <label for="security-question" class="block text-sm mb-2">Pregunta de seguridad</label>
+                <input type="text" id="security-question" name="security-question" placeholder="Ej: Nombre de mi mascota" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-teal-500">
+            </div>
+            <div class="mb-4">
+                <label for="security-answer" class="block text-sm mb-2">Respuesta</label>
+                <input type="text" id="security-answer" name="security-answer" placeholder="Ej: Olivia" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-teal-500">
+            </div>
+            <div class="text-center my-4">Asegurate de que solo tu sepas la respuesta</div>
+            <a href="register3-view.html" class="btn-2">Continuar</a>
+        </form>
+    </div>
+</body>
+</html>

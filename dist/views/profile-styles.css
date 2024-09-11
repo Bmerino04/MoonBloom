@@ -1,0 +1,416 @@
+body{
+    
+    font-family: var(--fuente-principal);
+    background-color: var(--color-celeste-fondo) ;
+}
+header{
+    background-color: var(--color-header);
+    font-family: var(--fuente-principal);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    padding: 0 3%;
+    align-items: center;
+    justify-content: space-between;   
+}
+/*Header-Navbar*/
+.Logotype{
+    display: flex;
+    align-items: center; 
+    gap:3%;
+}
+.Logotype img{
+    width: 70px;
+    height: auto;
+}
+.Logotype h1{
+    color: var(--color-blanco);
+    font-size: var(--tamaño-fuente-grande);
+    font-weight: bolder;
+    letter-spacing: 0.20em;
+}
+.Nav-Btn{
+    height: 80px;
+    display: flex ;
+    gap: 3px;
+    justify-content: flex-end;
+    align-items: center;
+}
+.Profile-btn{
+    background-color: var(--color-celeste-medio);
+    height: 80px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap:5%;
+    justify-content: center;    
+}
+.Profile-btn .titulo{
+    font-family: var(--fuente-principal);
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: bold;
+    color: var(--color-celeste-oscuro);
+}
+.Profile-btn img{
+    width: 40px;
+    height: 40px;
+}
+
+/* Estilo base para los botones */
+.Stats-btn, .Info-btn {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.Stats-btn img, .Info-btn img {
+    width: 40px;
+    height: 40px;
+    transition: filter 0.3s ease;
+}
+
+.Stats-btn:hover img, .Info-btn:hover img {
+    filter: invert(24%) sepia(34%) saturate(3400%) hue-rotate(125deg) brightness(30%) contrast(90%);
+}
+
+.Stats-btn:hover img, .Info-btn:hover img {
+    transform: translateX(-70px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Stats-btn .titulo, .Info-btn .titulo {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    color: var(--color-celeste-oscuro);
+    font-family: var(--fuente-principal);
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Stats-btn:hover, .Info-btn:hover {
+    width: 200px;
+}
+
+.Stats-btn:hover .titulo, .Info-btn:hover .titulo {
+    transform: translateX(20px);
+    opacity: 1;
+}
+
+
+.Info-btn:hover, .Stats-btn:hover, .Profile-btn:hover {
+    background-color: var(--color-celeste-medio);
+}
+
+.Main-container{
+    display: flex;
+    align-items: center;
+    padding: 5% 5%;
+    width: 100%;
+    font-family: var(--fuente-principal);
+}
+
+.Panel-Info-Profile{
+    background-color: var(--color-rosado-claro);
+    border:8px solid var(--color-rosado-claro-barras);
+    border-radius: 8px;
+    height: 60%;
+    width: 25%;
+    padding: 20px;
+}
+
+.Text-panel-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Separación entre los paneles */
+    width: 60%;
+}
+
+/* Panel individual, mismo estilo que antes */
+.Text-panel {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-celeste-oscuro-op);
+    border:8px solid var(--color-celeste-oscuro);
+    width: 100%;
+    border-radius: 8px;
+    padding: 2%;
+    color: var(--color-blanco);
+    display: flex; /* Para hacer que los hijos se alineen horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+    justify-content: space-between; /* Espacio entre article y el botón */
+    gap: 20px; /* Espacio entre article y el botón */
+}
+
+.Upper-text {
+    flex: 1; /* Esto permite que el artículo ocupe la mayor parte del espacio disponible */
+}
+
+.method-btn {
+    background-color: var(--color-celeste-oscuro);
+    border: 8px solid var(--color-celeste-oscuro);
+    width: 200px; /* Ancho fijo del botón */
+    height: 100px; /* Altura del botón para mantener la proporción 2:1 */
+    border-radius: 8px; /* Bordes redondeados */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex; /* Alinea el texto en el centro del botón */
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centra el texto horizontalmente */
+}
+.method-btn:hover {
+    background-color: var(--color-header);
+}
+
+.Text-panel h2 {
+    font-size: var(--tamaño-fuente-medio);
+    color: var(--color-rosado-medio);
+    text-align: left; /* Cambiado a izquierda */
+    margin: 5%;
+}
+
+.Text-panel p {
+    font-size: 20px;
+    color: var(--color-blanco-opaco);
+    text-align: left; /* Cambiado a izquierda */
+    margin: 5%;
+}
+.text-panel-sub-container {
+    display: flex;
+    gap: 20px; /* Espacio entre los paneles */
+    width: 100%;
+}
+
+/* Los paneles dentro del sub-contenedor ocuparán la mitad del espacio cada uno */
+.text-panel-sub-container .Panel-Texto {
+    flex: 1; /* Se aseguran de ocupar el mismo espacio */
+}
+
+.contained-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los bloques de texto */
+}
+
+.title {
+    font-size: 20px !important;
+    font-weight: bold;
+    color: var(--color-rosado-medio);
+    text-align: center;
+}
+
+.content {
+    font-size: 20px !important;
+    color: var(--color-blanco);
+}
+
+.subtitle {
+    margin-bottom: 10px;
+}
+
+.subtitle strong {
+    font-weight: bold;
+}
+
+.subtitle span {
+    display: block; /* Hace que el texto del subtítulo y la opción de editar estén en líneas separadas */
+}
+
+.edit {
+    color: var(--color-rosado-medio) !important;
+    text-decoration: none;
+}
+
+.edit:hover {
+    text-decoration: underline;
+}
+
+.Note {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: var(--color-blanco);
+    margin-top: 20px !important;
+    margin-bottom: 5px !important;
+}
+
+/* Estilos para el Panel de Información de Perfil */
+.Panel-Info-Profile {
+    background-color: var(--color-rosado-claro);
+    border: 8px solid var(--color-rosado-claro-barras);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+}
+
+/* Estilo para la foto de perfil */
+.Profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid var(--color-celeste-oscuro);
+}
+
+.Profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botón para editar la foto */
+.Edit-btn {
+    position: absolute;
+    top: 220px;
+    right: 30px;
+    background-color: var(--color-rosado-medio);
+    border: 6px solid var(--color-celeste-oscuro);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Edit-btn img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.Edit-btn:hover {
+    background-color: var(--color-rosado-claro);
+}
+
+.user-name{
+    display: block; 
+    width: 100%; 
+    background-color: var(--color-rosado-medio);
+    color: var(--color-celeste-oscuro); 
+    font-weight: 600; 
+    padding: 0.5rem;
+    border-radius:20px; 
+    transition: background-color 0.3s ease; 
+    text-align: center;
+    text-decoration: none; 
+}
+
+.user-data {
+    background-color: var(--color-rosado-medio);
+    border: 2px solid var(--color-rosado-claro-barras);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.user-data p {
+    font-size: 18px;
+    color: var(--color-celeste-oscuro);
+}
+
+.BMI-bar {
+    width: 100%;
+    height: 20px;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.range {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #2C5D5B, #48A09F, #FFFF00, #FFCC00, #FF0000);
+    border-radius: 5px;
+}
+
+.BMI-pointer {
+    position: absolute;
+    top: 20px;
+    left: 30%; /* Ajustar según el valor del IMC */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid black;
+}
+
+.log-out {
+    background-color: var(--color-celeste-medio);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px; /* Añade espacio entre el botón y el contenido anterior */
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.log-out:hover {
+    background-color: var(--color-celeste-oscuro);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Cuando el modal está activo (es decir, cuando es seleccionado como target) */
+  .modal:target {
+    display: flex;
+  }
+  
+  /* Estilos del contenido del modal */
+  .modal-content {
+    background-color: white;
+    color: var(--color-negro);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+
+  .modal-content h3{
+    size: 16px;
+  }
+  
+  .close-modal {
+    display: block; 
+    width: 100%; 
+    border: 3px solid var(--color-rosado-medio); 
+    background-color: var(--color-rosado-claro);
+    color: var(--color-negro); 
+    font-weight: 600; 
+    padding: 0.5rem;
+    border-radius: 0.375rem; 
+    transition: background-color 0.3s ease; 
+    text-align: center;
+    text-decoration: none; 
+    margin-top: 30px;
+  }
