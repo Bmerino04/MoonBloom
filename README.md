@@ -1,5 +1,9 @@
-Link Figma:
-https://www.figma.com/design/Ix1O6INxrJjqv3e5WJtliI/Proyecto-de-Aplicaci%C3%B3n---MoonBloom?node-id=601-11&t=786ju2hlH5eK9dzH-1
+[REQUISTOS PARA CORRECTA EJECUCION]:
+- Tener instalado node.js
+- Ejecutar comando [npm run dev] para inicializar Tailwind
+
+Link Figma con Sugerencias:
+https://www.figma.com/proto/Ix1O6INxrJjqv3e5WJtliI/Proyecto-de-Aplicación---MoonBloom?node-id=601-11&t=zN2ZjVMzOF8m1SFe-1
 
 Nombre Proyecto: MoonBloom
 
