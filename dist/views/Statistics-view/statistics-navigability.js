@@ -13,10 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         slideTitle.textContent = slideTitles[index];
 
-        // Inicializar el gráfico para el slide visible
         initializeChart(index);
-
-        // Si llegamos al slide de "Tendencia Sexual", también renderizamos el segundo carrusel
         if (index === 3) { // Slide "Tendencia Sexual"
             renderSecondSlides(currentSecondSlideIndex);
         }
@@ -51,14 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     tooltip: {
                         callbacks: {
-                            // Muestra el título (X) normalmente
                             title: function(context) {
-                                return context[0].label; // Muestra la etiqueta X normalmente
+                                return context[0].label;
                             },
-                            // Personaliza el texto del tooltip para Y
                             label: function(context) {
-                                const value = context.raw; // Obtiene el valor de Y
-                                return `Días: ${value}`; // Cambia el texto para mostrar "Días: (valor)"
+                                const value = context.raw;
+                                return `Días: ${value}`;
                             }
                         }    
                     }
@@ -72,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             text: 'Periodos'
                         },
                         ticks: {
-                            display: false // Oculta las etiquetas del eje X
+                            display: false
                         }
                     },
                     y: {
@@ -98,10 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
         renderSlides(currentSlideIndex);
     });
 
-    // Renderizado inicial
+    // Initial rendering
     renderSlides(currentSlideIndex);
 
-    // Lógica del segundo carrusel
     const secondSlides = document.querySelectorAll('.Second-Slide');
     const secondNextButton = document.querySelector('.Second-Next');
     const secondBackButton = document.querySelector('.Second-Back');
@@ -113,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
             slide.style.display = (i === index) ? 'block' : 'none';
         });
 
-        // Inicializar el gráfico de barras en el slide visible
         initializeSexChart(index);
     }
 
@@ -198,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderSecondSlides(currentSecondSlideIndex);
     });
 
-    // Renderizado inicial del segundo carrusel
+    // Initial rendering of the second carousel
     renderSecondSlides(currentSecondSlideIndex);
 });
 
