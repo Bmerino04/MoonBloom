@@ -48,22 +48,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 plugins: {
                     legend: {
                         display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            // Muestra el título (X) normalmente
+                            title: function(context) {
+                                return context[0].label; // Muestra la etiqueta X normalmente
+                            },
+                            // Personaliza el texto del tooltip para Y
+                            label: function(context) {
+                                const value = context.raw; // Obtiene el valor de Y
+                                return `Días: ${value}`; // Cambia el texto para mostrar "Días: (valor)"
+                            }
+                        }    
                     }
                 },
                 scales: {
                     x: {
                         type: 'category',
-                        labels: ['0', '1', '2', '3', '4', '5', '6', '7','8'],
+                        labels: ['27 Nov - 24 Dic', '25 Dic- 21 Ene', '22 Ene - 18 Feb', '19 Feb - 17 Mar', '18 Mar - 14 Abr', '15 Abr - 12 May', '13 May - 9 Jun', '10 Jun - 7 Jul','8 Jul - 4 Agost'],
                         title: {
-                            display: true,
+                            display: false,
                             text: 'Periodos'
+                        },
+                        ticks: {
+                            display: false // Oculta las etiquetas del eje X
                         }
                     },
                     y: {
                         min: 0,
                         max: 35,
                         title: {
-                            display: true,
+                            display: false,
                             text: 'Días',
                         }
                     }
@@ -147,7 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1, 
+                            callback: function(value) { 
+                                return Number.isInteger(value) ? value : '';
+                            }
+                        }    
                     }
                 }
             }
