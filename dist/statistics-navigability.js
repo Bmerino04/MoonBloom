@@ -15,12 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Inicializar el gráfico para el slide visible
         initializeChart(index);
+
+        // Si llegamos al slide de "Tendencia Sexual", también renderizamos el segundo carrusel
+        if (index === 3) { // Slide "Tendencia Sexual"
+            renderSecondSlides(currentSecondSlideIndex);
+        }
     }
 
     function initializeChart(index) {
         const chartId = `LineChart${index + 1}`;
-        const ctx = document.getElementById(chartId).getContext('2d');
-        
+        const canvas = document.getElementById(chartId);
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
         new Chart(ctx, {
             type: 'line',
             data: {
@@ -77,8 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Renderizado inicial
     renderSlides(currentSlideIndex);
+
+    // Lógica del segundo carrusel
     const secondSlides = document.querySelectorAll('.Second-Slide');
-    const secondSlideTitle = document.querySelector('.Second-Slide-Title');
     const secondNextButton = document.querySelector('.Second-Next');
     const secondBackButton = document.querySelector('.Second-Back');
 
@@ -88,7 +96,62 @@ document.addEventListener('DOMContentLoaded', () => {
         secondSlides.forEach((slide, i) => {
             slide.style.display = (i === index) ? 'block' : 'none';
         });
-        secondSlideTitle.textContent = `Slide ${index + 1}`;
+
+        // Inicializar el gráfico de barras en el slide visible
+        initializeSexChart(index);
+    }
+
+    function initializeSexChart(index) {
+        const chartId = `SexChart${index + 1}`;
+        const canvas = document.getElementById(chartId);
+        if (!canvas) return;
+    
+        const ctx = canvas.getContext('2d');
+    
+        // Destroy any existing chart instance before creating a new one
+        if (window[`sexChart${index}`]) {
+            window[`sexChart${index}`].destroy();
+        }
+    
+        // Store the chart instance in a global variable
+        window[`sexChart${index}`] = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Menstrual', 'Folicular', 'Ovulatoria', 'Lutea'],
+                datasets: [
+                    {
+                        label: 'R.S. con protección',
+                        data: [1, 2, 4, 2],
+                        backgroundColor: '#F88FA3',
+                    },
+                    {
+                        label: 'R.S. sin protección',
+                        data: [2, 1, 0, 1],
+                        backgroundColor: '#FF7777',
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            usePointStyle: true,
+                            pointStyle: 'circle',
+                            color: '#000',
+                            font: {
+                                size: 14,
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     }
 
     secondBackButton.addEventListener('click', () => {
