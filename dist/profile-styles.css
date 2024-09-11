@@ -11,7 +11,6 @@ header{
     align-items: center;
     justify-content: space-between;   
 }
-
 /*Header-Navbar*/
 .Logotipo{
     display: flex;
@@ -28,7 +27,6 @@ header{
     font-weight: bolder;
     letter-spacing: 0.20em;
 }
-
 .Botones-Navegacion{
     height: 80px;
     display: flex ;
@@ -36,18 +34,7 @@ header{
     justify-content: flex-end;
     align-items: center;
 }
-
-.Boton-Estadisticas{
-    width: 40px;
-    height: 40px;
-}
-
-.Boton-Informacion{
-    width: 40px;
-    height: 40px;
-}
-
-.Boton-Perfil_Vista-Actual{
+.Boton-Perfil{
     background-color: var(--color-celeste-medio);
     height: 80px;
     width: 200px;
@@ -56,16 +43,71 @@ header{
     gap:5%;
     justify-content: center;    
 }
-.Boton-Perfil_Vista-Actual h6{
+.Boton-Perfil .titulo{
     font-family: var(--fuente-principal);
     font-size: var(--tamaño-fuente-medio);
     font-weight: bold;
     color: var(--color-celeste-oscuro);
 }
-
-.Boton-Perfil_Vista-Actual img{
+.Boton-Perfil img{
     width: 40px;
     height: 40px;
+}
+
+/* Estilo base para los botones */
+.Boton-Estadisticas, .Boton-Informacion {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.Boton-Estadisticas img, .Boton-Informacion img {
+    width: 40px;
+    height: 40px;
+    transition: filter 0.3s ease;
+}
+
+.Boton-Estadisticas:hover img, .Boton-Informacion:hover img {
+    filter: invert(24%) sepia(34%) saturate(3400%) hue-rotate(125deg) brightness(30%) contrast(90%);
+}
+
+.Boton-Estadisticas:hover img, .Boton-Informacion:hover img {
+    transform: translateX(-70px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Boton-Estadisticas .titulo, .Boton-Informacion .titulo {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    color: var(--color-celeste-oscuro);
+    font-family: var(--fuente-principal);
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Boton-Estadisticas:hover, .Boton-Informacion:hover {
+    width: 200px;
+}
+
+.Boton-Estadisticas:hover .titulo, .Boton-Informacion:hover .titulo {
+    transform: translateX(20px);
+    opacity: 1;
+}
+
+
+.Boton-Informacion:hover, .Boton-Estadisticas:hover, .Boton-Perfil:hover {
+    background-color: var(--color-celeste-medio);
 }
 
 .Contenedor-Principal{
