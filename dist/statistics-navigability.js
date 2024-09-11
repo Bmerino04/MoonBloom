@@ -77,5 +77,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Renderizado inicial
     renderSlides(currentSlideIndex);
+    const secondSlides = document.querySelectorAll('.Second-Slide');
+    const secondSlideTitle = document.querySelector('.Second-Slide-Title');
+    const secondNextButton = document.querySelector('.Second-Next');
+    const secondBackButton = document.querySelector('.Second-Back');
+
+    let currentSecondSlideIndex = 0;
+
+    function renderSecondSlides(index) {
+        secondSlides.forEach((slide, i) => {
+            slide.style.display = (i === index) ? 'block' : 'none';
+        });
+        secondSlideTitle.textContent = `Slide ${index + 1}`;
+    }
+
+    secondBackButton.addEventListener('click', () => {
+        currentSecondSlideIndex = (currentSecondSlideIndex - 1 + secondSlides.length) % secondSlides.length;
+        renderSecondSlides(currentSecondSlideIndex);
+    });
+
+    secondNextButton.addEventListener('click', () => {
+        currentSecondSlideIndex = (currentSecondSlideIndex + 1) % secondSlides.length;
+        renderSecondSlides(currentSecondSlideIndex);
+    });
+
+    // Renderizado inicial del segundo carrusel
+    renderSecondSlides(currentSecondSlideIndex);
 });
 
