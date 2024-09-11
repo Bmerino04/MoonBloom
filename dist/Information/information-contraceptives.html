@@ -10,38 +10,43 @@
     <link rel="stylesheet" href="contraceptives-styles.css">    
 </head>
 <body>
-    <header class="Encabezado shadow-md">
-        <div class="Logotipo">
-            <img src="\img\logo-MoonBloom.png">
-            <h1>MOONBLOOM</h1>
-        </div>
-        <nav class="Botones-Navegacion">
-            <img class="Boton-Estadisticas" src="\img\estadistica-blanco.png"> 
-            <div class="Boton-Informacion_Vista-Actual ">
-                <img src="\img\info-verde.png">
-                <h6>Información</h6>
-            </div>
-            <img class="Boton-Perfil" src="\img\perfil-blanco.png">
-        </nav>
+    <header class="Header shadow-md">
+            <a class="Logotype" href="..\Main-View\calendar-view.html">
+                <img src="\img\logo-MoonBloom.png">
+                <h1>MOONBLOOM</h1>
+            </a>
+
+            <nav class="Navigation-Buttons">
+                <a class="Statistics-Button" href=" ">
+                    <img src="\img\estadistica-blanco.png"> 
+                    <span class="title">Estadísticas</span>
+                 </a>    
+                <a class="Information-Button" href="..\index.html">
+                    <img src="\img\info-verde.png">
+                    <span class="title">Información</span>
+                </a>         
+                <a class="Profile-Button" href=" ">
+                    <img src="\img\perfil-blanco.png">
+                    <span class="title">Perfil</span>
+                </a>  
+            </nav>  
     </header>
 
-    <main class="Contenedor-Principal">
-        <section class="Cuerpo flex gap-20 p-4 justify-center">
-            <aside class="Panel-Informacion shadow-md">  
+    <main class="Main-Container">
+            <aside class="Information-Panel shadow-md">  
                 <h3>¡Aprende sobre ti!</h3>
-                <ul class="Panel-Informacion_Lista">
+                <ul class="Information-List">
                     <li class="no-underline hover:underline"><a href="..\Information\information-menstrual-cycle.html">Ciclo Menstrual</a></li>
                     <li class="no-underline hover:underline"><a href="..\Information\information-contraceptives.html">Métodos Anticonceptivos</a></li>
                     <li class="no-underline hover:underline"><a href="..\Information\information-reproductive-diseases.html">Enfermedades Reproductivas</a></li>
                 </ul>   
             </aside>
 
-            <article class="Panel-Texto shadow-md">
+            <article class="Text-Panel shadow-md">
                 <h2>Métodos Anticonceptivos</h2>
-                <div class="Container">
-                    <p>
-                        Elegir el anticonceptivo adecuado es clave para una planificación familiar eficaz. Aquí te presentamos algunos métodos comunes y cómo funcionan:</p>
-                    <ul class="Panel-Texto_Anticonceptivos">
+                <div class="Text-Container">
+                    <p> Elegir el anticonceptivo adecuado es clave para una planificación familiar eficaz. Aquí te presentamos algunos métodos comunes y cómo funcionan:</p>
+                    <ul class="Contraceptive-List">
                         <li><strong>Píldoras Anticonceptivas:</strong> Previenen la ovulación y espesan el moco cervical para evitar que los espermatozoides lleguen al óvulo.</li>
                         <li><strong>DIU (Dispositivo Intrauterino):</strong> El DIU de cobre bloquea a los espermatozoides, mientras que el DIU hormonal suprime la ovulación.</li>
                         <img src="\img_info\contraceptive.png">
@@ -49,9 +54,7 @@
                         <li><strong>Anillo Vaginal:</strong> Libera hormonas en la vagina, previniendo la ovulación y dificultando la llegada de los espermatozoides al óvulo.</li>    
                     </ul> 
                 </div>
-                
             </article>
-        </section>
     </main>
 </body>
 </html>
