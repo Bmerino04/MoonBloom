@@ -11,57 +11,57 @@
 </head>
 
 <body>
-    <header class="Encabezado shadow-md">
-        <div class="Logotipo">
+    <header class="shadow-md">
+        <div class="Logotype">
             <img src="\img\logo-MoonBloom.png">
             <h1>MOONBLOOM</h1>
         </div>
-        <nav class="Botones-Navegacion">
-            <a href="/dist/views/Statistics-view/statistics-view.html" class="Boton-Estadisticas">
+        <nav class="Nav-Btn">
+            <a href="/dist/views/Statistics-view/statistics-view.html" class="Stats-btn">
                 <img src="\img\estadistica-blanco.png" alt="Estadísticas">
                 <span class="titulo">Estadísticas</span>
             </a> 
-            <a href="/dist/index.html" class="Boton-Informacion">
+            <a href="/dist/index.html" class="Info-btn">
                 <img src="\img\info-blanco.png" alt="Información">
                 <span class="titulo">Información</span>
             </a>
-            <a href="/dist/views/user-info-view.html" class="Boton-Perfil">
+            <a href="/dist/views/user-info-view.html" class="Profile-btn">
                 <img src="\img\perfil-verde.png" alt="Perfil">
                 <span class="titulo">Perfil</span>
             </a>
         </nav>
     </header>
 
-    <main class="Contenedor-Principal">
+    <main class="Main.container">
         <section class="Cuerpo flex gap-20 p-4 bg-white rounded-lg bg-opacity-50 justify-center">
-            <aside class="Panel-Informacion-Perfil shadow-md">
+            <aside class="Panel-Info-Profile shadow-md">
                 <div>
-                    <div class="Foto-Perfil shadow-md">
+                    <div class="Profile-img shadow-md">
                         <img src="\img\foto-perfil-ejemplo.png" alt="Foto de perfil">
                     </div>
-                    <div class="Boton-Editar">
+                    <div class="Edit-btn">
                         <img src="\img\pencil.png" alt="Editar foto">
                     </div>
                 </div>
                 <a class="user-name">Nombre de usuario</a>
-                <div class="datos-usuario">
+                <div class="user-data">
                     <p><strong>Peso:</strong> 72kg <a href="#">[editar]</a></p>
                     <p><strong>Altura:</strong> 173cm <a href="#">[editar]</a></p>
-                    <div class="barra-imc">
-                        <div class="rango"></div>
-                        <div class="flecha-imc"></div>
+                    <div class="BMI-bar">
+                        <div class="range"></div>
+                        <div class="BMI-pointer"></div>
                     </div>
                     <p>Tu IMC es: 24</p>
-                    <a href="/dist/views/Login-Register-view/login-view.html" class="cerrar-sesion shadow-md">Cerrar sesión</a>
+                    <a href="/dist/views/Login-Register-view/login-view.html" class="log-out shadow-md">Cerrar sesión</a>
                 </div>
             </aside>            
-            <div class="Panel-Texto-Contenedor">
-                <section class="Panel-Texto shadow-md items-center justify-between">
-                    <article class="Texto-Superior">
+            <div class="Text-panel-container">
+                <section class="Text-panel shadow-md items-center justify-between">
+                    <article class="Upper-text">
                         <h2>Anticonceptivos Internos</h2>
                         <p>Los métodos anticonceptivos internos, como los dispositivos intrauterinos (DIU) y los implantes hormonales, pueden afectar el ciclo menstrual de diferentes maneras, dependiendo del tipo de método utilizado.</p>
                     </article>
-                    <a href="#modal" class="btn-anticonceptivo">Registrar o eliminar un metodo Anticonceptivo</a>
+                    <a href="#modal" class="method-btn">Registrar o eliminar un metodo Anticonceptivo</a>
                     <div id="modal" class="modal">
                         <div class="modal-content">
                           <h3>Metodo Anticonceptivo Interno</h3>
@@ -80,32 +80,32 @@
                         </div>
                       </div>
                 </section>
-                <div class="Panel-Texto-Sub-Contenedor">
-                    <article class="Panel-Texto shadow-md w-1/2">
-                        <div class="Texto-Contenido">
-                            <h2 class="Titulo">Duración Periodo/Ciclo</h2>
-                            <div class="Contenido">
-                                <div class="Subtitulo">
+                <div class="text-panel-sub-container">
+                    <article class="Text-panel shadow-md w-1/2">
+                        <div class="contained-text">
+                            <h2 class="title">Duración Periodo/Ciclo</h2>
+                            <div class="content">
+                                <div class="subtitle">
                                     <strong>Tu periodo suele durar:</strong> 
                                     <span>5 días <a href="#" class="editar">[editar]</a></span>
                                 </div>
-                                <div class="Subtitulo">
+                                <div class="subtitle">
                                     <strong>Tu ciclo suele durar:</strong> 
-                                    <span>28 días <a href="#" class="editar">[editar]</a></span>
+                                    <span>28 días <a href="#" class="edit">[editar]</a></span>
                                 </div>
                             </div>
-                            <p class="Nota">Nota: Esta estimación se usará para poner de trasfondo previo a los registros.</p>
+                            <p class="Note">Nota: Esta estimación se usará para poner de trasfondo previo a los registros.</p>
                         </div>
                     </article>                    
-                    <article class="Panel-Texto shadow-md w-1/2">
-                        <div class="Texto-Contenido">
-                            <h2 class="Titulo">Actualmente estas usando DIU hormonal:</h2>
-                            <div class="Contenido">
-                                <div class="Subtitulo">
+                    <article class="Text-panel shadow-md w-1/2">
+                        <div class="contained-text">
+                            <h2 class="title">Actualmente estas usando DIU hormonal:</h2>
+                            <div class="content">
+                                <div class="subtitle">
                                     <span>Este método suele hacer que las menstruaciones sean más ligeras y menos dolorosas, también puede causar Amenorrea (ausencia de menstruación) en algunas mujeres.</span>
                                 </div>
                             </div>
-                            <p class="Nota">Nota: El método anticonceptivo se tomará en cuenta para futuras predicciones.</p>
+                            <p class="note">Nota: El método anticonceptivo se tomará en cuenta para futuras predicciones.</p>
                         </div>
                     </article>                    
                 </div>
