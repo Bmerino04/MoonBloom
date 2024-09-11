@@ -1,0 +1,34 @@
+.raleway-font {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+:root {
+    /* Colores Celeste */
+    --color-celeste-fondo: #A6C4C2;
+    --color-celeste-claro: #D9D9D9;
+    --color-celeste-medio: #48A09F;
+    --color-celeste-medio-oscuro:#348188;
+    --color-celeste-oscuro: #2C5D5B;
+    --color-celeste-oscuro-op: #2c5d5bc1; /*celeste oscuro 75% opacidad*/
+    --color-header: #48a09ebd; /* celeste medio 75% de opacidad */
+  
+    /* Colores Rosado */
+    --color-rosado-medio: #FE9FA3;
+    --color-rosado-oscuro: #FF2D55;
+    --color-rosado-claro: #FFCCCB;
+    --color-rosado-claro-barras: #F88FA3;
+    --color-rosado-oscuro-barras: #FF7777;
+  
+    /* Otros Colores */
+    --color-blanco: #FFFFFF;
+    --color-blanco-opaco: #F2F2F2;
+    --color-negro: #1E1E1E;
+  
+    /* Tipografías */
+    --fuente-principal: 'Raleway', sans-serif;
+    --tamaño-fuente-grande: 24px;
+    --tamaño-fuente-medio:22px;
+    --tamaño-fuente-texto:20px;
+}

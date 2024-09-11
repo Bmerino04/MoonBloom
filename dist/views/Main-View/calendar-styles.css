@@ -1,0 +1,364 @@
+@import url(dist\global.css);
+body{
+    background-color: var(--color-celeste-fondo) ;
+}
+header{
+    background-color: var(--color-header);
+    font-family: var(--fuente-principal);
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    padding: 0 3%;
+    align-items: center;
+    justify-content: space-between;   
+}
+/*Header-Navbar*/
+.Logotype{
+    display: flex;
+    align-items: center; 
+    gap:3%;
+}
+.Logotype img{
+    width: 4.375rem;
+    height: auto;
+}
+.Logotype h1{
+    color: var(--color-blanco);
+    font-size: var(--tamaño-fuente-grande);
+    font-weight: bolder;
+    letter-spacing: 0.20em;
+}
+.Navigation-Buttons{
+    height: 5rem;
+    display: flex ;
+    gap: 0.188rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Navigation-Buttons a {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.Navigation-Buttons img {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: filter 0.3s ease;
+}
+
+.Statistics-Button:hover img, .Profile-Button:hover img, .Information-Button:hover img {
+    filter: invert(24%) sepia(34%) saturate(3400%) hue-rotate(125deg) brightness(35%) contrast(90%);
+}
+
+.Statistics-Button:hover img, .Profile-Button:hover img, .Information-Button:hover img {
+    transform: translateX(-4.375rem);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Statistics-Button .title, .Profile-Button .title, .Information-Button .title {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    color: var(--color-celeste-oscuro);
+    font-family: var(--fuente-principal);
+    font-size: var(--tamaño-fuente-medio);
+    font-weight: bold;
+    text-align: center;
+    padding: 0.625rem;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Statistics-Button:hover, .Profile-Button:hover, .Information-Button:hover {
+    width: 12.5rem;
+}
+
+.Statistics-Button:hover .title, .Profile-Button:hover .title, .Information-Button:hover .title {
+    transform: translateX(1.25rem);
+    opacity: 1;
+}
+
+.Information-Button:hover, .Statistics-Button:hover, .Profile-Button:hover {
+    background-color: var(--color-celeste-medio);
+}
+
+/*Main*/
+.Main-Container{
+    font-family:var(--fuente-principal);
+    display: flex;
+    align-items: center;
+    padding: 3% 4% 0;
+    gap:3%;
+    width: 100%;
+    height: 37.5rem; 
+}
+.Left-Panel{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap:5.5%;   
+}
+
+/*Day summary*/
+.Day-Summary{
+    width: 22.5rem;
+    height: 22.5rem;
+    border: 0.6rem dashed var(--color-celeste-oscuro-op);
+    border-radius:100% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Phase-Info{
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--color-rosado-claro-barras);
+    border: 0.375rem solid var(--color-celeste-oscuro-op); 
+    border-radius:100%;
+    text-align: center; 
+    align-content: center; 
+    padding: 0 20%;  
+    letter-spacing: 0.085rem;
+}
+.Phase-Info p{
+    font-size: var(--tamaño-fuente-texto);
+    color: var(--color-blanco);
+}
+
+.Phase-Info h2{
+    color: var(--color-rosado-oscuro);
+    font-size: 2rem;
+    font-weight: 600;
+}
+.Phase-Info span{
+    font-weight: 900;
+}
+
+/*Daily advice*/
+.Daily-Advice{
+    background-color: var(--color-celeste-oscuro-op);
+    border-radius: 0.5rem;
+    padding: 2% 3% 3%;
+    text-align: justify;
+}
+
+.Daily-Advice h3{
+    color:  var(--color-rosado-claro-barras); 
+    letter-spacing: 0.1rem;  
+}
+.Daily-Advice p{
+    font-size:  var(--tamaño-fuente-texto);
+    color: var(--color-blanco);
+    padding: 2% 0;
+}
+
+/*------------------------------------------------*/
+
+.Right-Panel{
+    width: 60%;
+    height: 100%;
+    align-content: center;
+}
+
+/*Calendar styles*/
+.Calendar{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    
+}
+.Buttons{
+    width: 18.75rem;
+    height: 4.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-rosado-claro-barras); 
+    border-top-left-radius: 0.625;
+    border-top-right-radius: 0.625;
+    text-align: center;
+}
+.Buttons img{ 
+    width: 2.8rem;
+    padding-top: 0.3rem;
+}
+.Buttons h2{
+    width: 11.25rem;
+    font-size: 2rem;
+    color: var(--color-blanco);
+}
+.Container{
+    border: 0.5rem solid var(--color-rosado-claro-barras);
+    border-radius: 0.5rem;
+    gap:0.625rem;    
+}
+.Week{
+    background-color: var(--color-rosado-claro);
+    font-size: var(--tamaño-fuente-grande);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    padding: 0.3rem 1.25rem 0;
+}
+.Week p{
+    text-align: center;
+}
+.Days{
+    background-color: var(--color-rosado-claro);
+    font-size: var(--tamaño-fuente-grande);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 1.25rem 0.44rem;
+    padding: 0.625rem 1.25rem 0;
+}
+.Day {
+    text-align: center;
+    align-content: center;
+    width: 5.625rem;
+    height: 3.75rem;
+    border-radius: 5rem;
+    opacity: 5; 
+    cursor: pointer;   
+}
+
+.Normal-Day{
+    background-color: var(--color-blanco);
+    text-align: center;
+    align-content: center;  
+    transition:  background-color 0.3s ease;  
+}
+.Normal-Day:hover {
+    background-color: var(--color-rosado-medio);
+}
+.Menstrual-Day{
+    background-color: #ff2d5381;
+    border: 0.25rem dotted var(--color-rosado-oscuro);
+    transition:  background-color 0.3s ease; 
+}
+.Menstrual-Day:hover{
+    background-color: var(--color-rosado-oscuro);
+}
+.Ovulation-Day{
+    background-color: #a6c4c2b1;
+    border: 0.25rem dotted var(--color-celeste-oscuro-op);
+}
+.Fertile-Day {
+    background-color: #a6c4c2b1;
+    border:0.25rem dotted var(--color-celeste-fondo);
+    transition:  background-color 0.3s ease; 
+}
+.Fertile-Day:hover{
+    background-color: var(--color-celeste-fondo);
+}
+.Ovulation-Day, .Current-Day{
+    transition:  background-color 0.3s ease; 
+}
+.Ovulation-Day:hover, .Current-Day:hover{
+    background-color: var(--color-celeste-oscuro-op);
+}
+.Other-Month-Days{
+    background-color: #ffffff78;
+    text-align: center;
+    align-content: center;
+    width: 5.625rem;
+    border-radius: 5rem;   
+}
+.Current-Day{
+    background-color: var(--color-celeste-fondo);  
+    border: 0.25rem solid var(--color-celeste-oscuro-op);
+}
+
+/*Pop-up styles*/
+.Popup {
+    background-color: rgba(0, 0, 0, 0.456);
+    position: fixed; 
+}
+
+.Popup-Content {
+    background-color: white;
+    border-radius: 1rem;    
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 1.5rem;
+}
+
+.Head-Popup{
+    text-align: center;
+}
+.Popup-Date {
+    padding:0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+.Head-Popup h3{
+    font-size: 2rem;         
+    font-weight: bold;          
+    width: 100%; 
+    padding:1.5rem 0 1.5rem;    
+}
+.Checkboxes{
+    padding: 1.5rem 2rem 1.5rem;       
+    display: grid;             
+    row-gap: 0.5rem; 
+    font-size: var(--tamaño-fuente-texto);           
+}
+.Checkboxes input{
+    cursor: pointer;
+}
+
+.Action-buttons {
+    display: flex;
+    justify-content: space-evenly ;
+}
+.Save-Button {
+    background-color: #a6c4c283;
+    border: 0.40rem solid var(--color-celeste-fondo);
+}
+
+.Exit-Button {
+    background-color: #f88fa27e;
+    border: 0.40rem solid var(--color-rosado-claro-barras);
+    width: 7.25rem;
+}
+.Save-Button, .Exit-Button{
+    font-size: var(--tamaño-fuente-texto);
+    padding: 0.1rem 1rem;     
+    border-radius: 0.75rem;    
+    transition:  background-color 0.3s ease; 
+}
+.Save-Button:hover{
+    background-color:var(--color-celeste-fondo) ;
+}
+.Exit-Button:hover{
+    background-color: var(--color-rosado-claro-barras);
+}
+.Ovulatory-Phase{          
+    color: var(--color-celeste-medio); 
+    background-color:#48a09e81 ;  
+}
+.Menstrual-Phase{          
+    color: var(--color-rosado-oscuro); 
+    background-color: #ff2d5383;  
+}
+.Folicular-Phase{          
+    color: var(--color-celeste-fondo); 
+    background-color:#a6c4c280;  
+}
+.Luteal-Phase{          
+    color:#FE9FA3; 
+    background-color: var(--color-rosado-claro);  
+}
+
