@@ -1,11 +1,31 @@
-.body{
+body{
+    background-color: var(--color-celeste-fondo) ;
+}
+header{
+    background-color: var(--color-header);
+    font-family: var(--fuente-principal);
+    width: 100%;
+    height: 80px;
     display: flex;
-    justify-content: center;
-    align-content: center;
-    max-height: 100%;
-    padding-bottom: 0px;
-    padding-top: 2.6%;
-    margin-left: 7%;
+    padding: 0 3%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Logotipo{
+    display: flex;
+    align-items: center; 
+    gap:3%;
+}
+.Logotipo img{
+    width: 70px;
+    height: auto;
+}
+.Logotipo h1{
+    color: var(--color-blanco);
+    font-size: var(--tamaño-fuente-grande);
+    font-weight: bolder;
+    letter-spacing: 0.20em;
 }
 .Buttons-Navigation{
     height: 80px;
@@ -89,6 +109,15 @@
 
 .Button-Statistics_Vista-Actual:hover, .Button-Information:hover, .Button-Profile:hover {
     background-color: var(--color-celeste-medio);
+}
+.body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    max-height: 100%;
+    padding-bottom: 0px;
+    padding-top: 2.6%;
+    margin-left: 7%;
 }
 /* Ajusta el contenedor principal para centrar el carrusel */
 .Slider {

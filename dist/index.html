@@ -3,49 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoonBloom</title>
-    <link rel="icono" href="\img\icono-MoonBloom.png" type="image\png">
+    <title>MoonBloom  | Tu Calendario Menstrual</title>
+    <link rel="icon" href="\img\icono-MoonBloom.png" type="image\png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="overrides.css">    
 </head>
 
 <body>
-    <header class="Encabezado shadow-md">
-        <div class="Logotipo">
+    <header class="shadow-md">
+        <a class="Logotype" href="/dist/views/Main-View/calendar-view.html">
             <img src="\img\logo-MoonBloom.png">
             <h1>MOONBLOOM</h1>
-        </div>
-        <nav class="Botones-Navegacion">
-            <img class="Boton-Estadisticas" src="\img\estadistica-blanco.png"> 
-            <div class="Boton-Informacion_Vista-Actual ">
+        </a>
+
+        <nav class="Navigation-Buttons">
+            <a class="Statistics-Button" href="/dist/views/Statistics-view/statistics-view.html">
+                <img src="\img\estadistica-blanco.png"> 
+                <span class="title">Estadísticas</span>
+             </a>    
+            <a class="Information-Button" href="/dist/index.html">
                 <img src="\img\info-verde.png">
-                <h6>Información</h6>
-            </div>
-            <img class="Boton-Perfil" src="\img\perfil-blanco.png">
-        </nav>
+                <span class="title">Información</span>
+            </a>         
+            <a class="Profile-Button" href="/dist/views/user-info-view.html">
+                <img src="\img\perfil-blanco.png">
+                <span class="title">Perfil</span>
+            </a>  
+        </nav>  
     </header>
 
-    <main class="Contenedor-Principal">
-        <section class="Cuerpo flex gap-20 p-4 justify-center">
-            <aside class="Panel-Informacion shadow-md">  
+    <main class="Main-Container">
+        <aside class="Information-Panel shadow-md">  
+            <a href="/dist/index.html">
                 <h3>¡Aprende sobre ti!</h3>
-                <ul class="Panel-Informacion_Lista">
-                    <li class="no-underline hover:underline">Ciclo Menstrual</li>
-                    <li class="no-underline hover:underline">Métodos Anticonceptivos</li>
-                    <li class="no-underline hover:underline">Enfermedades Reproductivas</li>
-                </ul>   
-            </aside>
-            <article class="Panel-Texto shadow-md">
-                <h2>¡Descubre más sobre tu salud menstrual y reproductiva!</h2>
-                <p class="Panel-Texto_Parrafo">
-                    Entender tu ciclo menstrual es clave para tomar decisiones informadas sobre tu bienestar. Aprende sobre los diferentes métodos anticonceptivos, cómo funcionan, y cuál podría ser el adecuado para ti. Además, infórmate sobre las enfermedades uterinas y del sistema reproductivo, para que puedas detectar síntomas a tiempo y saber cuándo consultar a un profesional.
-                </p>
-                <p class="Panel-Texto_Final">
-                    Conoce más y cuida de ti misma. Tu salud es tu poder.
-                </p>
-            </article>
-        </section>
+            </a>
+            <ul class="Information-List">
+                <li class="no-underline hover:underline"><a href="/dist/views/Information/information-menstrual-cycle.html">Ciclo Menstrual</a></li>
+                <li class="no-underline hover:underline"><a href="/dist/views/Information/information-contraceptives.html">Métodos Anticonceptivos</a></li>
+                <li class="no-underline hover:underline"><a href="/dist/views/Information/information-reproductive-diseases.html">Enfermedades Reproductivas</a></li>
+            </ul>   
+        </aside>
+
+        <article class="Text-Panel shadow-md">
+            <h2>¡Descubre más sobre tu salud menstrual y reproductiva!</h2>
+            <div class="Text-Container">
+                <p>Entender tu ciclo menstrual es clave para tomar decisiones informadas sobre tu bienestar. Aprende sobre los diferentes métodos anticonceptivos, cómo funcionan, y cuál podría ser el adecuado para ti. Además, infórmate sobre las enfermedades uterinas y del sistema reproductivo, para que puedas detectar síntomas a tiempo y saber cuándo consultar a un profesional.</p>
+            </div>
+            
+            <p class="Panel-Texto_Final">
+                Conoce más y cuida de ti misma. Tu salud es tu poder.
+            </p>
+        </article>
     </main>
 </body>
 </html>
