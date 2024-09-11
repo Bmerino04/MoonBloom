@@ -231,7 +231,6 @@ header{
     display: flex;
     flex-direction: column;
     padding: 1rem 0 1.5rem;
-
 }
 
 .Head-Popup{
@@ -246,8 +245,6 @@ header{
 .Head-Popup h3{
     font-size: 2rem;         
     font-weight: bold;          
-    color: #ec4899; 
-    background-color: #c5226374;
     width: 100%; 
     padding:1.5rem 0 1.5rem;    
 }
@@ -279,5 +276,21 @@ header{
     border-radius: 0.75rem;    
     border: 0.40rem solid var(--color-rosado-claro-barras);
     width: 7.25rem;
+}
+.Ovulatory-Phase{          
+    color: var(--color-celeste-medio); 
+    background-color:#48a09e81 ;  
+}
+.Menstrual-Phase{          
+    color: var(--color-rosado-oscuro); 
+    background-color: #ff2d5383;  
+}
+.Folicular-Phase{          
+    color: var(--color-celeste-fondo); 
+    background-color:#a6c4c280;  
+}
+.Luteal-Phase{          
+    color:#FE9FA3; 
+    background-color: var(--color-rosado-claro);  
 }
 
