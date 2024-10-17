@@ -18,15 +18,12 @@
   </template>
   
   <script setup>
-  import { ref, watch, defineEmits } from 'vue'; // Asegúrate de importar `watch`
+  import { ref, watch, defineEmits } from 'vue';
   
-  // Definimos la propiedad emit para enviar el valor seleccionado al padre
   const emit = defineEmits(['update:selectedMethod']);
   
-  // Creamos un ref para el método seleccionado
   const selectedMethod = ref('');
   
-  // Observamos cambios en el método seleccionado y lo emitimos al componente padre
   watch(selectedMethod, (newValue) => {
     emit('update:selectedMethod', newValue);
   });
