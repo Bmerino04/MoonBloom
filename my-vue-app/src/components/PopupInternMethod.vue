@@ -20,7 +20,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import ButtonComponent from './ButtonComponent.vue';
+import ButtonComponent from './Button.vue';
 
 const emit = defineEmits(['close']);
 const selectedMethod = ref('');
