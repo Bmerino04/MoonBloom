@@ -2,17 +2,7 @@
   <div class="modal" @click.self="closeModal">
     <div class="modal-content">
       <h3>Método Anticonceptivo Interno</h3>
-      <div class="mb-4">
-        <select id="intern-method" name="intern-method" class="select-style" v-model="selectedMethod">
-          <option value="" disabled selected>Seleccionar uno (opcional)</option>
-          <option value="pildora">Inyecciones anticonceptivas</option>
-          <option value="diu">DIU de cobre</option>
-          <option value="diu-hormonal">DIU hormonal</option>
-          <option value="implante">Implante anticonceptivo</option>
-          <option value="anillo">Anillo vaginal</option>
-          <option value="ninguna">Ninguna</option>
-        </select>
-      </div>
+      <SelectMethod v-model:selectedMethod="selectedMethod" />
       <ButtonComponent type="pink" @click="handleContinue">Continuar</ButtonComponent>
     </div>
   </div>
@@ -21,6 +11,7 @@
 <script setup>
 import { ref } from 'vue';
 import ButtonComponent from './Button.vue';
+import SelectMethod from './SelectMethod.vue';
 
 const emit = defineEmits(['close']);
 const selectedMethod = ref('');
