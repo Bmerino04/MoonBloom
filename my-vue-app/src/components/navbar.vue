@@ -45,6 +45,12 @@
   import defaultInfoIcon from '../assets/icon/info-blanco.png';
   import activeInfoIcon from '../assets/icon/info-verde.png';
   
+  const props = defineProps({
+  currentView: {
+    type: String,
+    required: true
+  }
+});
 </script>
   
 
