@@ -1,11 +1,11 @@
 <template>
     <div class="mb-4">
-      <select
-        id="intern-method"
-        name="intern-method"
-        class="select-style"
-        v-model="selectedMethod"
-      >
+        <select
+            id="intern-method"
+            name="intern-method"
+            class="select-style"
+            v-model="selectedMethod"
+        >
         <option value="" disabled selected>Seleccionar uno (opcional)</option>
         <option value="pildora">Inyecciones anticonceptivas</option>
         <option value="diu">DIU de cobre</option>
