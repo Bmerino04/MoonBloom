@@ -6,7 +6,7 @@
       @mouseleave="isHovered = false"
     >
       <img :src="isActive ? activeIcon : defaultIcon" :alt="title" />
-      <span v-if="isHovered || isActive">{{ title }}</span>
+      <span :class="{ 'active-text': isActive }" v-if="isHovered || isActive">{{ title }}</span>
     </div>
 </template>
   
@@ -42,6 +42,9 @@
 </script>
   
 <style scoped>
+div{
+  color: #fff;
+}
   .navbar-button {
     display: flex;
     align-items: center;
@@ -65,7 +68,6 @@
   
   .navbar-button span {
     margin-left: 10px;
-    color: var(--color-celeste-oscuro);
     font-family: var(--fuente-principal);
     font-size: var(--tamaño-fuente-medio);
     font-weight: bold;
@@ -73,7 +75,11 @@
   }
   
   .active-button {
-    background-color: var(--color-celeste-medio);
+    background-color: #348188;
+    width: 200px;
   }
+  .active-text {
+  color: #2C5D5B; /* Cambia esto al color verde que usas para los íconos activos */
+}
 </style>
   
