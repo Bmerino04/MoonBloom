@@ -11,6 +11,8 @@
     </div>
   </div>
 </template>
+
+
 <style scoped>
 button{
     background-color:transparent;
@@ -23,7 +25,7 @@ button{
     align-items: center;
     justify-content: center;
     margin-left: 19%;
-    background-color: #F88FA3;
+    background-color:var(--color-rosado-claro-barras);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
@@ -35,9 +37,10 @@ button{
     padding-top: 5px;
 }
 .buttons h2{
+    font-family: var(--fuente-principal);
     line-height: 1.15;
     width: 180px;
     font-size: 20px;
-    color: #FFFFFF;
+    color: var(--color-blanco)
 }
 </style>
