@@ -1,0 +1,62 @@
+[
+    {
+        "user_name": "ana_garcia",
+        "email": "ana.garcia@example.com",
+        "password": "ana12345",
+        "security_question": "Nombre de tu primera mascota",
+        "security_answer": "Olivia",
+        "weight": 60,
+        "height": 1.65,
+        "imc": 22.04,
+        "start_last_period": "2024-09-12",
+        "end_last_period": "2024-09-17",
+        "cycle_duration_est": 28,
+        "period_duration_est": 5,
+        "anticonceptive_method": "Inyecciones anticonceptivas"
+    },
+    {
+        "user_name": "maria_fernandez",
+        "email": "maria.fernandez@example.com",
+        "password": "maria2024!",
+        "security_question": "Ciudad donde naciste",
+        "security_answer": "Santiago",
+        "weight": 68,
+        "height": 1.72,
+        "imc": 22.98,
+        "start_last_period": "2024-10-05",
+        "end_last_period": "2024-10-10",
+        "cycle_duration_est": 30,
+        "period_duration_est": 6,
+        "anticonceptive_method": "DIU de cobre"
+    },
+    {
+        "user_name": "sofia_lopez",
+        "email": "sofia.lopez@example.com",
+        "password": "sofia789",
+        "security_question": "Nombre de tu mejor amigo de la infancia",
+        "security_answer": "Ana Garcia",
+        "weight": 55,
+        "height": 1.60,
+        "imc": 21.48,
+        "start_last_period": "2024-09-20",
+        "end_last_period": "2024-09-24",
+        "cycle_duration_est": 27,
+        "period_duration_est": 4,
+        "anticonceptive_method": "Implante anticonceptivo"
+    },
+    {
+        "user_name": "laura_rodriguez",
+        "email": "laura.rodriguez@example.com",
+        "password": "laura54321",
+        "security_question": "Comida favorita",
+        "security_answer": "Handroll de salmon queso palta",
+        "weight": 72,
+        "height": 1.68,
+        "imc": 25.51,
+        "start_last_period": "2024-09-15",
+        "end_last_period": "2024-09-19",
+        "cycle_duration_est": 29,
+        "period_duration_est": 5,
+        "anticonceptive_method": "Ninguna"
+    }
+]
