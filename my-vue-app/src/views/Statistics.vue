@@ -1,3 +1,4 @@
+
 <script setup>
  import Navbar from '../components/navbar.vue'
  import Slider from '../components/PhasesSlider.vue'
