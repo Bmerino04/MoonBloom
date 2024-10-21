@@ -10,14 +10,14 @@
                     <Form @submit="submitForm">
                         <div class="form-group">
                             <label for="email" class="label">Correo electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico..." class="input">
+                            <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico..." class="input" />
                         </div>
                         <div class="form-group">
                             <label for="password" class="label">Contraseña</label>
-                            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña..." class="input">
+                            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña..." class="input" />
                         </div>
                         <div class="form-group text-right">
-                            <a href="pass-recuperation-view.html" class="link">¿Olvidaste tu contraseña?</a>
+                            <a @click="passRecovery" class="link">¿Olvidaste tu contraseña?</a>
                         </div>
                         <div class="form-group button-group">
                             <Button type="pink" @click="submitForm">Iniciar sesión</Button>
@@ -27,24 +27,30 @@
                         </div>
                     </Form>
                 </div>
-                <div class="margin-container"></div> 
+                <div class="margin-container"></div>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
 import Button from '../components/Button.vue';
 import 'my-vue-app/src/style.css';
+
+const router = useRouter();
 
 const submitForm = () => {
     console.log('Formulario enviado');
 };
 
 const goToRegister = () => {
-    // Redirigir a la página de registro
-    window.location.href = "register1-view.html"; // Cambia esto si usas un enrutador
+    router.push('/register'); // Redirigir usando Vue Router
 };
+
+const passRecovery = () => {
+    router.push('/passRecovery')
+}
 </script>
 
 <style scoped>
@@ -62,7 +68,7 @@ const goToRegister = () => {
 
 .form-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .flex-container {
@@ -71,18 +77,37 @@ const goToRegister = () => {
     align-items: center;
 }
 
-.login-logo, .form-box, .margin-container {
+.login-logo {
     font-family: var(--fuente-principal);
-    flex: 1;
+    flex: 0 0 30%; /* Proporción de 30% */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.form-box {
+    font-family: var(--fuente-principal);
+    flex: 0 0 35%; /* Proporción ajustada a 35% */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem;
+    padding-top: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 1rem; /* Margen lateral para el formulario */
+}
+
+.margin-container {
+    font-family: var(--fuente-principal);
+    flex: 0 0 30%; /* Proporción de 30% */
+}
+
 .logo-image {
     width: 150px;
     margin-bottom: 1rem;
-    margin-right: 50%;
+    margin-right: 70%;
 }
 
 .title {
@@ -91,19 +116,13 @@ const goToRegister = () => {
     font-size: var(--tamaño-fuente-grande);
     font-weight: bolder;
     letter-spacing: 0.20em;
-    margin-right: 50%;
+    margin-right: 70%;
 }
 
 /* Estilos del formulario */
-.form-box {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .form-group {
     margin-bottom: 1rem;
+    width: 100%;
 }
 
 .label {
@@ -113,11 +132,12 @@ const goToRegister = () => {
 }
 
 .input {
-    width: 100%;
+    width: 100%; /* Asegúrate de que las entradas ocupen todo el ancho del formulario */
     padding: 0.5rem;
     border: 1px solid #D1D5DB;
     border-radius: 0.375rem;
     outline: none;
+    margin: 0.5rem 0; /* Margen para separar los campos */
 }
 
 .input:focus {
@@ -126,6 +146,19 @@ const goToRegister = () => {
 
 .text-right {
     text-align: right;
+}
+
+.link {
+    color: var(--color-celeste-oscuro); /* Color original */
+    text-decoration: none; /* Sin subrayado por defecto */
+    cursor: pointer;
+    transition: color 0.3s ease-in-out; /* Transición suave para el color */
+}
+
+/* Cambios al hacer hover */
+.link:hover {
+    color: var(--color-teal); /* Cambia de color al hacer hover */
+    text-decoration: underline; /* Subrayar al pasar el mouse */
 }
 
 /* Estilos para el grupo de botones */
