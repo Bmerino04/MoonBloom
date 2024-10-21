@@ -106,22 +106,19 @@ import SelectMethod from '../components/SelectMethod.vue';
 import 'my-vue-app/src/style.css';
 
 const router = useRouter();
-const currentForm = ref(1); // Estado para rastrear el formulario actual
+const currentForm = ref(1); 
 
 const continueRegister = () => {
-    // Pasar al siguiente formulario
     if (currentForm.value < 4) {
         currentForm.value++;
     } else {
         console.log('Registro completado');
-        // Redirigir a la página de inicio de sesión
         router.push('/login');
     }
 };
 
 const goToLogin = () => {
-    // Redirigir a la página de inicio de sesión
-    router.push('/login'); // Cambia esto para usar Vue Router
+    router.push('/login');
 };
 </script>
 
@@ -151,7 +148,7 @@ const goToLogin = () => {
 
 .login-logo {
     font-family: var(--fuente-principal);
-    flex: 0 0 30%; /* Proporción de 30% */
+    flex: 0 0 30%; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,7 +156,7 @@ const goToLogin = () => {
 
 .form-box {
     font-family: var(--fuente-principal);
-    flex: 0 0 35%; /* Proporción ajustada a 35% */
+    flex: 0 0 35%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -168,12 +165,12 @@ const goToLogin = () => {
     padding-top: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 1rem; /* Margen lateral para el formulario */
+    margin: 0 1rem; 
 }
 
 .margin-container {
     font-family: var(--fuente-principal);
-    flex: 0 0 30%; /* Proporción de 30% */
+    flex: 0 0 30%; 
 }
 
 .logo-image {
@@ -204,12 +201,12 @@ const goToLogin = () => {
 }
 
 .input {
-    width: 100%; /* Asegúrate de que las entradas ocupen todo el ancho del formulario */
+    width: 100%; 
     padding: 0.5rem;
     border: 1px solid #D1D5DB;
     border-radius: 0.375rem;
     outline: none;
-    margin: 0.5rem 0; /* Margen para separar los campos */
+    margin: 0.5rem 0; 
 }
 
 .input:focus {

@@ -76,12 +76,12 @@ const continueRecovery = () => {
         currentForm.value++;
     } else {
         console.log('Recuperación completada');
-        router.push('/login'); // Redirigir a la página de inicio de sesión
+        router.push('/login');  
     }
 };
 
 const goToRegister = () => {
-    router.push('/register'); // Redirigir a la página de registro
+    router.push('/register');  
 };
 </script>
 
@@ -111,7 +111,7 @@ const goToRegister = () => {
 
 .login-logo {
     font-family: var(--fuente-principal);
-    flex: 0 0 30%; /* Proporción de 30% */
+    flex: 0 0 30%;  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,7 +119,7 @@ const goToRegister = () => {
 
 .form-box {
     font-family: var(--fuente-principal);
-    flex: 0 0 35%; /* Proporción ajustada a 35% */
+    flex: 0 0 35%; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,12 +128,12 @@ const goToRegister = () => {
     padding-top: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 1rem; /* Margen lateral para el formulario */
+    margin: 0 1rem;  
 }
 
 .margin-container {
     font-family: var(--fuente-principal);
-    flex: 0 0 30%; /* Proporción de 30% */
+    flex: 0 0 30%;  
 }
 
 .logo-image {
@@ -164,12 +164,12 @@ const goToRegister = () => {
 }
 
 .input {
-    width: 100%; /* Asegúrate de que las entradas ocupen todo el ancho del formulario */
+    width: 100%;  
     padding: 0.5rem;
     border: 1px solid #D1D5DB;
     border-radius: 0.375rem;
     outline: none;
-    margin: 0.5rem 0; /* Margen para separar los campos */
+    margin: 0.5rem 0; 
 }
 
 .input:focus {
@@ -181,16 +181,16 @@ const goToRegister = () => {
 }
 
 .link {
-    color: var(--color-celeste-oscuro); /* Color original */
-    text-decoration: none; /* Sin subrayado por defecto */
+    color: var(--color-celeste-oscuro);  
+    text-decoration: none; 
     cursor: pointer;
-    transition: color 0.3s ease-in-out; /* Transición suave para el color */
+    transition: color 0.3s ease-in-out; 
 }
 
 /* Cambios al hacer hover */
 .link:hover {
-    color: var(--color-teal); /* Cambia de color al hacer hover */
-    text-decoration: underline; /* Subrayar al pasar el mouse */
+    color: var(--color-teal);  
+    text-decoration: underline;  
 }
 
 /* Estilos para el grupo de botones */
