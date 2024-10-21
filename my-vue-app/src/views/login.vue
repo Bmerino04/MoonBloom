@@ -22,6 +22,7 @@
                         <div class="form-group button-group">
                             <Button type="pink" @click="submitForm">Iniciar sesión</Button>
                             <div class="separator"></div>
+                            <div class="register-text">¿No tienes una cuenta?</div> <!-- Aquí se añade el nuevo texto -->
                             <Button type="green" @click="goToRegister">Registrarse</Button>
                         </div>
                     </Form>
@@ -61,7 +62,7 @@ const goToRegister = () => {
 
 .form-container {
     width: 100%;
-    max-width: 800px; /* Ajusta el tamaño máximo según sea necesario */
+    max-width: 800px;
 }
 
 .flex-container {
@@ -72,15 +73,15 @@ const goToRegister = () => {
 
 .login-logo, .form-box, .margin-container {
     font-family: var(--fuente-principal);
-    flex: 1; /* Hace que los contenedores sean del mismo tamaño */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el contenido dentro de cada contenedor */
+    align-items: center;
 }
 
 .logo-image {
-    width: 150px; /* Ajusta el tamaño del logo según sea necesario */
-    margin-bottom: 1rem; /* Añade espacio entre el logo y el título */
+    width: 150px;
+    margin-bottom: 1rem;
     margin-right: 50%;
 }
 
@@ -95,13 +96,12 @@ const goToRegister = () => {
 
 /* Estilos del formulario */
 .form-box {
-    background-color: rgba(255, 255, 255, 0.7); /* bg-opacity-70 */
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 2rem;
     border-radius: 0.5rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos de grupo de formularios */
 .form-group {
     margin-bottom: 1rem;
 }
@@ -131,28 +131,32 @@ const goToRegister = () => {
 /* Estilos para el grupo de botones */
 .button-group {
     display: flex;
-    flex-direction: column; /* Coloca los botones uno encima del otro */
-    align-items: center; /* Centra los botones */
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
 }
 
-/* Aumentar el tamaño de los botones */
 .button-group .Green-Button,
 .button-group .Pink-Button {
-    padding: 0.25rem; /* Espaciado interno más grande */
-    width: 100%; /* Asegura que los botones ocupen todo el ancho del contenedor */
-    border-radius: 0.5rem; /* Aumentar el radio de los bordes, opcional */
+    padding: 0.25rem;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.register-text {
+    font-size: 14px;
+    color: var(--color-negro);
 }
 
 /* Estilos para la línea separadora */
 .separator {
-    width: 100%; /* Ajusta el ancho de la línea */
-    height: 1px; /* Ajusta el grosor de la línea */
-    background-color: #D1D5DB; /* Color de la línea */
-    margin: 0.75rem 0; /* Espacio superior e inferior */
+    width: 100%;
+    height: 1px;
+    background-color: #D1D5DB;
+    margin-top: 5%;
 }
 
 .margin-container {
-    flex: 1; /* Contenedor de margen del mismo tamaño */
+    flex: 1;
 }
 </style>
