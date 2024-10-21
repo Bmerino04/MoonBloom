@@ -71,11 +71,11 @@ const days = computed(() => {
 
 
 const prevMonth = () => {
-    currentMonthIndex.value = (currentMonthIndex.value + 1) % months.length;
+    currentMonthIndex.value = (currentMonthIndex.value - 1 + months.length) % months.length;
 };
 
 const nextMonth = () => {
-    currentMonthIndex.value = (currentMonthIndex.value - 1 + months.length) % months.length;
+      currentMonthIndex.value = (currentMonthIndex.value + 1) % months.length;
 };
 </script>
 
