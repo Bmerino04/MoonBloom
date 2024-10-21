@@ -22,12 +22,12 @@
                         <div class="form-group button-group">
                             <Button type="pink" @click="submitForm">Iniciar sesión</Button>
                             <div class="separator"></div>
-                            <div class="register-text">¿No tienes una cuenta?</div> <!-- Aquí se añade el nuevo texto -->
+                            <div class="register-text">¿No tienes una cuenta?</div>
                             <Button type="green" @click="goToRegister">Registrarse</Button>
                         </div>
                     </Form>
                 </div>
-                <div class="margin-container"></div> <!-- Contenedor de margen -->
+                <div class="margin-container"></div> 
             </div>
         </div>
     </div>
@@ -138,6 +138,7 @@ const goToRegister = () => {
 
 .button-group .Green-Button,
 .button-group .Pink-Button {
+    font-size: 14px;
     padding: 0.25rem;
     width: 100%;
     border-radius: 0.5rem;
