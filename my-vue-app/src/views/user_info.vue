@@ -48,7 +48,7 @@ import Modal from '../components/Modal.vue';
 
 const isModalOpen = ref(false);
 const selectedMethod = ref(null);
-const userData = ref({}); // Inicializa userData como un objeto vacío
+const userData = ref({});
 
 function openModal() {
   isModalOpen.value = true;
@@ -63,7 +63,6 @@ onMounted(async () => {
     const response = await axios.get('http://localhost:3000/users');
     console.log("Datos del usuario: ", response.data);
     
-    // Encuentra al usuario y mapea los datos necesarios
     const user = response.data.find(user => user.user_name === 'ana_garcia');
     if (user) {
       userData.value = {
@@ -72,8 +71,8 @@ onMounted(async () => {
         weight: user.weight,
         height: user.height,
         bmi: user.imc,
-        bmiPointerPosition: `${(calculateBMI(user.weight, user.height) / 40) * 100}%`, // Ejemplo de cálculo de posición del puntero
-        profilePicture: user.profilePicture || "../assets/icon/foto-perfil-ejemplo.png", // Imagen por defecto
+        bmiPointerPosition: `${(calculateBMI(user.weight, user.height) / 40) * 100}%`, 
+        profilePicture: user.profilePicture || "../assets/icon/foto-perfil-ejemplo.png", 
         period_duration_est: user.period_duration_est,
         cycle_duration_est: user.cycle_duration_est,
         anticonceptive_method: user.anticonceptive_method,
@@ -84,9 +83,8 @@ onMounted(async () => {
   }
 });
 
-// Función para calcular el IMC
 function calculateBMI(weight, height) {
-  return (weight / ((height / 100) ** 2)).toFixed(2); // Devuelve el IMC con 2 decimales
+  return (weight / ((height / 100) ** 2)).toFixed(2);
 }
 </script>
 
@@ -105,12 +103,12 @@ function calculateBMI(weight, height) {
 .text-panel-sub-container {
   display: flex;
   gap: 16px;
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  width: 100%;
 }
 
 .text-panel-sub-container > * {
-  flex: 1; /* Hace que los elementos compartan equitativamente el espacio disponible */
-  min-width: 0; /* Evita que el contenido interno fuerce un mínimo de ancho */
+  flex: 1;
+  min-width: 0;
 }
 
 
@@ -124,10 +122,10 @@ body{
 .Main-container {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Permite que el contenido se ajuste dentro del ancho máximo */
+    flex-wrap: wrap;
     padding: 5% 5%;
     width: 100%;
-    max-width: 1200px; /* Ajusta este valor según tu diseño */
+    max-width: 1200px;
     font-family: var(--fuente-principal);
 }
 
@@ -143,7 +141,7 @@ body{
 .Text-panel-container {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Separación entre los paneles */
+    gap: 20px;
     width: 60%;
 }
 
@@ -151,16 +149,16 @@ body{
 .method-btn {
     background-color: var(--color-celeste-oscuro);
     border: 8px solid var(--color-celeste-oscuro);
-    width: 200px; /* Ancho fijo del botón */
-    height: 100px; /* Altura del botón para mantener la proporción 2:1 */
-    border-radius: 8px; /* Bordes redondeados */
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
     color: white;
     text-decoration: none;
     font-size: 16px;
-    display: flex; /* Alinea el texto en el centro del botón */
+    display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center; /* Centra el texto horizontalmente */
+    text-align: center;
 }
 .method-btn:hover {
     background-color: var(--color-header);
@@ -169,31 +167,30 @@ body{
 .Text-panel h2 {
     font-size: var(--tamaño-fuente-medio);
     color: var(--color-rosado-medio);
-    text-align: left; /* Cambiado a izquierda */
+    text-align: left;
     margin: 5%;
 }
 
 .Text-panel p {
     font-size: 20px;
     color: var(--color-blanco-opaco);
-    text-align: left; /* Cambiado a izquierda */
+    text-align: left;
     margin: 5%;
 }
 .text-panel-sub-container {
     display: flex;
-    gap: 20px; /* Espacio entre los paneles */
+    gap: 20px;
     width: 100%;
 }
 
-/* Los paneles dentro del sub-contenedor ocuparán la mitad del espacio cada uno */
 .text-panel-sub-container .Panel-Texto {
-    flex: 1; /* Se aseguran de ocupar el mismo espacio */
+    flex: 1;
 }
 
 .contained-text {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espacio entre los bloques de texto */
+    gap: 20px;
 }
 
 .title {
@@ -217,7 +214,7 @@ body{
 }
 
 .subtitle span {
-    display: block; /* Hace que el texto del subtítulo y la opción de editar estén en líneas separadas */
+    display: block;
 }
 
 .edit {
