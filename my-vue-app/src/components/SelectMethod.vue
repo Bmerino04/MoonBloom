@@ -1,6 +1,6 @@
 <template>
     <div class="mb-4">
-        <select
+      <select
             id="intern-method"
             name="intern-method"
             class="select-style"

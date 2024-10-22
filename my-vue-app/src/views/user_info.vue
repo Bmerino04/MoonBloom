@@ -14,16 +14,8 @@
         </TextPanel>
   
         <!-- Modal -->
-        <Modal v-if="isModalOpen" title="Método Anticonceptivo Interno" @close="closeModal">
-          <select v-model="selectedMethod" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-teal-500">
-            <option value="" disabled selected>Seleccionar uno (opcional)</option>
-            <option value="inyecciones">Inyecciones anticonceptivas</option>
-            <option value="diu_cobre">DIU de cobre</option>
-            <option value="diu_hormonal">DIU hormonal</option>
-            <option value="implante">Implante anticonceptivo</option>
-            <option value="anillo">Anillo vaginal</option>
-            <option value="ninguna">Ninguna</option>
-          </select>
+        <Modal :isOpen="isModalOpen" title="Método Anticonceptivo Interno" @close="closeModal">
+          <SelectMethod v-model="selectedMethod" />
           <a href="#" class="close-modal" @click="closeModal">Continuar</a>
         </Modal>
   
@@ -50,8 +42,9 @@ import axios from 'axios';
 import Navbar from '../components/navbar.vue';
 import UserProfilePanel from '../components/UserProfilePanel.vue';
 import TextPanel from '../components/TextPanel.vue';
-import Modal from '../components/SelectMethod.vue';
+import SelectMethod from '../components/SelectMethod.vue';
 import Button from '../components/Button.vue';
+import Modal from '../components/Modal.vue';
 
 const isModalOpen = ref(false);
 const selectedMethod = ref(null);
@@ -243,6 +236,24 @@ body{
     margin-top: 20px !important;
     margin-bottom: 5px !important;
 }
+
+
+  
+.close-modal {
+    display: block; 
+    width: 50%; 
+    border: 3px solid var(--color-rosado-medio); 
+    background-color: var(--color-rosado-claro);
+    color: var(--color-negro); 
+    font-weight: 600; 
+    padding: 0.5rem;
+    border-radius: 0.375rem; 
+    transition: background-color 0.3s ease; 
+    text-align: center;
+    text-decoration: none; 
+    margin: 30px;
+  }
+
   
 
 </style>
