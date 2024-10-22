@@ -24,6 +24,7 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useRouter } from 'vue-router'; // Importar useRouter
 
 const props = defineProps({
   userData: {
@@ -43,6 +44,8 @@ const getBmiPointerPosition = computed(() => {
 });
 
 // Funciones de manejo de eventos
+const router = useRouter(); // Inicializar el router
+
 function editProfile() {
   // Lógica para editar el perfil
   console.log('Editar perfil');
@@ -59,8 +62,8 @@ function editHeight() {
 }
 
 function logout() {
-  // Lógica para cerrar sesión
-  console.log('Cerrar sesión');
+  // Redirigir a la vista de login
+  router.push('/login');
 }
 </script>
 
