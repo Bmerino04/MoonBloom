@@ -111,7 +111,6 @@ import '../style.css';
 const router = useRouter();
 const currentForm = ref(1); 
 
-// Campos del formulario
 const userName = ref('');
 const email = ref('');
 const password = ref('');
@@ -126,11 +125,10 @@ const cycleDuration = ref('');
 const periodDuration = ref('');
 const contraceptiveMethod = ref('');
 
-// Mensaje de error
 const errorMessage = ref('');
 
 const continueRegister = () => {
-    // Validaciones según el formulario actual
+    
     if (currentForm.value === 1) {
         if (!userName.value || !email.value || !password.value || !confirmPassword.value) {
             errorMessage.value = 'Todos los campos son obligatorios en este paso.';
@@ -157,7 +155,7 @@ const continueRegister = () => {
         }
     }
 
-    // Si todo está bien, continuar al siguiente formulario
+    
     errorMessage.value = ''; // Limpiar mensaje de error
     if (currentForm.value < 4) {
         currentForm.value++;
