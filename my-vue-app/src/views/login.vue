@@ -16,6 +16,12 @@
                             <label for="password" class="label">Contraseña</label>
                             <input type="password" id="password" name="password" placeholder="Ingrese su contraseña..." class="input" />
                         </div>
+
+                        <!-- Mostrar mensaje de error si existe un error -->
+                        <div v-if="error" class="error-message">
+                            {{ errorMessage }}
+                        </div>
+
                         <div class="form-group text-right">
                             <a @click="passRecovery" class="link">¿Olvidaste tu contraseña?</a>
                         </div>
@@ -33,14 +39,20 @@
     </div>
 </template>
 
+
 <script setup>
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Button from '../components/Button.vue';
-import Form from '../components/Form.vue'; // Importar tu componente Form
-import axios from 'axios'; // Asegúrate de tener axios instalado
+import Form from '../components/Form.vue'; 
+import axios from 'axios';
 import '../style.css';
 
 const router = useRouter();
+
+// Estado para el error y mensaje
+const error = ref(false);
+const errorMessage = ref('');
 
 const submitForm = async () => {
     console.log('Formulario enviado');
@@ -49,22 +61,26 @@ const submitForm = async () => {
     const password = document.getElementById('password').value;
 
     try {
-    const response = await axios.get('http://localhost:3000/users'); // Asegúrate de que la ruta es correcta
-    console.log(response.data); // Verifica la estructura de la respuesta
-    const users = response.data; // Cambia esto si necesitas acceder a otra propiedad
+        const response = await axios.get('http://localhost:3000/users');
+        console.log(response.data);
+        const users = response.data;
 
-    // Verificar si el usuario existe
-    const user = users.find(user => user.email === email && user.password === password);
-    if (user) {
-        console.log('Inicio de sesión exitoso', user);
-        router.push('/userInfo');
-    } else {
-        console.error('Credenciales incorrectas');
-        // Aquí podrías mostrar un mensaje de error al usuario
+        // Verificar si el usuario existe
+        const user = users.find(user => user.email === email && user.password === password);
+        if (user) {
+            console.log('Inicio de sesión exitoso', user);
+            error.value = false; // Restablecer el estado del error si es correcto
+            router.push('/userInfo');
+        } else {
+            console.error('Credenciales incorrectas');
+            error.value = true; // Activar el estado de error
+            errorMessage.value = 'Correo electrónico o contraseña incorrectos'; // Mensaje de error
+        }
+    } catch (error) {
+        console.error('Error al cargar los datos de usuarios:', error);
+        error.value = true;
+        errorMessage.value = 'Hubo un error al intentar conectarse. Por favor, intente nuevamente.';
     }
-} catch (error) {
-    console.error('Error al cargar los datos de usuarios:', error);
-}
 };
 
 const goToRegister = () => {
@@ -73,8 +89,9 @@ const goToRegister = () => {
 
 const passRecovery = () => {
     router.push('/passRecovery');
-}
+};
 </script>
+
 
 <style scoped>
 /* Estilos generales */
@@ -215,5 +232,13 @@ const passRecovery = () => {
 
 .margin-container {
     flex: 1;
+}
+
+/* Estilo para el mensaje de error */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 </style>
