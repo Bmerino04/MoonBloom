@@ -8,25 +8,61 @@
       <button @click="nextSlide" class="next-button">
         <img src="../assets/img_cal/right-arrow.png" alt="Siguiente" />
       </button>
+    </div>  
+
+    <div v-if="currentSlideIndex < 3">
+      <div v-for="(slide, index) in slides" :key="index" v-show="index === currentSlideIndex" class="slide-container">
+        <LineChart :chartId="`LineChart${index + 1}`" :labels="slide.labels" :data="slide.data" />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import LineChart from './LineChart.vue';
+import axios from 'axios';
 
 const slides = ref([]);
 const slideTitles = ["Ciclo", "Fase Menstrual", "Día a Ovular", "Tendencia Sexual"];
 const currentSlideIndex = ref(0);
 
+const fetchData = async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/users?user_name=ana_garcia');
+    const user = response.data[0];
 
+    slides.value = [
+      {
+        labels: ["Ciclo 1", "Ciclo 2", "Ciclo 3", "Ciclo 4"],
+        data: user.cycle_data.cycles_registered,
+        summary: `Promedio del ciclo: ${user.cycle_data.avg_cycle_duration} días, Variaciones: ${user.cycle_data.cycle_variation} días, Anomalías: ${user.cycle_data.cycle_anomalies}, Método anticonceptivo: ${user.anticonceptive_method}`
+      },
+      {
+        labels: ["Fase 1", "Fase 2", "Fase 3", "Fase 4"],
+        data: user.menstrual_phase_data.menstrual_phase_durations,
+        summary: `Promedio de la fase menstrual: ${user.menstrual_phase_data.avg_menstrual_phase_duration} días, Variaciones: ${user.menstrual_phase_data.menstrual_phase_variation} días, Anomalías: ${user.menstrual_phase_data.menstrual_phase_anomalies}`
+      },
+      {
+        labels: ["Ciclo 1", "Ciclo 2", "Ciclo 3", "Ciclo 4"],
+        data: user.ovulation_data.day_of_ovulation,
+        summary: `Promedio del día de ovulación: Día ${user.ovulation_data.avg_day_of_ovulation}, Variaciones: ${user.ovulation_data.ovulation_variation} días, Anomalías: ${user.ovulation_data.ovulation_anomalies}`
+      }
+    ];  
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
 
+onMounted(() => {
+  fetchData();
+});
 const nextSlide = () => {
-  currentSlideIndex.value = (currentSlideIndex.value + 1) % slideTitles.length;
+  currentSlideIndex.value = (currentSlideIndex.value + 1) % slides.value.length;
 };
 
 const previousSlide = () => {
-  currentSlideIndex.value = (currentSlideIndex.value - 1 + slideTitles.length) % slideTitles.length;
+  currentSlideIndex.value = (currentSlideIndex.value - 1 + slides.value.length) % slides.value.length;
 };
 </script>
 <style scoped>
