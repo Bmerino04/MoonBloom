@@ -44,18 +44,19 @@
                     </Form>
 
                     <!-- Tercer formulario: Confirmación final -->
-                    <Form v-if="currentForm === 3" @submit.prevent="continueRecovery">
+                    <Form v-if="currentForm === 3" @submit.prevent="resetPassword">
                         <div class="form-group">
                             <label for="new-password" class="label">Nueva contraseña</label>
-                            <input type="password" id="new-password" name="new-password" placeholder="Ingrese su nueva contraseña..." class="input" />
+                            <input v-model="newPassword" type="password" id="new-password" name="new-password" placeholder="Ingrese su nueva contraseña..." class="input" />
                         </div>
                         <div class="form-group">
                             <label for="confirm-password" class="label">Confirmar contraseña</label>
-                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme su nueva contraseña..." class="input" />
+                            <input v-model="confirmPassword" type="password" id="confirm-password" name="confirm-password" placeholder="Confirme su nueva contraseña..." class="input" />
                         </div>
                         <div class="form-group button-group">
                             <Button type="pink">Restablecer contraseña</Button>
                         </div>
+                        <p v-if="passwordErrorMessage" class="error-message">{{ passwordErrorMessage }}</p>
                     </Form>
                 </div>
                 <div class="margin-container"></div>
@@ -78,6 +79,9 @@ const securityQuestion = ref('');
 const userSecurityAnswer = ref(''); // Respuesta ingresada por el usuario
 const securityAnswer = ref(''); // Respuesta correcta del usuario obtenida del servidor
 const errorMessage = ref('');
+const newPassword = ref('');
+const confirmPassword = ref('');
+const passwordErrorMessage = ref('');
 
 // Función para continuar con la recuperación de contraseña
 const continueRecovery = async () => {
@@ -111,7 +115,17 @@ const continueRecovery = async () => {
         } else {
             errorMessage.value = 'Respuesta incorrecta. Intente nuevamente.';
         }
-    } else if (currentForm.value === 3) {
+    }
+};
+
+// Función para restablecer la contraseña
+const resetPassword = () => {
+    // Validar que ambos campos de contraseña no estén vacíos y sean iguales
+    if (!newPassword.value) {
+        passwordErrorMessage.value = 'La nueva contraseña no puede estar vacía.';
+    } else if (newPassword.value !== confirmPassword.value) {
+        passwordErrorMessage.value = 'Las contraseñas no coinciden.';
+    } else {
         // Aquí puedes implementar la lógica para restablecer la contraseña
         console.log('Recuperación completada');
         router.push('/login'); // Redirigir al login después de restablecer la contraseña
