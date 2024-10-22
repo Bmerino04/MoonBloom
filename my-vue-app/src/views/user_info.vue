@@ -41,7 +41,7 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import Navbar from '../components/navbar.vue';
 import UserProfilePanel from '../components/UserProfilePanel.vue';
-import TextPanel from '../components/TextPanel.vue';
+import TextPanel from '../components/UserInfoTextPanel.vue';
 import SelectMethod from '../components/SelectMethod.vue';
 import Button from '../components/Button.vue';
 import Modal from '../components/Modal.vue';
