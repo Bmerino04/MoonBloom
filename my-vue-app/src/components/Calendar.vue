@@ -81,6 +81,7 @@ const nextMonth = () => {
 
 <style scoped>
 .calendar {
+ 
     display: flex;
     flex-direction: column;
     align-items: center;

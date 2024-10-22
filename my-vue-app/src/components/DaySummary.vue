@@ -1,10 +1,13 @@
 <template>
     <div class="Day-Summary ">
         <div class="Phase-Info ">
-            <p>Viernes, 25 Jul. </p>
+            <div class="text">
+                        <p>Viernes, 25 Jul. </p>
             <p>Fase Ovulatoria</p>
             <h2>Periodo en <span>10 Días</span></h2>
-            <p>Prob. media de Embarazo</p>
+            <p>Prob. media de Embarazo</p>    
+            </div>
+
         </div>
     </div>
 </template>
@@ -25,22 +28,32 @@
     background-color: #F88FA3;
     border: 0.375rem solid #2c5d5bc1; 
     border-radius:100%;
+    display: flex;
+    align-content: center;
     text-align: center; 
-    align-content: center; 
-    padding: 0 20%;  
-    letter-spacing: 0.085rem;
+    justify-content: center;
+    align-items: center;
+
+ 
 }
-.Phase-Info p{
+.text{
+    width: 10rem;
+    
+     
+  
+
+}
+.text p{
     font-size: 20px;
     color: #FFFFFF;
 }
 
-.Phase-Info h2{
+.text h2{
     color: #FF2D55;
     font-size: 2rem;
     font-weight: 600;
 }
-.Phase-Info span{
+.text span{
     font-weight: 900;
 }
 </style>

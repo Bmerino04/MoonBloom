@@ -1,0 +1,14 @@
+{
+    "calendarData": {
+      "months": ["Junio", "Julio", "Agosto", "Septiembre", "Octubre"],
+      "daysInMonths": [30, 31, 31, 30, 31],
+      "firstDays": [6, 1, 4, 0, 2],
+      "weekDays": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+      "phases": {
+        "menstrual": [8, 9, 10, 11],
+        "fertile": [20, 21, 22, 23, 24, 25],
+        "ovulation": [22, 23]
+      }
+    }
+  }
+  

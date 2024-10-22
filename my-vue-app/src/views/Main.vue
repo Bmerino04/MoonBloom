@@ -10,12 +10,10 @@
         </div>
 
     </div>
-
-
 </template>
 
 <script setup>
-import Navbar from '../components/Navbar.vue';
+import Navbar from '../components/navbar.vue';
 import DaySummary from '../components/DaySummary.vue';
 import Calendar from '../components/Calendar.vue';
 import DailyAdvice from '../components/DailyAdvice.vue';
@@ -26,18 +24,19 @@ import DailyAdvice from '../components/DailyAdvice.vue';
     font-family: var(--fuente-principal);
     display: flex;
     align-items: center;
-    padding: 3% 4% 0;
-    gap:3%;
+    padding: 2% 2% 0;
+    gap:2%;
     width: 100%;
-    height: 37.5rem; 
+
 }
 .left-panel{
     width: 40%;
-    height: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center; 
-    gap:5.5%;   
+    justify-content: space-between;
+  
 }
 
 .right-panel{

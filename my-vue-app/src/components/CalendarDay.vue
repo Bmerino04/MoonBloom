@@ -26,8 +26,8 @@ const handleClick = () => {
 .day {
     text-align: center;
     align-content: center;
-    width: 5.625rem;
-    height: 3.75rem;
+    width: 5rem;
+    height: 3.438rem;
     border-radius: 5rem;
     opacity: 5;
     cursor: pointer;

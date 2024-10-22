@@ -8,19 +8,26 @@
 </template>
 <style scoped>
 .Daily-Advice{
+   
     background-color: var(--color-celeste-oscuro-op);
     border-radius: 0.5rem;
-    padding: 2% 3% 3%;
+    padding: 1% 3% 1%;
     text-align: justify;
+    
 }
 
 .Daily-Advice h3{
     color:  var(--color-rosado-claro-barras); 
-    letter-spacing: 0.1rem;  
+    letter-spacing: 0.1rem;
+    margin-block-end: 0;  
+
 }
 .Daily-Advice p{
     font-size:  var(--tamaño-fuente-texto);
     color: var(--color-blanco);
-    padding: 2% 0;
+    padding: 1% 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+
 }
 </style>
