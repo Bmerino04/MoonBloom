@@ -11,7 +11,7 @@
                     <Form v-if="currentForm === 1" @submit.prevent="continueRecovery">
                         <div class="form-group">
                             <label for="email" class="label">Correo electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico..." class="input" />
+                            <input v-model="email" type="email" id="email" name="email" placeholder="Ingrese su correo electrónico..." class="input" />
                         </div>
                         <div class="form-group button-group">
                             <Button type="pink">Recuperar contraseña</Button>
@@ -22,13 +22,14 @@
                         <div class="form-group button-group">
                             <Button type="green" @click="goToRegister">Registrarse</Button>
                         </div>
+                        <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
                     </Form>
-                    
+
                     <!-- Segundo formulario: Pregunta de seguridad -->
                     <Form v-if="currentForm === 2" @submit.prevent="continueRecovery">
                         <div class="form-group">
-                            <label for="security-question" class="label">¿Cuál es el nombre de tu mascota?</label>
-                            <input type="text" id="security-question" name="security-question" placeholder="Respuesta..." class="input" />
+                            <label for="security-question" class="label">{{ securityQuestion }}</label>
+                            <input v-model="userSecurityAnswer" type="text" id="security-question" name="security-question" placeholder="Respuesta..." class="input" />
                         </div>
                         <div class="form-group button-group">
                             <Button type="pink">Continuar</Button>
@@ -39,6 +40,7 @@
                         <div class="form-group button-group">
                             <Button type="green" @click="goToRegister">Registrarse</Button>
                         </div>
+                        <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
                     </Form>
 
                     <!-- Tercer formulario: Confirmación final -->
@@ -65,23 +67,60 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import axios from 'axios';
 import Button from '../components/Button.vue';
 import '../style.css';
 
 const router = useRouter();
 const currentForm = ref(1);
+const email = ref('');
+const securityQuestion = ref('');
+const userSecurityAnswer = ref(''); // Respuesta ingresada por el usuario
+const securityAnswer = ref(''); // Respuesta correcta del usuario obtenida del servidor
+const errorMessage = ref('');
 
-const continueRecovery = () => {
-    if (currentForm.value < 3) {
-        currentForm.value++;
-    } else {
+// Función para continuar con la recuperación de contraseña
+const continueRecovery = async () => {
+    if (currentForm.value === 1) {
+        try {
+            // Obtener la lista de usuarios desde el servidor
+            const response = await axios.get('http://localhost:3000/users');
+            const users = response.data;
+
+            // Buscar el usuario con el correo ingresado
+            const user = users.find(u => u.email === email.value);
+
+            if (user) {
+                // Si el usuario existe, mostrar la pregunta de seguridad y guardar la respuesta correcta
+                securityQuestion.value = user.security_question;
+                securityAnswer.value = user.security_answer; // Respuesta correcta para la validación
+                currentForm.value = 2; // Pasar al segundo formulario
+                errorMessage.value = ''; // Limpiar el mensaje de error
+            } else {
+                errorMessage.value = 'Correo no encontrado. Intente nuevamente.';
+            }
+        } catch (error) {
+            console.error('Error al obtener los usuarios:', error);
+            errorMessage.value = 'Error al conectarse con el servidor.';
+        }
+    } else if (currentForm.value === 2) {
+        // Validar la respuesta de seguridad
+        if (userSecurityAnswer.value.toLowerCase() === securityAnswer.value.toLowerCase()) {
+            currentForm.value = 3; // Pasar al tercer formulario si la respuesta es correcta
+            errorMessage.value = ''; // Limpiar el mensaje de error
+        } else {
+            errorMessage.value = 'Respuesta incorrecta. Intente nuevamente.';
+        }
+    } else if (currentForm.value === 3) {
+        // Aquí puedes implementar la lógica para restablecer la contraseña
         console.log('Recuperación completada');
-        router.push('/login');  
+        router.push('/login'); // Redirigir al login después de restablecer la contraseña
     }
 };
 
+// Función para redirigir al registro
 const goToRegister = () => {
-    router.push('/register');  
+    router.push('/register');
 };
 </script>
 
