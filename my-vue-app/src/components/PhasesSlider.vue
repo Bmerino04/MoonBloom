@@ -1,19 +1,42 @@
 <template>
-  <div class="phases-slider">
+  <div class="phasesSlider">
     <div class="buttons">
-      <button class="back-button">
+      <button @click="previousSlide" class="back-button">
         <img src="../assets/img_cal/left-arrow.png" alt="Anterior" />
       </button>
-      <h2>Fase</h2>
-      <button class="next-button">
+      <h2>{{ slideTitles[currentSlideIndex] }}</h2>
+      <button @click="nextSlide" class="next-button">
         <img src="../assets/img_cal/right-arrow.png" alt="Siguiente" />
       </button>
     </div>
   </div>
 </template>
 
+<script setup>
+import { ref, onMounted } from 'vue';
 
+const slides = ref([]);
+const slideTitles = ["Ciclo", "Fase Menstrual", "Día a Ovular", "Tendencia Sexual"];
+const currentSlideIndex = ref(0);
+
+
+
+const nextSlide = () => {
+  currentSlideIndex.value = (currentSlideIndex.value + 1) % slideTitles.length;
+};
+
+const previousSlide = () => {
+  currentSlideIndex.value = (currentSlideIndex.value - 1 + slideTitles.length) % slideTitles.length;
+};
+</script>
 <style scoped>
+
+.phasesSlider{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
 button{
     background-color:transparent;
     border-color:transparent;
