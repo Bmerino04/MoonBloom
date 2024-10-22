@@ -8,7 +8,7 @@ import Statistics from './views/Statistics.vue'
 import Information from './views/Information.vue'
 
 const routes = [
-  { path: '/', redirect: '/login' },
+  { path: '/', redirect: '/statistics' },
   { path: '/login', component: Login },
   { path: '/register', component: Register },
   { path: '/userInfo', component: UserInfo },
