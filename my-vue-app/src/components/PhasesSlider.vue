@@ -11,9 +11,13 @@
     </div>  
 
     <div v-if="currentSlideIndex < 3">
-      <div v-for="(slide, index) in slides" :key="index" v-show="index === currentSlideIndex" class="slide-container">
+      <div v-for="(slide, index) in slides" :key="index" v-show="index === currentSlideIndex" class="slide">
         <LineChart :chartId="`LineChart${index + 1}`" :labels="slide.labels" :data="slide.data" />
       </div>
+    </div>
+
+    <div v-if="currentSlideIndex === 3" class="slide">
+      <SexualTrendSlider/>
     </div>
   </div>
 </template>
@@ -21,6 +25,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import LineChart from './LineChart.vue';
+import SexualTrendSlider from './SexualTrendSlider.vue';
 import axios from 'axios';
 
 const slides = ref([]);
@@ -47,6 +52,11 @@ const fetchData = async () => {
         labels: ["Ciclo 1", "Ciclo 2", "Ciclo 3", "Ciclo 4"],
         data: user.ovulation_data.day_of_ovulation,
         summary: `Promedio del día de ovulación: Día ${user.ovulation_data.avg_day_of_ovulation}, Variaciones: ${user.ovulation_data.ovulation_variation} días, Anomalías: ${user.ovulation_data.ovulation_anomalies}`
+      },
+      {
+        labels: [],
+        data: [],
+        summary: `Tendencia Sexual`
       }
     ];  
   } catch (error) {
@@ -71,7 +81,15 @@ const previousSlide = () => {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  padding-bottom: 0px;
+  padding-top: 2.6%;
+  margin-left: 7%;
+}
+.slide{
+  display: flex;
+  width: 54%;
+  height: auto;
+  justify-content: center;
 }
 button{
     background-color:transparent;
@@ -99,7 +117,7 @@ button{
     font-family: var(--fuente-principal);
     line-height: 1.15;
     width: 180px;
-    font-size: 20px;
+    font-size: 18px;
     color: var(--color-blanco)
 }
 </style>
