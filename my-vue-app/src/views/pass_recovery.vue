@@ -150,7 +150,7 @@ const goToRegister = () => {
 
 .login-logo {
     font-family: var(--fuente-principal);
-    flex: 0 0 30%;  
+    flex: 0 0 30%; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,16 +163,16 @@ const goToRegister = () => {
     flex-direction: column;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 0.5rem;
+    padding: 3%;
     padding-top: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 1rem;  
+    margin: 0 1rem; 
 }
 
 .margin-container {
     font-family: var(--fuente-principal);
-    flex: 0 0 30%;  
+    flex: 0 0 30%; 
 }
 
 .logo-image {
@@ -244,7 +244,7 @@ const goToRegister = () => {
 .button-group .Pink-Button {
     font-size: 14px;
     padding: 0.25rem;
-    width: 100%;
+    width: 300px;
     border-radius: 0.5rem;
 }
 
@@ -271,5 +271,13 @@ const goToRegister = () => {
 
 .margin-container {
     flex: 1;
+}
+
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 </style>
