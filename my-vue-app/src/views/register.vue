@@ -7,23 +7,26 @@
                     <h1 class="title">MOONBLOOM</h1>
                 </div>
                 <div class="form-box">
+                    <!-- Mensaje de notificación -->
+                    <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
+
                     <!-- Formulario de registro -->
                     <Form v-if="currentForm === 1" @submit.prevent="continueRegister">
                         <div class="form-group">
                             <label for="user-name" class="label">Nombre de usuario</label>
-                            <input type="user-name" id="user-name" name="user-name" placeholder="Ingrese su nombre de usuario..." class="input" />
+                            <input type="text" id="user-name" v-model="userName" placeholder="Ingrese su nombre de usuario..." class="input" />
                         </div>
                         <div class="form-group">
                             <label for="email" class="label">Correo electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico..." class="input" />
+                            <input type="email" id="email" v-model="email" placeholder="Ingrese su correo electrónico..." class="input" />
                         </div>
                         <div class="form-group">
                             <label for="password" class="label">Contraseña</label>
-                            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña..." class="input" />
+                            <input type="password" id="password" v-model="password" placeholder="Ingrese su contraseña..." class="input" />
                         </div>
                         <div class="form-group">
                             <label for="confirm-password" class="label">Confirmar contraseña</label>
-                            <input type="confirm-password" id="confirm-password" name="confirm-password" placeholder="Confirme su contraseña..." class="input" />
+                            <input type="password" id="confirm-password" v-model="confirmPassword" placeholder="Confirme su contraseña..." class="input" />
                         </div>
                         <div class="form-group button-group">
                             <Button type="pink">Continuar</Button>
@@ -38,11 +41,11 @@
                     <Form v-if="currentForm === 2" @submit.prevent="continueRegister">
                         <div class="form-group">
                             <label for="security-question" class="label">Pregunta de seguridad</label>
-                            <input type="security-question" id="security-question" name="security-question" placeholder="Ej: nombre de tu primera mascota" class="input" />
+                            <input type="text" id="security-question" v-model="securityQuestion" placeholder="Ej: nombre de tu primera mascota" class="input" />
                         </div>
                         <div class="form-group">
                             <label for="security-answer" class="label">Respuesta</label>
-                            <input type="security-answer" id="security-answer" name="security-answer" placeholder="Ej: Olivia" class="input" />
+                            <input type="text" id="security-answer" v-model="securityAnswer" placeholder="Ej: Olivia" class="input" />
                         </div>
                         <p>Asegúrate de que solo tú sepas la respuesta.</p>
                         <div class="form-group button-group">
@@ -54,27 +57,27 @@
                     <Form v-if="currentForm === 3" @submit.prevent="continueRegister">
                         <div class="form-group">
                             <label for="weight" class="label">Peso</label>
-                            <input type="text" id="weight" name="weight" placeholder="Kg" class="input" />
+                            <input type="text" id="weight" v-model="weight" placeholder="Kg" class="input" />
                         </div>
                         <div class="form-group">
                             <label for="height" class="label">Altura</label>
-                            <input type="text" id="height" name="height" placeholder="Cm" class="input" />
+                            <input type="text" id="height" v-model="height" placeholder="Cm" class="input" />
                         </div>
                         <div class="form-group">
                             <label for="start-period" class="label">Inicio de su último periodo</label>
-                            <input type="text" id="start-period" name="start-period" placeholder="dd/mm/aaaa" class="input" />
+                            <input type="date" id="start-period" v-model="startPeriod" class="input" />
                         </div>
                         <div class="form-group">
                             <label for="end-period" class="label">Término de su último periodo</label>
-                            <input type="text" id="end-period" name="end-period" placeholder="dd/mm/aaaa" class="input" />
+                            <input type="date" id="end-period" v-model="endPeriod" class="input" />
                         </div>
                         <div class="form-group">
                             <label for="cycle-duration" class="label">Duración de su ciclo</label>
-                            <input type="text" id="cycle-duration" name="cycle-duration" placeholder="Días que suele durar (ej: 28)" class="input" />
+                            <input type="text" id="cycle-duration" v-model="cycleDuration" placeholder="Días que suele durar (ej: 28)" class="input" />
                         </div>
                         <div class="form-group">
                             <label for="period-duration" class="label">Duración de su periodo</label>
-                            <input type="text" id="period-duration" name="period-duration" placeholder="Días que suele durar (ej: 5)" class="input" />
+                            <input type="text" id="period-duration" v-model="periodDuration" placeholder="Días que suele durar (ej: 5)" class="input" />
                         </div>
                         <div class="form-group button-group">
                             <Button type="pink">Continuar</Button>
@@ -85,7 +88,7 @@
                     <Form v-if="currentForm === 4" @submit.prevent="continueRegister">
                         <div class="form-group">
                             <label for="intern-method" class="label">Método anticonceptivo</label>
-                            <SelectMethod></SelectMethod>
+                            <SelectMethod v-model="contraceptiveMethod"></SelectMethod>
                         </div>
                         <div class="form-group button-group">
                             <Button type="pink">Continuar</Button>
@@ -108,7 +111,54 @@ import '../style.css';
 const router = useRouter();
 const currentForm = ref(1); 
 
+// Campos del formulario
+const userName = ref('');
+const email = ref('');
+const password = ref('');
+const confirmPassword = ref('');
+const securityQuestion = ref('');
+const securityAnswer = ref('');
+const weight = ref('');
+const height = ref('');
+const startPeriod = ref('');
+const endPeriod = ref('');
+const cycleDuration = ref('');
+const periodDuration = ref('');
+const contraceptiveMethod = ref('');
+
+// Mensaje de error
+const errorMessage = ref('');
+
 const continueRegister = () => {
+    // Validaciones según el formulario actual
+    if (currentForm.value === 1) {
+        if (!userName.value || !email.value || !password.value || !confirmPassword.value) {
+            errorMessage.value = 'Todos los campos son obligatorios en este paso.';
+            return;
+        }
+        if (password.value !== confirmPassword.value) {
+            errorMessage.value = 'Las contraseñas no coinciden.';
+            return;
+        }
+    } else if (currentForm.value === 2) {
+        if (!securityQuestion.value || !securityAnswer.value) {
+            errorMessage.value = 'Todos los campos son obligatorios en este paso.';
+            return;
+        }
+    } else if (currentForm.value === 3) {
+        if (!weight.value || !height.value || !startPeriod.value || !endPeriod.value || !cycleDuration.value || !periodDuration.value) {
+            errorMessage.value = 'Todos los campos son obligatorios en este paso.';
+            return;
+        }
+    } else if (currentForm.value === 4) {
+        if (!contraceptiveMethod.value) {
+            errorMessage.value = 'De no tener un metodo anticonceptivo, seleccione Ninguno.';
+            return;
+        }
+    }
+
+    // Si todo está bien, continuar al siguiente formulario
+    errorMessage.value = ''; // Limpiar mensaje de error
     if (currentForm.value < 4) {
         currentForm.value++;
     } else {
@@ -248,5 +298,12 @@ const goToLogin = () => {
 
 .margin-container {
     flex: 1;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 20px;
+    font-size: 10;
+    text-align: center;
 }
 </style>
