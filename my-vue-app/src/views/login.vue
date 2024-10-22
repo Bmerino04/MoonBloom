@@ -3,7 +3,7 @@
         <div class="form-container">
             <div class="flex-container">
                 <div class="login-logo">
-                    <img src="my-vue-app/src/assets/icon/logo-MoonBloom.png" alt="Logo MoonBloom" class="logo-image" />
+                    <img src="../assets/icon/logo-MoonBloom.png" alt="Logo MoonBloom" class="logo-image" />
                     <h1 class="title">MOONBLOOM</h1>
                 </div>
                 <div class="form-box">
@@ -20,7 +20,7 @@
                             <a @click="passRecovery" class="link">¿Olvidaste tu contraseña?</a>
                         </div>
                         <div class="form-group button-group">
-                            <Button type="pink" @click="submitForm">Iniciar sesión</Button>
+                            <Button type="pink">Iniciar sesión</Button>
                             <div class="separator"></div>
                             <div class="register-text">¿No tienes una cuenta?</div>
                             <Button type="green" @click="goToRegister">Registrarse</Button>
@@ -36,12 +36,35 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import Button from '../components/Button.vue';
-import 'my-vue-app/src/style.css';
+import Form from '../components/Form.vue'; // Importar tu componente Form
+import axios from 'axios'; // Asegúrate de tener axios instalado
+import '../style.css';
 
 const router = useRouter();
 
-const submitForm = () => {
+const submitForm = async () => {
     console.log('Formulario enviado');
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+    const response = await axios.get('http://localhost:3000/users'); // Asegúrate de que la ruta es correcta
+    console.log(response.data); // Verifica la estructura de la respuesta
+    const users = response.data; // Cambia esto si necesitas acceder a otra propiedad
+
+    // Verificar si el usuario existe
+    const user = users.find(user => user.email === email && user.password === password);
+    if (user) {
+        console.log('Inicio de sesión exitoso', user);
+        router.push('/userInfo');
+    } else {
+        console.error('Credenciales incorrectas');
+        // Aquí podrías mostrar un mensaje de error al usuario
+    }
+} catch (error) {
+    console.error('Error al cargar los datos de usuarios:', error);
+}
 };
 
 const goToRegister = () => {
@@ -49,7 +72,7 @@ const goToRegister = () => {
 };
 
 const passRecovery = () => {
-    router.push('/passRecovery')
+    router.push('/passRecovery');
 }
 </script>
 
@@ -92,7 +115,7 @@ const passRecovery = () => {
     flex-direction: column;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 0.5rem;
+    padding: 3%;
     padding-top: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);

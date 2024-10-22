@@ -3,7 +3,7 @@
         <div class="form-container">
             <div class="flex-container">
                 <div class="login-logo">
-                    <img src="my-vue-app/src/assets/icon/logo-MoonBloom.png" alt="Logo MoonBloom" class="logo-image" />
+                    <img src="../assets/icon/logo-MoonBloom.png" alt="Logo MoonBloom" class="logo-image" />
                     <h1 class="title">MOONBLOOM</h1>
                 </div>
                 <div class="form-box">
@@ -66,7 +66,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Button from '../components/Button.vue';
-import 'my-vue-app/src/style.css';
+import '../style.css';
 
 const router = useRouter();
 const currentForm = ref(1);
