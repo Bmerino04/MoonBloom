@@ -2,7 +2,7 @@
     <div v-if="isOpen" :id="id" class="modal" @click.self="closeModal">
       <div class="modal-content">
         <h3>{{ title }}</h3>
-        <slot></slot> <!-- Permite insertar contenido en el modal -->
+        <slot></slot> 
       </div>
     </div>
   </template>
@@ -11,13 +11,13 @@
   const props = defineProps({
     id: String,
     title: String,
-    isOpen: Boolean, // Controla la visibilidad del modal
+    isOpen: Boolean, 
   });
   
-  const emit = defineEmits(['close']); // Define el evento 'close' para emitir cuando se cierra el modal
+  const emit = defineEmits(['close']); 
   
   function closeModal() {
-    emit('close'); // Emite el evento de cierre al componente padre
+    emit('close'); 
   }
 </script>
   
@@ -29,7 +29,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex; /* Para centrar el modal en la pantalla */
+  display: flex; 
   justify-content: center;
   align-items: center;
 }
@@ -40,10 +40,10 @@
   padding: 20px;
   border-radius: 8px;
   width: 300px;
-  text-align: center; /* Asegura que todo dentro del modal esté centrado */
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Alinea los elementos hijos, como el botón, en el centro */
+  align-items: center; 
 }
 
 .modal-content h3 {

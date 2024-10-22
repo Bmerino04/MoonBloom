@@ -24,7 +24,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useRouter } from 'vue-router'; // Importar useRouter
+import { useRouter } from 'vue-router'; 
 
 const props = defineProps({
   userData: {
@@ -33,36 +33,29 @@ const props = defineProps({
   },
 });
 
-// Cálculo de la posición del puntero de IMC
 const getBmiPointerPosition = computed(() => {
   const bmi = props.userData.bmi;
-  // Calcular la posición (asumiendo que el rango de IMC es de 10 a 40)
   const minBmi = 10;
   const maxBmi = 40;
   const pointerPosition = ((bmi - minBmi) / (maxBmi - minBmi)) * 100;
   return `${Math.min(Math.max(pointerPosition, 0), 100)}%`;
 });
 
-// Funciones de manejo de eventos
-const router = useRouter(); // Inicializar el router
+const router = useRouter(); 
 
 function editProfile() {
-  // Lógica para editar el perfil
   console.log('Editar perfil');
 }
 
 function editWeight() {
-  // Lógica para editar el peso
   console.log('Editar peso');
 }
 
 function editHeight() {
-  // Lógica para editar la altura
   console.log('Editar altura');
 }
 
 function logout() {
-  // Redirigir a la vista de login
   router.push('/login');
 }
 </script>
@@ -106,7 +99,7 @@ function logout() {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer; /* Indica que se puede hacer clic */
+  cursor: pointer;
 }
 
 .Edit-btn img {
@@ -164,7 +157,7 @@ function logout() {
 
 .IMC-pointer {
   position: absolute;
-  top: 0; /* Cambiado a 0 para alinear con la barra */
+  top: 0;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -180,7 +173,7 @@ function logout() {
   color: white;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 20px; /* Añade espacio entre el botón y el contenido anterior */
+  margin-top: 20px; 
   display: block;
   width: 60%;
   text-align: center;

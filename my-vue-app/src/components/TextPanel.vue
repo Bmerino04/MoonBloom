@@ -2,7 +2,7 @@
     <article class="Text-panel shadow-md items-center justify-between">
       <h2>{{ title }}</h2>
       <p>{{ content }}</p>
-      <slot></slot> <!-- Permite añadir botones o contenido adicional -->
+      <slot></slot> 
     </article>
   </template>
   
@@ -22,14 +22,14 @@
     border-radius: 8px;
     padding: 2%;
     color: var(--color-blanco);
-    display:inline-block; /* Para hacer que los hijos se alineen horizontalmente */
-    align-items: center; /* Alinea verticalmente */
-    justify-content: space-between; /* Espacio entre article y el botón */
-    gap: 20px; /* Espacio entre article y el botón */
+    display:inline-block;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 20px; 
 }
 
 .Upper-text {
-    flex: 1; /* Esto permite que el artículo ocupe la mayor parte del espacio disponible */
+    flex: 1; 
 }
 
 </style>
