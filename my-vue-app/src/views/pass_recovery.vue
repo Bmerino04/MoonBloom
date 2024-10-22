@@ -76,30 +76,26 @@ const router = useRouter();
 const currentForm = ref(1);
 const email = ref('');
 const securityQuestion = ref('');
-const userSecurityAnswer = ref(''); // Respuesta ingresada por el usuario
-const securityAnswer = ref(''); // Respuesta correcta del usuario obtenida del servidor
+const userSecurityAnswer = ref(''); 
+const securityAnswer = ref('');
 const errorMessage = ref('');
 const newPassword = ref('');
 const confirmPassword = ref('');
 const passwordErrorMessage = ref('');
 
-// Función para continuar con la recuperación de contraseña
 const continueRecovery = async () => {
     if (currentForm.value === 1) {
         try {
-            // Obtener la lista de usuarios desde el servidor
             const response = await axios.get('http://localhost:3000/users');
             const users = response.data;
 
-            // Buscar el usuario con el correo ingresado
             const user = users.find(u => u.email === email.value);
 
             if (user) {
-                // Si el usuario existe, mostrar la pregunta de seguridad y guardar la respuesta correcta
                 securityQuestion.value = user.security_question;
-                securityAnswer.value = user.security_answer; // Respuesta correcta para la validación
-                currentForm.value = 2; // Pasar al segundo formulario
-                errorMessage.value = ''; // Limpiar el mensaje de error
+                securityAnswer.value = user.security_answer;
+                currentForm.value = 2;
+                errorMessage.value = '';
             } else {
                 errorMessage.value = 'Correo no encontrado. Intente nuevamente.';
             }
@@ -108,31 +104,26 @@ const continueRecovery = async () => {
             errorMessage.value = 'Error al conectarse con el servidor.';
         }
     } else if (currentForm.value === 2) {
-        // Validar la respuesta de seguridad
         if (userSecurityAnswer.value.toLowerCase() === securityAnswer.value.toLowerCase()) {
-            currentForm.value = 3; // Pasar al tercer formulario si la respuesta es correcta
-            errorMessage.value = ''; // Limpiar el mensaje de error
+            currentForm.value = 3;
+            errorMessage.value = '';
         } else {
             errorMessage.value = 'Respuesta incorrecta. Intente nuevamente.';
         }
     }
 };
 
-// Función para restablecer la contraseña
 const resetPassword = () => {
-    // Validar que ambos campos de contraseña no estén vacíos y sean iguales
     if (!newPassword.value) {
         passwordErrorMessage.value = 'La nueva contraseña no puede estar vacía.';
     } else if (newPassword.value !== confirmPassword.value) {
         passwordErrorMessage.value = 'Las contraseñas no coinciden.';
     } else {
-        // Aquí puedes implementar la lógica para restablecer la contraseña
         console.log('Recuperación completada');
-        router.push('/login'); // Redirigir al login después de restablecer la contraseña
+        router.push('/login');
     }
 };
 
-// Función para redirigir al registro
 const goToRegister = () => {
     router.push('/register');
 };
