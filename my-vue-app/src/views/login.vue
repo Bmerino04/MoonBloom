@@ -16,8 +16,6 @@
                             <label for="password" class="label">Contraseña</label>
                             <input type="password" id="password" name="password" placeholder="Ingrese su contraseña..." class="input" />
                         </div>
-
-                        <!-- Mostrar mensaje de error si existe un error -->
                         <div v-if="error" class="error-message">
                             {{ errorMessage }}
                         </div>
@@ -50,7 +48,6 @@ import '../style.css';
 
 const router = useRouter();
 
-// Estado para el error y mensaje
 const error = ref(false);
 const errorMessage = ref('');
 
@@ -65,16 +62,15 @@ const submitForm = async () => {
         console.log(response.data);
         const users = response.data;
 
-        // Verificar si el usuario existe
         const user = users.find(user => user.email === email && user.password === password);
         if (user) {
             console.log('Inicio de sesión exitoso', user);
-            error.value = false; // Restablecer el estado del error si es correcto
+            error.value = false; 
             router.push('/userInfo');
         } else {
             console.error('Credenciales incorrectas');
-            error.value = true; // Activar el estado de error
-            errorMessage.value = 'Correo electrónico o contraseña incorrectos'; // Mensaje de error
+            error.value = true;
+            errorMessage.value = 'Correo electrónico o contraseña incorrectos';
         }
     } catch (error) {
         console.error('Error al cargar los datos de usuarios:', error);
