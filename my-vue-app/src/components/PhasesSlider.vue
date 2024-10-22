@@ -9,42 +9,9 @@
         <img src="../assets/img_cal/right-arrow.png" alt="Siguiente" />
       </button>
     </div>
-    <div v-for="(slide, index) in slides" :key="index" v-show="index === currentSlideIndex" class="slide-container">
-      <LineChart :chartId="`LineChart${index + 1}`" :labels="slide.labels" :data="slide.data" />
-    </div>
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios'
-import LineChart from './LineChart.vue';
-
-const slides = ref([]);
-const slideTitles = ["Ciclo", "Fase Menstrual", "Día a Ovular"];
-const currentSlideIndex = ref(0);
-
-const fetchData = async () => {
-  try {
-    const response = await axios.get('http://localhost:3000/phases');
-    slides.value = response.data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-};
-
-onMounted(() => {
-  fetchData();
-});
-
-const nextSlide = () => {
-  currentSlideIndex.value = (currentSlideIndex.value + 1) % slides.value.length;
-};
-
-const previousSlide = () => {
-  currentSlideIndex.value = (currentSlideIndex.value - 1 + slides.value.length) % slides.value.length;
-};
-</script>
 
 <style scoped>
 button{
@@ -58,7 +25,7 @@ button{
     align-items: center;
     justify-content: center;
     margin-left: 19%;
-    background-color: var(--color-rosado-claro-barras);
+    background-color:var(--color-rosado-claro-barras);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
