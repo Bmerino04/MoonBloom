@@ -1,18 +1,22 @@
 {
-  "name": "moonbloom",
-  "version": "1.0.0",
-  "description": "Link Figma:\r https://www.figma.com/design/Ix1O6INxrJjqv3e5WJtliI/Proyecto-de-Aplicaci%C3%B3n---MoonBloom?node-id=601-11&t=786ju2hlH5eK9dzH-1",
-  "main": "index.js",
+  "name": "my-vue-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tailwindcss -i ./dist/input.css -o ./dist/styles.css --watch"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.4.10"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "moonbloom": "file:"
+    "axios": "^1.7.7",
+    "chart.js": "^4.4.5",
+    "my-vue-app": "file:",
+    "vue": "^3.5.10",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.4",
+    "vite": "^5.4.8"
   }
 }

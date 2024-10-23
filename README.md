@@ -49,7 +49,7 @@ El sistema debe mostrar la probabilidad de embarazo del día.
 
 - Consejo del día: La funcionalidad muestra al usuario consejos respecto a la fase del ciclo menstrual en el que se encuentre.
 El sistema debe mostrar consejos para afrontar la fase del ciclo.
-	
+    
 - Pestaña de información: La funcionalidad permite al usuario acceder a información variada.
 El sistema debe mostrar información sobre el ciclo menstrual.
 El sistema debe mostrar información sobre métodos anticonceptivos.
@@ -115,3 +115,205 @@ El sistema debe mostrar un gráfico de líneas de la duración de los ciclos reg
 El sistema debe mostrar un gráfico de líneas de la duración de los días menstruales registrados hasta el momento.
 El sistema debe mostrar un gráfico de líneas de los días ovulatorios registrados hasta el momento.
 El sistema debe mostrar un gráficos de barras del número de relaciones sexuales con protección y sin protección por fase, para cada ciclo menstrual registrado hasta el momento.
+
+
+Diagrama de Dominio:
+
+![Diagrama de dominio](/src/assets/icon/domain.diagram.png)
+
+Contrato Endpoint:
+
+1. Endpoint: /register
+Tipo de solicitud: POST
+Descripción: Permite al usuario registrarse en la página ingresando datos importantes para el funcionamiento del calendario menstrual.
+Contenido esperado (Request body):
+{ 
+"userName": "String", 
+"email": "String", 
+"password": "String", 
+"confirmPassword": "String", 
+"securityQuestion": "String", 
+"securityAnswer": "String",
+"weight": "Int", 
+"height": "Int",
+"startPeriod": "String",
+"endPeriod": "String",
+"cycleDuration": "Int",
+"periodDuration": "Int",
+"contraceptiveMethod": "String”
+}
+Rol de autorización: Ninguno.
+
+2. Endpoint: /password/recover
+Tipo de solicitud: POST
+Descripción: Permite al usuario validar su identidad respondiendo a la pregunta de seguridad para luego poder cambiar su contraseña.
+Contenido esperado (Request body):
+{
+"email": "String",
+"securityQuestion": "String", 
+"securityAnswer": "String"
+}
+Rol de autorización: Ninguno.
+
+3. Endpoint: /password/change
+Tipo de solicitud: POST
+Descripción: Permite al usuario cambiar su contraseña después de validar su identidad.
+Contenido esperado (Request body):
+
+{
+"newPassword": "String",
+"confirmPassword": "String"
+}
+Rol de autorización: Usuario autenticado.
+
+
+4. Endpoint: /login
+Tipo de solicitud: POST
+Descripción: Permite al usuario iniciar sesión en la página.
+Contenido esperado (Request body):
+{
+"email": "String",
+"contraseña": "String"
+}
+Rol de autorización: Ninguno.
+
+5. Endpoint: /statistics
+Tipo de solicitud: GET
+Descripción: Muestra estadísticas detalladas sobre el ciclo menstrual del usuario basado en su historial.
+Contenido esperado (Request headers):
+Autorización: Bearer Token
+Respuesta esperada (Response body):
+{
+  "avgCycleDuration": "number", 
+  "avgMenstrualPhaseDuration": "number",  
+  "avgDayOfOvulation": "Int", 
+  "cycleData": [
+    {
+      "cycleLength": "Int", 
+      "startPeriod": "Date", 
+      "endPeriod": "Date",
+      "fertileDays": ["Date"],  
+      "ovulationDay": "Date", 
+      "protectedSex": "Int", 
+      "unprotectedSex": "Int", 
+      "mostActivePhase": "String" 
+    }
+  ]
+}
+
+Rol de autorización: Usuario autenticado.
+
+6. Endpoint: /user/profile
+Tipo de solicitud: GET
+Descripción: Muestra la información personal del usuario.
+Contenido esperado (Request headers):
+Autorización: Bearer Token
+Respuesta esperada (Response body):
+{
+"userName": "String", 
+"weight": "Number",
+"height": "Number",
+"imc": "Number",
+"profilePicture": "String", 
+"period_duration_est": "Number",
+"cycle_duration_est": "Number", 
+"anticonceptive_method": "String"
+}
+Rol de autorización: Usuario autenticado.
+
+7. Endpoint: /user/update
+Tipo de solicitud: PUT
+Descripción: Permite al usuario actualizar su información personal, incluyendo detalles del ciclo menstrual.
+Contenido esperado (Request body):
+{
+"anticonceptive_method": "String",
+"weight": "Number",
+"height": "Number",
+"imc": "Number",
+"profilePicture": "String", 
+"cycleDuration": Number,
+"periodDuration": Number
+}
+Rol de autorización: Usuario autenticado.
+
+8. Endpoint: /logout
+Tipo de solicitud: POST
+Descripción: Finaliza la sesión del usuario y lo redirige a la vista de inicio de sesión.
+Contenido esperado: Ninguno.
+Rol de autorización: Usuario autenticado.
+
+
+9. Endpoint: /calendar
+Tipo de solicitud:GET 
+Descripción: El calendario calcula y muestra las fechas importantes del ciclo menstrual del usuario.
+Contenido esperado (Response body):
+{
+ "months": ["String"], 
+"actualMonth": "Int", 
+"daysInMonths": ["Int"], 
+"firstDays": ["Int"], 
+"weekDays": ["String"], 
+"phases": { 
+"menstrual": ["Int"], 
+"folicular": ["Int"], 
+"fertile": ["Int"], 
+"ovulation": ["Int"], 
+"luteal": ["Int"], 
+"currentDay": "Int"
+},
+"startPeriod": "String",
+"endPeriod":”String”,
+"cycleDuration": "Int",
+"periodDuration": "Int",
+"sexualActivityRecords": [
+ {
+ "date": "String", 
+"protected": "Boolean" } ]}
+Rol de autorización: Usuario autenticado.
+
+10.Endpoint: /popup
+Tipo de solicitud: GET
+Descripción: El popup muestra información sobre el día seleccionado, incluyendo la fecha, fase del ciclo menstrual y registros de actividad sexual.
+Contenido esperado (Response body):
+{
+"actualDate":”String”,
+"currentPhase":"String",
+"sexualActivityRecords": [
+ {
+ "date": "String", 
+"protected": "Boolean" } ]}
+
+11. Endpoint: /popup
+Tipo de solicitud: PUT
+Descripción:  El popup permite guardar registros de actividad sexual y del periodo, y actualiza el calendario con la nueva información.
+Contenido esperado (Request body):
+{
+"sexualActivityRecords": [
+ {
+ "date": "String", 
+"protected": "Boolean" } ]
+}
+Rol de autorización: Usuario autenticado.
+
+12. Endpoint: /daySummary
+Tipo de solicitud: GET
+Descripción: Muestra un resumen del día seleccionado, incluyendo la fecha, fase del ciclo, días restantes para el periodo y la probabilidad de embarazo.
+Contenido esperado (Response body)
+{
+         "actualDate":”String”,
+          "currentPhase":"String",
+          "daysLeftPeriod":Int,
+          "pregnancyProbability": "String"
+}
+Rol de autorización: Usuario autenticado.
+13. EndPoint: /dailyAdvice
+Tipo de solicitud: GET
+Descripción: Muestra consejos de estilo de vida basados en la fase del ciclo menstrual en la que se encuentra el usuario.
+Contenido esperado (Response body)
+{
+"adviceData":{  
+      "content":"String"
+}
+}
+Rol de autorización: Usuario autenticado.
+
