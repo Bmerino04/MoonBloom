@@ -28,10 +28,10 @@
     </div>
     <div class="buttons">
         <button @click="previousSlide">
-          <img src="../assets/img_cal/left-arrow.png" alt="Anterior" />
+          <img src="../assets/icon/left-arrow.png" alt="Anterior" />
         </button>
         <button @click="nextSlide">
-          <img src="../assets/img_cal/right-arrow.png" alt="Siguiente" />
+          <img src="../assets/icon/right-arrow.png" alt="Siguiente" />
         </button>
       </div>
   </div>

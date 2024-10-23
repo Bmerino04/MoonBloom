@@ -5,11 +5,11 @@
         <div class="slide">
           <div class="buttons">
       <button @click="previousSlide" class="back-button">
-        <img src="../assets/img_cal/left-arrow.png" alt="Anterior" />
+        <img src="../assets/icon/left-arrow.png" alt="Anterior" />
       </button>
       <h2>{{ slideTitles[currentSlideIndex] }}</h2>
       <button @click="nextSlide" class="next-button">
-        <img src="../assets/img_cal/right-arrow.png" alt="Siguiente" />
+        <img src="../assets/icon/right-arrow.png" alt="Siguiente" />
       </button>
     </div>  
         <LineChart :chartId="`LineChart${index + 1}`" :labels="slide.labels" :data="slide.data" />
@@ -31,11 +31,11 @@
     <div v-if="currentSlideIndex === 3" class="sexualTrendSlide">
       <div class="sexButtons">
       <button @click="previousSlide" class="back-button">
-        <img src="../assets/img_cal/left-arrow.png" alt="Anterior" />
+        <img src="../assets/icon/left-arrow.png" alt="Anterior" />
       </button>
       <h2>{{ slideTitles[currentSlideIndex] }}</h2>
       <button @click="nextSlide" class="next-button">
-        <img src="../assets/img_cal/right-arrow.png" alt="Siguiente" />
+        <img src="../assets/icon/right-arrow.png" alt="Siguiente" />
       </button>
     </div>  
       <SexualTrendSlider/>
