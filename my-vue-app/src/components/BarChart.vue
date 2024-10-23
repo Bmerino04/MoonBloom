@@ -30,41 +30,74 @@
   let chartInstance = null;
   
   const createBarChart = () => {
-    const ctx = document.getElementById(props.chartId).getContext('2d');
-    chartInstance = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: props.labels,
-        datasets: [{
-          label: props.cycleLabel,
-          data: props.data,
-          backgroundColor: [var(--color-rosado-claro-barras), '#FF7777'],
-          borderColor: ['#48A09F', '#FF7777'],
-          borderWidth: 1
-        }]
+  const ctx = document.getElementById(props.chartId).getContext('2d');
+  chartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: props.labels,
+      datasets: [
+        {
+          label: 'R.S. con protección',
+          data: props.data[0],  
+          backgroundColor: '#F88FA3',
+        },
+        {
+          label: 'R.S. sin protección',
+          data: props.data[1],  
+          backgroundColor: '#FF7777',
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: {
+            usePointStyle: true,
+            pointStyle: 'circle',
+            color: '#000',
+            font: {
+              size: 14
+            }
+          },
+          title: {
+            display: true,
+            text: props.cycleLabel,
+            font: {
+              size: 14
+            },
+            padding: {
+              bottom: 0
+            }
+          }
+        }
       },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1,
+            callback: function(value) {
+              return Number.isInteger(value) ? value : '';
+            }
           }
         }
       }
-    });
-  };
-  
-  onMounted(() => {
-    createBarChart();
-  });
-  
-
-  watch(() => props.data, (newData) => {
-    if (chartInstance) {
-      chartInstance.data.datasets[0].data = newData;
-      chartInstance.update();
     }
   });
+};
+
+onMounted(() => {
+  createBarChart();
+});
+
+watch(() => props.data, (newData) => {
+  if (chartInstance) {
+    chartInstance.data.datasets[0].data = newData[0];
+    chartInstance.data.datasets[1].data = newData[1];
+    chartInstance.update();
+  }
+});
   </script>
   
   <style scoped>
@@ -76,5 +109,9 @@
     width: 100%;
     height: 100%;
   }
+  .Chart canvas{
+    width: 100% !important;
+    height: 100% !important;
+}
   </style>
   
