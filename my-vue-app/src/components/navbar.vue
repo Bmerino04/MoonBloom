@@ -19,7 +19,7 @@
           :activeIcon="activeInfoIcon" 
           :currentView="currentView" 
           buttonView="info" 
-          :route="'/info'"
+          :route="'/information'"
         />
         <NavbarButton 
           title="Perfil" 
