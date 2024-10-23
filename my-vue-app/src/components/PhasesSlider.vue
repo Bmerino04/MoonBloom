@@ -59,31 +59,33 @@ const fetchData = async () => {
     const response = await axios.get('http://localhost:3000/users?user_name=ana_garcia');
     const user = response.data[0];
 
+    const shortestCycleIndex = user.cycle_data.cycles_registered.indexOf(Math.min(...user.cycle_data.cycles_registered));
+    const longestCycleIndex = user.cycle_data.cycles_registered.indexOf(Math.max(...user.cycle_data.cycles_registered));
     slides.value = [
       {
-        labels: ["Ciclo 1", "Ciclo 2", "Ciclo 3", "Ciclo 4"],
+        labels: user.cycle_data.cycle_intervals,
         data: user.cycle_data.cycles_registered,
         avgCycleDuration: user.cycle_data.avg_cycle_duration,
-        shortestCycle: "27 Nov - 24 Dic",  // Aquí podrías tener la lógica para calcular esto dinámicamente
-        longestCycle: "10 Jun - 7 Jul",
+        shortestCycle: user.cycle_data.cycle_intervals[shortestCycleIndex],
+        longestCycle: user.cycle_data.cycle_intervals[longestCycleIndex],
         anomalyMessage: user.cycle_data.cycle_anomalies ? `Riesgo de embarazo en el ciclo ${user.cycle_data.cycle_anomalies}` : "No hay anomalías registradas.",
         contraceptiveMessage: user.anticonceptive_method ? `Registras el método anticonceptivo: ${user.anticonceptive_method}.` : "No registras un método anticonceptivo que afecte tu ciclo."
       },
       {
-        labels: ["Fase 1", "Fase 2", "Fase 3", "Fase 4"],
+        labels: user.cycle_data.cycle_intervals,
         data: user.menstrual_phase_data.menstrual_phase_durations,
         avgCycleDuration: user.menstrual_phase_data.avg_menstrual_phase_duration,
-        shortestCycle: "27 Nov - 24 Dic",
-        longestCycle: "10 Jun - 7 Jul",
+        shortestCycle: user.cycle_data.cycle_intervals[shortestCycleIndex],
+        longestCycle: user.cycle_data.cycle_intervals[longestCycleIndex],
         anomalyMessage: user.menstrual_phase_data.menstrual_phase_anomalies ? `Anomalías en la fase menstrual del ciclo ${user.menstrual_phase_data.menstrual_phase_anomalies}` : "No hay anomalías registradas en las fases menstruales.",
         contraceptiveMessage: user.anticonceptive_method ? `Registras el método anticonceptivo: ${user.anticonceptive_method}.` : "No registras un método anticonceptivo que afecte tu ciclo."
       },
       {
-        labels: ["Ciclo 1", "Ciclo 2", "Ciclo 3", "Ciclo 4"],
+        labels: user.cycle_data.cycle_intervals,
         data: user.ovulation_data.day_of_ovulation,
         avgCycleDuration: user.ovulation_data.avg_day_of_ovulation,
-        shortestCycle: "27 Nov - 24 Dic",
-        longestCycle: "10 Jun - 7 Jul",
+        shortestCycle: user.cycle_data.cycle_intervals[shortestCycleIndex],
+        longestCycle: user.cycle_data.cycle_intervals[longestCycleIndex],
         anomalyMessage: user.ovulation_data.ovulation_anomalies ? `Anomalías en el ciclo de ovulación ${user.ovulation_data.ovulation_anomalies}` : "No hay anomalías registradas en los días de ovulación.",
         contraceptiveMessage: user.anticonceptive_method ? `Registras el método anticonceptivo: ${user.anticonceptive_method}.` : "No registras un método anticonceptivo que afecte tu ciclo."
       },
