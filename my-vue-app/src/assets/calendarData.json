@@ -1,6 +1,7 @@
 {
     "calendarData": {
         "months": ["Enero","Febrero","Marzo","Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre","Diciembre"],
+        "currentMonth":6,
         "daysInMonths": [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
         "firstDays": [0, 3, 4, 0, 2, 5, 0, 3, 6, 1, 4, 6],
         "weekDays": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
@@ -9,9 +10,13 @@
             "folicular":[12,13,14,15,16,17,18,19],
             "fertile": [20, 21, 22, 23, 24, 25],
             "ovulation": [22, 23],
-            "luteal":[26,27,28,29,30,31,1,2,3,4,5,6,7]
-            
-        }
+            "luteal":[26,27,28,29,30,31,1,2,3,4,5,6,7],
+            "currentDay": 26
+          },
+          "actualDate":"Jueves, 26 de Jul",
+          "currentPhase":"Fase Ovulatoria",
+          "daysLeftPeriod":10,
+          "pregnancyProbability": "media"
 
     },
     
@@ -30,38 +35,13 @@
         "period_duration_est": 4,
         "anticonceptive_method": "Inyecciones anticonceptivas"
     },
-
-    "informationData":[{
-      "title": "El Ciclo Menstrual",
-      "content":"Entender tu ciclo menstrual es clave para tomar decisiones informadas sobre tu bienestar. Aprende sobre los diferentes métodos anticonceptivos, cómo funcionan, y cuál podría ser el adecuado para ti. Además, infórmate sobre las enfermedades uterinas y del sistema reproductivo, para que puedas detectar síntomas a tiempo y saber cuándo consultar a un profesional."
-    ],
-    
-    },
-    {
-      title: 'Métodos Anticonceptivos',
-      content: [
-        'Elegir el anticonceptivo adecuado es clave para una planificación familiar eficaz...'
-      ],
-      list: [
-        { title: 'Píldoras Anticonceptivas', description: 'Previenen la ovulación y espesan el moco cervical para evitar que los espermatozoides lleguen al óvulo.' },
-        { title: 'DIU (Dispositivo Intrauterino)', description: 'El DIU de cobre bloquea a los espermatozoides, mientras que el DIU hormonal suprime la ovulación.' },
-        { title: 'Implante Subdérmico', description: 'Se inserta en el brazo y libera progestina para prevenir la ovulación.' },
-        { title: 'Anillo Vaginal', description: 'Libera hormonas en la vagina, previniendo la ovulación.' }
-      ],
-
-    },
-    {
-      title: 'Enfermedades Uterinas/Reproductivas',
-      content: [
-        'Conocer las enfermedades uterinas y del sistema reproductivo es fundamental para mantener una buena salud...'
-      ],
-      list: [
-        { title: 'Endometriosis', description: 'Ocurre cuando el tejido que normalmente recubre el interior del útero crece fuera de él.' },
-        { title: 'Fibromas Uterinos', description: 'Son tumores benignos que se desarrollan en el útero.' },
-        { title: 'Síndrome de Ovario Poliquístico (SOP)', description: 'Un desequilibrio hormonal que provoca ciclos menstruales irregulares.' }
-      ],
-   
+    "adviceData":{
+     
+      "content":" Mantente hidratada, come alimentos ricos en antioxidantes y escucha a tu cuerpo si sientes molestias"
+  
     }
-  ];
-}
+  }
+
+   
+    
   
