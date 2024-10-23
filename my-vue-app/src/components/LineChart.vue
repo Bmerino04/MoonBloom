@@ -34,7 +34,6 @@
       datasets: [{
         data: props.data,
         borderColor: '#48A09F',
-        backgroundColor: 'rgba(72, 160, 159, 0.2)', 
         fill: false,
         tension: 0,  
         pointBackgroundColor: '#FFFFFF', 
@@ -73,12 +72,16 @@
             display: false  
           }
         },
-        y: {
-          min: 0,
-          max: 35,  
+        y: { 
           title: {
             display: false,
             text: 'Días'
+          },
+          ticks: {
+            stepSize: 1,
+            callback: function(value) {
+              return Number.isInteger(value) ? value : '';
+            }
           }
         }
       }
