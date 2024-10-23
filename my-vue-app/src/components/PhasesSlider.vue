@@ -1,6 +1,9 @@
 <template>
   <div class="phasesSlider">
-    <div class="buttons">
+    <div v-if="currentSlideIndex < 3">
+      <div v-for="(slide, index) in slides" :key="index" v-show="index === currentSlideIndex" class="slide-container">
+        <div class="slide">
+          <div class="buttons">
       <button @click="previousSlide" class="back-button">
         <img src="../assets/img_cal/left-arrow.png" alt="Anterior" />
       </button>
@@ -9,10 +12,6 @@
         <img src="../assets/img_cal/right-arrow.png" alt="Siguiente" />
       </button>
     </div>  
-
-    <div v-if="currentSlideIndex < 3">
-      <div v-for="(slide, index) in slides" :key="index" v-show="index === currentSlideIndex" class="slide-container">
-        <div class="slide">
         <LineChart :chartId="`LineChart${index + 1}`" :labels="slide.labels" :data="slide.data" />
         </div>
         <SummaryBox 
@@ -30,6 +29,15 @@
     </div>
 
     <div v-if="currentSlideIndex === 3" class="sexualTrendSlide">
+      <div class="sexButtons">
+      <button @click="previousSlide" class="back-button">
+        <img src="../assets/img_cal/left-arrow.png" alt="Anterior" />
+      </button>
+      <h2>{{ slideTitles[currentSlideIndex] }}</h2>
+      <button @click="nextSlide" class="next-button">
+        <img src="../assets/img_cal/right-arrow.png" alt="Siguiente" />
+      </button>
+    </div>  
       <SexualTrendSlider/>
     </div>
   </div>
@@ -112,6 +120,7 @@ const previousSlide = () => {
 .slide-container{
   display: flex;
   width: 100%;
+  justify-content: center;
 }
 .slide-container SummaryBox{
   width: 0%;
@@ -119,23 +128,47 @@ const previousSlide = () => {
 }  
 .slide{
   display: flex;
+  flex-direction: column;
   width: 55%;
   height: 100%;
   padding-left: 3%;
   padding-right: 3%;
-  justify-content: center;
+  align-items: center;
+}
+.sexButtons{
+    width: 17%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--color-rosado-claro-barras);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    margin-left: 20%;
+}
+.sexButtons img{ 
+    width: 45px;
+    padding-top: 5px;
+}
+.sexButtons h2{
+    font-family: var(--fuente-principal);
+    line-height: 1.15;
+    width: 180px;
+    font-size: 18px;
+    color: var(--color-blanco);
+    padding: 0;
+    margin: 0;
 }
 button{
     background-color:transparent;
     border-color:transparent;
 }
 .buttons{
-    width: 15%;
+    width: 30%;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 19%;
     background-color:var(--color-rosado-claro-barras);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
