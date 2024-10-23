@@ -1,62 +1,90 @@
-[
-    {
-        "user_name": "ana_garcia",
-        "email": "ana.garcia@example.com",
-        "password": "ana12345",
-        "security_question": "Nombre de tu primera mascota",
-        "security_answer": "Olivia",
-        "weight": 60,
-        "height": 1.65,
-        "imc": 22.04,
-        "start_last_period": "2024-09-12",
-        "end_last_period": "2024-09-17",
-        "cycle_duration_est": 28,
-        "period_duration_est": 5,
-        "anticonceptive_method": "Inyecciones anticonceptivas"
-    },
-    {
-        "user_name": "maria_fernandez",
-        "email": "maria.fernandez@example.com",
-        "password": "maria2024!",
-        "security_question": "Ciudad donde naciste",
-        "security_answer": "Santiago",
-        "weight": 68,
-        "height": 1.72,
-        "imc": 22.98,
-        "start_last_period": "2024-10-05",
-        "end_last_period": "2024-10-10",
-        "cycle_duration_est": 30,
-        "period_duration_est": 6,
-        "anticonceptive_method": "DIU de cobre"
-    },
-    {
-        "user_name": "sofia_lopez",
-        "email": "sofia.lopez@example.com",
-        "password": "sofia789",
-        "security_question": "Nombre de tu mejor amigo de la infancia",
-        "security_answer": "Ana Garcia",
-        "weight": 55,
-        "height": 1.60,
-        "imc": 21.48,
-        "start_last_period": "2024-09-20",
-        "end_last_period": "2024-09-24",
-        "cycle_duration_est": 27,
-        "period_duration_est": 4,
-        "anticonceptive_method": "Implante anticonceptivo"
-    },
-    {
-        "user_name": "laura_rodriguez",
-        "email": "laura.rodriguez@example.com",
-        "password": "laura54321",
-        "security_question": "Comida favorita",
-        "security_answer": "Handroll de salmon queso palta",
-        "weight": 72,
-        "height": 1.68,
-        "imc": 25.51,
-        "start_last_period": "2024-09-15",
-        "end_last_period": "2024-09-19",
-        "cycle_duration_est": 29,
-        "period_duration_est": 5,
-        "anticonceptive_method": "Ninguna"
-    }
-]
+{
+    "users": [
+        {
+            "user_name": "ana_garcia",
+            "email": "ana.garcia@example.com",
+            "password": "ana12345",
+            "security_question": "Nombre de tu primera mascota",
+            "security_answer": "Olivia",
+            "weight": 60,
+            "height": 1.65,
+            "imc": 22.04,
+            "start_last_period": "2024-09-12",
+            "end_last_period": "2024-09-17",
+            "cycle_duration_est": 28,
+            "period_duration_est": 5,
+            "anticonceptive_method": "Inyecciones anticonceptivas"
+        },
+        {
+            "user_name": "maria_fernandez",
+            "email": "maria.fernandez@example.com",
+            "password": "maria2024!",
+            "security_question": "Ciudad donde naciste",
+            "security_answer": "Santiago",
+            "weight": 68,
+            "height": 1.72,
+            "imc": 22.98,
+            "start_last_period": "2024-10-05",
+            "end_last_period": "2024-10-10",
+            "cycle_duration_est": 30,
+            "period_duration_est": 6,
+            "anticonceptive_method": "DIU de cobre"
+        },
+        {
+            "user_name": "sofia_lopez",
+            "email": "sofia.lopez@example.com",
+            "password": "sofia789",
+            "security_question": "Nombre de tu mejor amigo de la infancia",
+            "security_answer": "Ana Garcia",
+            "weight": 55,
+            "height": 1.60,
+            "imc": 21.48,
+            "start_last_period": "2024-09-20",
+            "end_last_period": "2024-09-24",
+            "cycle_duration_est": 27,
+            "period_duration_est": 4,
+            "anticonceptive_method": "Implante anticonceptivo"
+        },
+        {
+            "user_name": "laura_rodriguez",
+            "email": "laura.rodriguez@example.com",
+            "password": "laura54321",
+            "security_question": "Comida favorita",
+            "security_answer": "Handroll de salmon queso palta",
+            "weight": 72,
+            "height": 1.68,
+            "imc": 25.51,
+            "start_last_period": "2024-09-15",
+            "end_last_period": "2024-09-19",
+            "cycle_duration_est": 29,
+            "period_duration_est": 5,
+            "anticonceptive_method": "Ninguna"
+        }
+    ],
+    "contraceptive_methods": [
+        {
+            "method_name": "Inyecciones anticonceptivas",
+            "summary": "Las inyecciones anticonceptivas liberan hormonas (generalmente progestina) que previenen la ovulación. Pueden causar cambios en el ciclo menstrual, como periodos más ligeros o incluso la ausencia de periodos. Otros efectos incluyen aumento de peso, cambios de humor y reducción en la densidad ósea con uso prolongado."
+        },
+        {
+            "method_name": "DIU de cobre",
+            "summary": "El DIU de cobre no contiene hormonas, funciona liberando pequeñas cantidades de cobre para impedir el paso de los espermatozoides. Puede causar sangrados menstruales más abundantes y dolorosos en los primeros meses, pero no altera los niveles hormonales."
+        },
+        {
+            "method_name": "DIU hormonal",
+            "summary": "El DIU hormonal libera progestina que espesa el moco cervical y adelgaza el revestimiento del útero. Esto puede hacer que los periodos sean más ligeros o desaparezcan. Otros efectos incluyen sangrado irregular, dolores de cabeza, y cambios de humor."
+        },
+        {
+            "method_name": "Implante anticonceptivo",
+            "summary": "El implante libera una dosis continua de progestina que inhibe la ovulación. Los periodos pueden volverse más irregulares o desaparecer. También puede causar aumento de peso, acné y cambios de humor."
+        },
+        {
+            "method_name": "Anillo vaginal",
+            "summary": "El anillo vaginal libera una combinación de estrógeno y progestina que previene la ovulación. Puede hacer que los periodos sean más ligeros y regulares. Otros efectos incluyen sensibilidad en los senos, náuseas, y cambios de humor."
+        },
+        {
+            "method_name": "Ninguna",
+            "summary": "Sin el uso de anticonceptivos, el ciclo menstrual natural no se ve afectado. Los periodos tienden a ser regulares o irregulares según las hormonas naturales de cada mujer. No hay alteraciones hormonales externas, pero no se ofrece protección anticonceptiva."
+        }
+    ]
+}
