@@ -119,7 +119,7 @@ El sistema debe mostrar un gráficos de barras del número de relaciones sexuale
 
 Diagrama de Dominio:
 
-![Diagrama de dominio](my-vue-app/src/assets/icon/domain.diagram.png)
+![Diagrama de dominio](/src/assets/icon/domain.diagram.png)
 
 Contrato Endpoint:
 
