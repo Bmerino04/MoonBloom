@@ -116,6 +116,11 @@ El sistema debe mostrar un gráfico de líneas de la duración de los días mens
 El sistema debe mostrar un gráfico de líneas de los días ovulatorios registrados hasta el momento.
 El sistema debe mostrar un gráficos de barras del número de relaciones sexuales con protección y sin protección por fase, para cada ciclo menstrual registrado hasta el momento.
 
+
+Diagrama de Dominio:
+
+![Diagrama de dominio](my-vue-app/src/assets/icon/domain.diagram.png)
+
 Contrato Endpoint:
 
 1. Endpoint: /register
