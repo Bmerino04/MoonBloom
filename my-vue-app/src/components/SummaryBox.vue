@@ -54,24 +54,28 @@ const props = defineProps({
 
 <style scoped>
 .Summary {
-    width: 50%;
+    margin-left: 5%;
+    margin-right: 10%;
     border-radius: 8px;
     background-color: var(--color-celeste-claro);
     padding:1%;
-    margin-right: 10%;
-    font: var(--fuente-principal);
+    font-family: var(--fuente-principal);
     color: var(--color-celeste-oscuro)
 }
 .Summary h5{
+  font-size: 16px;
     font-weight: 600;
     margin-top: 4.2%;
+    margin-bottom: 0;
 }
 .Summary h3{
     font-size: var(--tamaño-fuente-texto);
     font-weight: bold;
     text-decoration: underline;
+    text-align: center;
 }
 .Summary ul{
+    font-size: 15px;
     list-style-type: disc; 
     margin-left: 10%;
     margin-right: 0.5%;

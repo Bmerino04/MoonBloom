@@ -11,12 +11,24 @@
     </div>  
 
     <div v-if="currentSlideIndex < 3">
-      <div v-for="(slide, index) in slides" :key="index" v-show="index === currentSlideIndex" class="slide">
+      <div v-for="(slide, index) in slides" :key="index" v-show="index === currentSlideIndex" class="slide-container">
+        <div class="slide">
         <LineChart :chartId="`LineChart${index + 1}`" :labels="slide.labels" :data="slide.data" />
+        </div>
+        <SummaryBox 
+        :type="'phase'"
+        :data="{
+          avgCycleDuration: slide.avgCycleDuration,
+          shortestCycle: slide.shortestCycle,
+          longestCycle: slide.longestCycle,
+          anomalyMessage: slide.anomalyMessage,
+          contraceptiveMessage: slide.contraceptiveMessage
+        }"
+        />
       </div>
     </div>
 
-    <div v-if="currentSlideIndex === 3" class="slide">
+    <div v-if="currentSlideIndex === 3" class="sexualTrendSlide">
       <SexualTrendSlider/>
     </div>
   </div>
@@ -27,6 +39,7 @@ import { ref, onMounted } from 'vue';
 import LineChart from './LineChart.vue';
 import SexualTrendSlider from './SexualTrendSlider.vue';
 import axios from 'axios';
+import SummaryBox from './SummaryBox.vue';
 
 const slides = ref([]);
 const slideTitles = ["Ciclo", "Fase Menstrual", "Día a Ovular", "Tendencia Sexual"];
@@ -41,24 +54,35 @@ const fetchData = async () => {
       {
         labels: ["Ciclo 1", "Ciclo 2", "Ciclo 3", "Ciclo 4"],
         data: user.cycle_data.cycles_registered,
-        summary: `Promedio del ciclo: ${user.cycle_data.avg_cycle_duration} días, Variaciones: ${user.cycle_data.cycle_variation} días, Anomalías: ${user.cycle_data.cycle_anomalies}, Método anticonceptivo: ${user.anticonceptive_method}`
+        avgCycleDuration: user.cycle_data.avg_cycle_duration,
+        shortestCycle: "27 Nov - 24 Dic",  // Aquí podrías tener la lógica para calcular esto dinámicamente
+        longestCycle: "10 Jun - 7 Jul",
+        anomalyMessage: user.cycle_data.cycle_anomalies ? `Riesgo de embarazo en el ciclo ${user.cycle_data.cycle_anomalies}` : "No hay anomalías registradas.",
+        contraceptiveMessage: user.anticonceptive_method ? `Registras el método anticonceptivo: ${user.anticonceptive_method}.` : "No registras un método anticonceptivo que afecte tu ciclo."
       },
       {
         labels: ["Fase 1", "Fase 2", "Fase 3", "Fase 4"],
         data: user.menstrual_phase_data.menstrual_phase_durations,
-        summary: `Promedio de la fase menstrual: ${user.menstrual_phase_data.avg_menstrual_phase_duration} días, Variaciones: ${user.menstrual_phase_data.menstrual_phase_variation} días, Anomalías: ${user.menstrual_phase_data.menstrual_phase_anomalies}`
+        avgCycleDuration: user.menstrual_phase_data.avg_menstrual_phase_duration,
+        shortestCycle: "27 Nov - 24 Dic",
+        longestCycle: "10 Jun - 7 Jul",
+        anomalyMessage: user.menstrual_phase_data.menstrual_phase_anomalies ? `Anomalías en la fase menstrual del ciclo ${user.menstrual_phase_data.menstrual_phase_anomalies}` : "No hay anomalías registradas en las fases menstruales.",
+        contraceptiveMessage: user.anticonceptive_method ? `Registras el método anticonceptivo: ${user.anticonceptive_method}.` : "No registras un método anticonceptivo que afecte tu ciclo."
       },
       {
         labels: ["Ciclo 1", "Ciclo 2", "Ciclo 3", "Ciclo 4"],
         data: user.ovulation_data.day_of_ovulation,
-        summary: `Promedio del día de ovulación: Día ${user.ovulation_data.avg_day_of_ovulation}, Variaciones: ${user.ovulation_data.ovulation_variation} días, Anomalías: ${user.ovulation_data.ovulation_anomalies}`
+        avgCycleDuration: user.ovulation_data.avg_day_of_ovulation,
+        shortestCycle: "27 Nov - 24 Dic",
+        longestCycle: "10 Jun - 7 Jul",
+        anomalyMessage: user.ovulation_data.ovulation_anomalies ? `Anomalías en el ciclo de ovulación ${user.ovulation_data.ovulation_anomalies}` : "No hay anomalías registradas en los días de ovulación.",
+        contraceptiveMessage: user.anticonceptive_method ? `Registras el método anticonceptivo: ${user.anticonceptive_method}.` : "No registras un método anticonceptivo que afecte tu ciclo."
       },
       {
         labels: [],
         data: [],
-        summary: `Tendencia Sexual`
       }
-    ];  
+    ]; 
   } catch (error) {
     console.error('Error fetching data:', error);
   }
@@ -83,12 +107,21 @@ const previousSlide = () => {
   justify-content: center;
   padding-bottom: 0px;
   padding-top: 2.6%;
-  margin-left: 7%;
 }
+.slide-container{
+  display: flex;
+  width: 100%;
+}
+.slide-container SummaryBox{
+  width: 0%;
+  justify-content: center;
+}  
 .slide{
   display: flex;
-  width: 54%;
-  height: auto;
+  width: 55%;
+  height: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
   justify-content: center;
 }
 button{
