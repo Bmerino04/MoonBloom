@@ -24,7 +24,7 @@ import DailyAdvice from '../components/DailyAdvice.vue';
     font-family: var(--fuente-principal);
     display: flex;
     align-items: center;
-    padding: 2% 2% 0;
+    padding: 2% 0 2%;
     gap:2%;
     width: 100%;
 
