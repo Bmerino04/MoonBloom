@@ -4,7 +4,7 @@
     <div v-if="type === 'phase'">
       <h5>Promedio:</h5>
       <ul>
-        <li>Tu ciclo suele durar {{ data.avgCycleDuration }} días.</li>
+        <li>Tu {{ phaseTitle }} suele durar {{ data.avgCycleDuration }} días.</li>
       </ul>
       <h5>Variaciones:</h5>
       <ul>
@@ -48,7 +48,11 @@ const props = defineProps({
   data: {
     type: Object,
     required: true
-  }
+  },
+  phaseTitle: {
+    type: String,
+    required: false
+  }  
 });
 </script>
 
@@ -77,7 +81,7 @@ const props = defineProps({
 .Summary ul{
     font-size: 15px;
     list-style-type: disc; 
-    margin-left: 10%;
+    margin-left: 1%;
     margin-right: 0.5%;
 }
 </style>

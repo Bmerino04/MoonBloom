@@ -17,6 +17,7 @@
         </div>
         <SummaryBox 
         :type="'phase'"
+        :phaseTitle="slideTitles[currentSlideIndex]"
         :data="{
           avgCycleDuration: slide.avgCycleDuration,
           shortestCycle: slide.shortestCycle,
