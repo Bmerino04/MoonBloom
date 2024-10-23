@@ -1,9 +1,9 @@
 <template>
     <nav class="navbar">
-      <a class="Logotipo">
+      <RouterLink :to="'/main'" class="Logotipo">
         <img :src="logoSrc" alt="Logotipo MoonBloom">
         <h1>MOONBLOOM</h1>
-      </a>
+      </RouterLink>
       <div class="Buttons-Navigation">
           <NavbarButton 
           title="Estadísticas" 
@@ -11,6 +11,7 @@
           :activeIcon="activeStatisticsIcon" 
           :currentView="currentView" 
           buttonView="estadisticas" 
+          :route="'/statistics'"
         />
         <NavbarButton 
           title="Información" 
@@ -18,6 +19,7 @@
           :activeIcon="activeInfoIcon" 
           :currentView="currentView" 
           buttonView="info" 
+          :route="'/info'"
         />
         <NavbarButton 
           title="Perfil" 
@@ -25,9 +27,9 @@
           :activeIcon="activeProfileIcon" 
           :currentView="currentView" 
           buttonView="perfil" 
+          :route="'/userInfo'"
         />
       </div>
-      
     </nav>
 </template>
   
@@ -44,6 +46,7 @@
   
   import defaultInfoIcon from '../assets/icon/info-blanco.png';
   import activeInfoIcon from '../assets/icon/info-verde.png';
+import { RouterLink } from 'vue-router';
   
   const props = defineProps({
   currentView: {
@@ -62,17 +65,20 @@ nav{
   display: flex;
   font-family: 'Raleway', sans-serif;
   width: 100%;
-  height: 80px;
+  height: 70px;
   align-items: center;
   justify-content: space-between;  
 }
 .Logotipo{
+    all: unset;
+    cursor: pointer;
     display: flex;
     align-items: center; 
+    margin-left: 1.5%;
     gap:3%;
 }
 .Logotipo img{
-    width: 70px;
+    width: 12%;
     height: auto;
 }
 .Logotipo h1{
@@ -82,7 +88,7 @@ nav{
     letter-spacing: 0.20em;
 }
 .Buttons-Navigation{
-    height: 80px;
+    height: 70px;
     display: flex ;
     gap: 3px;
     justify-content: flex-end;
