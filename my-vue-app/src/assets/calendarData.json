@@ -29,6 +29,39 @@
         "cycle_duration_est": 30,
         "period_duration_est": 4,
         "anticonceptive_method": "Inyecciones anticonceptivas"
+    },
+
+    "informationData":[{
+      "title": "El Ciclo Menstrual",
+      "content":"Entender tu ciclo menstrual es clave para tomar decisiones informadas sobre tu bienestar. Aprende sobre los diferentes métodos anticonceptivos, cómo funcionan, y cuál podría ser el adecuado para ti. Además, infórmate sobre las enfermedades uterinas y del sistema reproductivo, para que puedas detectar síntomas a tiempo y saber cuándo consultar a un profesional."
+    ],
+    
+    },
+    {
+      title: 'Métodos Anticonceptivos',
+      content: [
+        'Elegir el anticonceptivo adecuado es clave para una planificación familiar eficaz...'
+      ],
+      list: [
+        { title: 'Píldoras Anticonceptivas', description: 'Previenen la ovulación y espesan el moco cervical para evitar que los espermatozoides lleguen al óvulo.' },
+        { title: 'DIU (Dispositivo Intrauterino)', description: 'El DIU de cobre bloquea a los espermatozoides, mientras que el DIU hormonal suprime la ovulación.' },
+        { title: 'Implante Subdérmico', description: 'Se inserta en el brazo y libera progestina para prevenir la ovulación.' },
+        { title: 'Anillo Vaginal', description: 'Libera hormonas en la vagina, previniendo la ovulación.' }
+      ],
+
+    },
+    {
+      title: 'Enfermedades Uterinas/Reproductivas',
+      content: [
+        'Conocer las enfermedades uterinas y del sistema reproductivo es fundamental para mantener una buena salud...'
+      ],
+      list: [
+        { title: 'Endometriosis', description: 'Ocurre cuando el tejido que normalmente recubre el interior del útero crece fuera de él.' },
+        { title: 'Fibromas Uterinos', description: 'Son tumores benignos que se desarrollan en el útero.' },
+        { title: 'Síndrome de Ovario Poliquístico (SOP)', description: 'Un desequilibrio hormonal que provoca ciclos menstruales irregulares.' }
+      ],
+   
     }
+  ];
 }
   
