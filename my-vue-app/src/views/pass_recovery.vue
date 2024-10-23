@@ -208,7 +208,7 @@ const goToRegister = () => {
 }
 
 .input {
-    width: 100%;  
+    width: 94%;  
     padding: 0.5rem;
     border: 1px solid #D1D5DB;
     border-radius: 0.375rem;
