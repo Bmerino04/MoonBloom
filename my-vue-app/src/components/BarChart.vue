@@ -102,6 +102,7 @@ watch(() => props.data, (newData) => {
   
   <style scoped>
   .barChart{
+    padding-top: 2%;
     margin:0%;
     background-color: var(--color-rosado-claro);
     border:8px solid var(--color-rosado-claro-barras);

@@ -66,10 +66,8 @@ const previousSlide = () => {
 }
 .sexual-trend-slider {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   padding-bottom: 0px;
-  margin-left: 7%;
   width: 100%;
 }
 button{
@@ -85,7 +83,7 @@ button{
     z-index: 2;
     align-items: center;
     justify-content: center;
-    margin-left: 47%;
+    margin-left: 43%;
     background-color: var(--color-rosado-claro-barras);
     border-bottom-left-radius: 10px;
     border-top-right-radius: 10px;
