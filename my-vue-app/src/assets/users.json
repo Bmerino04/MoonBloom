@@ -3,11 +3,17 @@
         {
             "user_name": "ana_garcia",
             "email": "ana.garcia@example.com",
+            "password": "ana12345",
+            "security_question": "Nombre de tu primera mascota",
+            "security_answer": "Olivia",
             "weight": 60,
             "height": 1.65,
             "imc": 22.04,
+            "start_last_period": "2024-09-12",
+            "end_last_period": "2024-09-17",
+            "cycle_duration_est": 28,
+            "period_duration_est": 5,
             "anticonceptive_method": "Inyecciones anticonceptivas",
-        
             "cycle_data": {
                 "cycles_registered": [28, 29, 26, 32],  
                 "cycle_intervals": [
@@ -80,7 +86,6 @@
                   ]
             }
         },
-        
         {
             "user_name": "maria_fernandez",
             "email": "maria.fernandez@example.com",
@@ -125,9 +130,45 @@
             "cycle_duration_est": 29,
             "period_duration_est": 5,
             "anticonceptive_method": "Ninguna"
+        } 
+    ],
+    "contraceptive_methods": [
+        {
+            "method_name": "Inyecciones anticonceptivas",
+            "summary": "Las inyecciones anticonceptivas liberan hormonas (generalmente progestina) que previenen la ovulación. Pueden causar cambios en el ciclo menstrual, como periodos más ligeros o incluso la ausencia de periodos. Otros efectos incluyen aumento de peso, cambios de humor y reducción en la densidad ósea con uso prolongado."
+        },
+        {
+            "method_name": "DIU de cobre",
+            "summary": "El DIU de cobre no contiene hormonas, funciona liberando pequeñas cantidades de cobre para impedir el paso de los espermatozoides. Puede causar sangrados menstruales más abundantes y dolorosos en los primeros meses, pero no altera los niveles hormonales."
+        },
+        {
+            "method_name": "DIU hormonal",
+            "summary": "El DIU hormonal libera progestina que espesa el moco cervical y adelgaza el revestimiento del útero. Esto puede hacer que los periodos sean más ligeros o desaparezcan. Otros efectos incluyen sangrado irregular, dolores de cabeza, y cambios de humor."
+        },
+        {
+            "method_name": "Implante anticonceptivo",
+            "summary": "El implante libera una dosis continua de progestina que inhibe la ovulación. Los periodos pueden volverse más irregulares o desaparecer. También puede causar aumento de peso, acné y cambios de humor."
+        },
+        {
+            "method_name": "Anillo vaginal",
+            "summary": "El anillo vaginal libera una combinación de estrógeno y progestina que previene la ovulación. Puede hacer que los periodos sean más ligeros y regulares. Otros efectos incluyen sensibilidad en los senos, náuseas, y cambios de humor."
+        },
+        {
+            "method_name": "Ninguna",
+            "summary": "Sin el uso de anticonceptivos, el ciclo menstrual natural no se ve afectado. Los periodos tienden a ser regulares o irregulares según las hormonas naturales de cada mujer. No hay alteraciones hormonales externas, pero no se ofrece protección anticonceptiva."
         }
-    
-    
-    ]
-}      
-    
+    ],
+    "calendarData": {
+        "months": ["Enero","Febrero","Marzo","Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre","Diciembre"],
+        "daysInMonths": [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+        "firstDays": [0, 3, 4, 0, 2, 5, 0, 3, 6, 1, 4, 6],
+        "weekDays": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+        "phases": {
+            "menstrual": [8, 9, 10, 11],
+            "folicular": [12, 13, 14, 15, 16, 17, 18, 19],
+            "fertile": [20, 21, 22, 23, 24, 25],
+            "ovulation": [22, 23],
+            "luteal": [26, 27, 28, 29, 30, 31, 1, 2, 3, 4, 5, 6, 7]
+        }
+    }
+}
