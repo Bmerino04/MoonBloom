@@ -31,36 +31,35 @@
 import { ref, computed, onMounted } from 'vue';
 import CalendarDay from './CalendarDay.vue';
 import CalendarPopup from './CalendarPopup.vue';
-import axios from 'axios';
+import { getCalendarData } from '../Services/calendarServices';
 
 const months = ref([]);
 const daysInMonths = ref([]);
 const firstDays = ref([]);
 const weekDays = ref({});
-const phases = ref({
+const phases = ref({});
 
-});
-
-const currentMonthIndex = ref(6);
-
+const currentMonthIndex = ref(0);
 const isPopupVisible = ref(false);
 const selectedDay = ref(null);
 const selectedMonth = ref('');
 const selectedDayOfWeek = ref('');
-const cyclePhase = ref('');          // Nueva ref para la fase
-const cyclePhaseClass = ref('');     // Nueva ref para la clase de la fase
+const cyclePhase = ref('');         
+const cyclePhaseClass = ref('');     
 
 
 const loadCalendarData = async () => {
   try {
-    const response = await axios.get('http://localhost:3000/calendarData');
-    const data = response.data;
+    const data = await getCalendarData();
 
     months.value = data.months;
     daysInMonths.value = data.daysInMonths;
     firstDays.value = data.firstDays;
     weekDays.value = data.weekDays;
     phases.value = data.phases;
+    currentMonthIndex.value = data.currentMonth;
+    currentMonth.value = data.currentMonth;
+
   } catch (error) {
     console.error("Error al cargar los datos del calendario:", error);
   }
@@ -89,7 +88,7 @@ const days = computed(() => {
     if (phases.value.ovulation.includes(i)) {
       className = 'Ovulation-Day';
     }
-    if (currentMonthIndex.value === 6 && i === 25) {
+    if (i === phases.value.currentDay && currentMonthIndex.value === currentMonthIndex.value) { //ARREGLAR
       className = 'Current-Day';
     }
 
@@ -158,15 +157,14 @@ const openPopup = (day) => {
 
 <style scoped>
 .calendar {
-  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .buttons {
-  width: 18.75rem;
-  height: 4.375rem;
+  width: 18rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -177,7 +175,10 @@ const openPopup = (day) => {
 }
 
 .buttons img {
-  width: 2.8rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  
+
   padding-top: 0.3rem;
 }
 
@@ -195,16 +196,15 @@ const openPopup = (day) => {
 .cont {
   border: 0.5rem solid #F88FA3;
   border-radius: 0.5rem;
-  gap: 0.625rem;
+
 }
 
 .calendar-weeks {
   background-color: #FFCCCB;
   font-size: 24px;
-
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  padding: 0.3rem 1.25rem 0;
+  padding: 0.025rem 1.25rem 0;
 }
 
 .calendar-weeks p {
@@ -214,10 +214,9 @@ const openPopup = (day) => {
 .days {
   background-color: #FFCCCB;
   font-size: 24px;
-
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 1.25rem 0.44rem;
-  padding: 0.625rem 1.25rem 0;
+  gap: 0.75rem 0.40rem;
+  padding: 0 1.25rem 0.625rem;
 }
 </style>
