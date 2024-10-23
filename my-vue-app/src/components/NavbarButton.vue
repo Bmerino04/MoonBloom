@@ -1,17 +1,19 @@
 <template>
-    <div 
+    <RouterLink 
       class="navbar-button" 
+      :to="route"
       :class="{ 'active-button': isActive }"
       @mouseover="isHovered = true"
       @mouseleave="isHovered = false"
     >
       <img :src="isActive ? activeIcon : defaultIcon" :alt="title" />
       <span :class="{ 'active-text': isActive }" v-if="isHovered || isActive">{{ title }}</span>
-    </div>
+    </RouterLink>
 </template>
   
 <script setup>
   import { ref, computed } from 'vue';
+  import { RouterLink } from 'vue-router';
   
   // Definir las props que recibirá el componente
   const props = defineProps({
@@ -34,6 +36,10 @@
     buttonView: {
       type: String,
       required: true
+    },
+    route:{
+      type:String,
+      required: true
     }
   });
   
@@ -42,10 +48,9 @@
 </script>
   
 <style scoped>
-div{
-  color: #fff;
-}
+
   .navbar-button {
+    all: unset;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,6 +59,7 @@ div{
     height: 80px;
     transition: width 0.3s ease;
     overflow: hidden;
+    color: var(--color-blanco);
   }
   
   .navbar-button img {
@@ -77,6 +83,7 @@ div{
   .active-button {
     background-color: #348188;
     width: 200px;
+    height: 100%;
   }
   .active-text {
   color: #2C5D5B; /* Cambia esto al color verde que usas para los íconos activos */
