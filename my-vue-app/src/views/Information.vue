@@ -21,6 +21,7 @@ import InformationPanel from '../components/InformationPanel.vue';
     gap: 5rem;
     width: 100%;
     height: auto;
+    
 }
 
 </style>

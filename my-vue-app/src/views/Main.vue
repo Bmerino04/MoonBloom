@@ -24,21 +24,27 @@ import DailyAdvice from '../components/DailyAdvice.vue';
     font-family: var(--fuente-principal);
     display: flex;
     align-items: center;
-    padding: 2% 0 2%;
-    gap:2%;
+    padding: 1.5% 0 1.5%;
     width: 100%;
 
 }
 .left-panel{
     width: 40%;
-
+    height: 32rem;
     display: flex;
     flex-direction: column;
     align-items: center; 
+    padding-left: 3% ;
     justify-content: space-between;
+    
   
 }
 
+.right-panel{
+    width: 60%;
+    height: 100%;
+    align-content: center;
+}
 .right-panel{
     width: 60%;
     height: 100%;
