@@ -12,6 +12,7 @@ const props = defineProps({
     day: Object, currentMonthIndex: Number,
 });
 
+
 const emit = defineEmits(['click']);
 
 const handleClick = () => {
@@ -26,8 +27,8 @@ const handleClick = () => {
 .day {
     text-align: center;
     align-content: center;
-    width: 5rem;
-    height: 3.438rem;
+    width: 5.625rem;
+    height: 3.75rem;
     border-radius: 5rem;
     opacity: 5;
     cursor: pointer;
@@ -46,6 +47,8 @@ const handleClick = () => {
     background-color: #ff2d5381;
     border: 0.25rem dotted #FF2D55;
     transition: background-color 0.3s ease;
+    width: 5.171rem;
+    height: 3.296rem;
 }
 
 .Menstrual-Day:hover {
@@ -54,13 +57,17 @@ const handleClick = () => {
 
 .Ovulation-Day {
     background-color:#a6c4c2b1;
-    border: 0.25rem solid #2c5d5bc1;
+    border: 0.25rem dotted #2c5d5bc1;
+    width: 5.171rem;
+    height: 3.296rem;
 }
 
 .Fertile-Day {
     background-color: #a6c4c2b1;
     border:0.25rem dotted #A6C4C2;
     transition:  background-color 0.3s ease; 
+    width: 5.171rem;
+    height: 3.296rem;
 }
 
 .Fertile-Day:hover{
@@ -86,5 +93,7 @@ const handleClick = () => {
 .Current-Day {
     background-color: #A6C4C2;
     border: 0.25rem solid #2c5d5bc1;
+    width: 5.171rem;
+    height: 3.296rem;
 }
 </style>

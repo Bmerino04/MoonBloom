@@ -2,7 +2,7 @@
     <div v-if="visible" class="popup-overlay" @click="closePopup">
         <div class="popup-content" @click.stop>
             <div class="Head-Popup">
-                <h2 class="Popup-Date">Detalles del día {{ day }}</h2>
+                <h2 class="Popup-Date">{{ weekDay }} {{ day }} de {{ month }}, 2024</h2>
                 <h3 class="Cycle-Phase">{{ cyclePhase }}</h3>
             </div>
 
@@ -34,7 +34,9 @@
 import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
+    weekDay : String,
     day: Number,
+    month: String,
     visible: Boolean
 });
 
