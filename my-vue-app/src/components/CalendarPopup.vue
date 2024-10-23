@@ -1,5 +1,5 @@
 <template>
-    <div v-if="visible" class="popup-overlay" @click="closePopup">
+    <div v-if="visible" class="popup-overlay" >
         <div class="popup-content" @click.stop>
             <div class="Head-Popup">
                 <h2 class="Popup-Date">{{ weekDay }} {{ day }} de {{ month }}, 2024</h2>
@@ -21,9 +21,8 @@
                 </label>
             </div>
             
-           
             <div class="Action-Buttons">
-                <button class="Save-Button">Guardar</button>
+                <button class="Save-Button"@click="closePopup" >Guardar</button>
                 <button class="Exit-Button" @click="closePopup">Salir</button>
             </div>
         </div>
@@ -39,7 +38,7 @@ const props = defineProps({
     month: String,
     cyclePhase: String,
     visible: Boolean,
-    cyclePhase: String, // Nueva prop para la fase
+    cyclePhase: String,
     cyclePhaseClass: String
 });
 
@@ -122,7 +121,6 @@ const closePopup = () => {
 }
 .Exit-Button:hover{
     background-color: var(--color-rosado-claro-barras);
-
 }
 
 .Ovulatory-Phase{          

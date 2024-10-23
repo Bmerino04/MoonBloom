@@ -26,8 +26,8 @@ import DailyAdvice from '../components/DailyAdvice.vue';
     align-items: center;
     padding: 1.5% 0 1.5%;
     width: 100%;
-
 }
+
 .left-panel{
     width: 40%;
     height: 32rem;
@@ -36,8 +36,6 @@ import DailyAdvice from '../components/DailyAdvice.vue';
     align-items: center; 
     padding-left: 3% ;
     justify-content: space-between;
-    
-  
 }
 
 .right-panel{
@@ -45,6 +43,7 @@ import DailyAdvice from '../components/DailyAdvice.vue';
     height: 100%;
     align-content: center;
 }
+
 .right-panel{
     width: 60%;
     height: 100%;

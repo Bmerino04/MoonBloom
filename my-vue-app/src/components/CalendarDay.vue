@@ -12,7 +12,6 @@ const props = defineProps({
     day: Object, currentMonthIndex: Number,
 });
 
-
 const emit = defineEmits(['click']);
 
 const handleClick = () => {

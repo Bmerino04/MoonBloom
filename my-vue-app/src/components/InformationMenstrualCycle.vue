@@ -14,11 +14,9 @@
     </article>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
-
 .Text-Panel h2 {
     font-size: var(--tamaño-fuente-grande);
     text-decoration: underline;
