@@ -88,7 +88,7 @@
                     <Form v-if="currentForm === 4" @submit.prevent="continueRegister">
                         <div class="form-group">
                             <label for="intern-method" class="label">Método anticonceptivo</label>
-                            <SelectMethod v-model="contraceptiveMethod"></SelectMethod>
+                            <SelectMethod v-model:selectedMethod="contraceptiveMethod"></SelectMethod>
                         </div>
                         <div class="form-group button-group">
                             <Button type="pink">Continuar</Button>
@@ -150,9 +150,11 @@ const continueRegister = () => {
         }
     } else if (currentForm.value === 4) {
         if (!contraceptiveMethod.value) {
-            errorMessage.value = 'De no tener un metodo anticonceptivo, seleccione Ninguno.';
+            errorMessage.value = 'De no tener un método anticonceptivo, seleccione Ninguno.';
             return;
         }
+        console.log('Registro completado');
+        router.push('/login');  // Redirigir al login
     }
 
     
