@@ -7,9 +7,10 @@
             <ul class="Contraceptive-List">
                 <li><strong>Píldoras Anticonceptivas:</strong> Previenen la ovulación y espesan el moco cervical para
                     evitar que los espermatozoides lleguen al óvulo.</li>
-                <li><strong>DIU (Dispositivo Intrauterino):</strong> El DIU de cobre bloquea a los espermatozoides,
+                    <img src="../assets/icon/contraceptive.png">
+                    <li><strong>DIU (Dispositivo Intrauterino):</strong> El DIU de cobre bloquea a los espermatozoides,
                     mientras que el DIU hormonal suprime la ovulación.</li>
-                <img src="../assets/icon/contraceptive.png">
+                
                 <li><strong>Implante Subdérmico:</strong> Se inserta en el brazo y libera progestina para prevenir la
                     ovulación y espesar el moco cervical.</li>
                 <li><strong>Anillo Vaginal:</strong> Libera hormonas en la vagina, previniendo la ovulación y
@@ -19,25 +20,13 @@
     </article>
 </template>
 <style scoped>
-.Text-Panel{
-    background-color:var(--color-celeste-oscuro-op);
-    width: 60%; 
-    max-height: 95%;
-    height: auto;
-    border-radius: 0.5rem;
-    padding: 2% 4% 2%;
-    color: var(--color-blanco);
-    word-wrap: break-word; 
-    overflow: hidden;      
-    text-overflow: ellipsis;
-}
+
 .Text-Panel h2{
     font-size: var(--tamaño-fuente-grande);
     text-decoration: underline;
 }  
 
 .Text-Container{  
-    font-size: var(--tamaño-fuente-texto);
     text-align: justify; 
     margin-top: 2%;   
     align-items: flex-end;
