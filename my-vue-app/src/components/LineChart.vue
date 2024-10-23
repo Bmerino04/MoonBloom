@@ -27,21 +27,63 @@
   
   const createLineChart = () => {
     const ctx = document.getElementById(props.chartId).getContext('2d');
-    chartInstance = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: props.labels,
-        datasets: [{
-          label: 'Datos de Línea',
-          data: props.data,
-          borderColor: '#48A09F',
-          fill: false
-        }]
+    chartInstance = new Chart(ctx,{
+    type: 'line',
+    data: {
+      labels: props.labels,
+      datasets: [{
+        data: props.data,
+        borderColor: '#48A09F',
+        backgroundColor: 'rgba(72, 160, 159, 0.2)', 
+        fill: false,
+        tension: 0,  
+        pointBackgroundColor: '#FFFFFF', 
+        pointBorderColor: '#48A09F',  
+        pointBorderWidth: 3,  
+        pointRadius: 8 
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false  
+        },
+        tooltip: {
+          callbacks: {
+            title: function(context) {
+              return context[0].label;
+            },
+            label: function(context) {
+              const value = context.raw;
+              return `Días: ${value}`;
+            }
+          }
+        }
       },
-      options: {
-        responsive: true
+      scales: {
+        x: {
+          type: 'category',
+          labels: props.labels, 
+          title: {
+            display: false,
+            text: 'Periodos'
+          },
+          ticks: {
+            display: false  
+          }
+        },
+        y: {
+          min: 0,
+          max: 35,  
+          title: {
+            display: false,
+            text: 'Días'
+          }
+        }
       }
-    });
+    }
+  });
   };
   
   onMounted(() => {
