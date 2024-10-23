@@ -1,7 +1,7 @@
 {
     "calendarData": {
         "months": ["Enero","Febrero","Marzo","Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre","Diciembre"],
-        "currentMonth":6,
+        "actualMonth":6,
         "daysInMonths": [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
         "firstDays": [0, 3, 4, 0, 2, 5, 0, 3, 6, 1, 4, 6],
         "weekDays": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],

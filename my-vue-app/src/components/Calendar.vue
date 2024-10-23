@@ -40,6 +40,7 @@ const weekDays = ref({});
 const phases = ref({});
 
 const currentMonthIndex = ref(0);
+const actualMonth=ref(0);
 const isPopupVisible = ref(false);
 const selectedDay = ref(null);
 const selectedMonth = ref('');
@@ -57,8 +58,8 @@ const loadCalendarData = async () => {
     firstDays.value = data.firstDays;
     weekDays.value = data.weekDays;
     phases.value = data.phases;
-    currentMonthIndex.value = data.currentMonth;
-    currentMonth.value = data.currentMonth;
+    currentMonthIndex.value = data.actualMonth;
+    actualMonth.value = data.actualMonth;
 
   } catch (error) {
     console.error("Error al cargar los datos del calendario:", error);
@@ -88,7 +89,7 @@ const days = computed(() => {
     if (phases.value.ovulation.includes(i)) {
       className = 'Ovulation-Day';
     }
-    if (i === phases.value.currentDay && currentMonthIndex.value === currentMonthIndex.value) { //ARREGLAR
+    if (i === phases.value.currentDay && currentMonthIndex.value === actualMonth.value) { 
       className = 'Current-Day';
     }
 
