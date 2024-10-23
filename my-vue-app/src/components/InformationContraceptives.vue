@@ -1,5 +1,5 @@
 <template>
-    <article class="Text-Panel shadow-md">
+    <article class="Text-Panel">
         <h2>Métodos Anticonceptivos</h2>
         <div class="Text-Container">
             <p> Elegir el anticonceptivo adecuado es clave para una planificación familiar eficaz. Aquí te presentamos

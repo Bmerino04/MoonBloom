@@ -1,6 +1,6 @@
 <template>
 
-    <article class="Text-Panel shadow-md">
+    <article class="Text-Panel">
         <h2>Enfermedades Uterinas/Reproductivas</h2>
         <div class="Text-Container">
             <p>

@@ -1,5 +1,6 @@
 <template>
-  <aside class="Information-Panel">  
+  <div class="Main-Container">
+    <aside class="Information-Panel">  
     <h2 @click="showComponent('informationMain')" class="clickable-title">¡Aprende sobre ti!</h2>
     <ul class="Information-List">
       <li @click="showComponent('menstrualCycle')" class="no-underline hover:underline">
@@ -14,25 +15,24 @@
     </ul>   
   </aside>
 
-  <!-- Mostrar componentes condicionalmente -->
-  <section>
+  <section class="Container">
     <InformationMain v-if="currentComponent === 'informationMain'" />
     <MenstrualCycle v-if="currentComponent === 'menstrualCycle'" />
     <Contraceptives v-if="currentComponent === 'contraceptives'" />
     <ReproductiveDiseases v-if="currentComponent === 'reproductiveDiseases'" />
   </section>
+  </div>
+
 </template>
 
 <script setup>
 import { ref } from 'vue';
 
-// Importar componentes
 import InformationMain from './InformationMain.vue';
 import MenstrualCycle from './InformationMenstrualCycle.vue';
 import Contraceptives from './InformationContraceptives.vue';
 import ReproductiveDiseases from './InformationReproductiveDiseases.vue';
 
-// Controlar qué componente mostrar
 const currentComponent = ref('informationMain');
 
 function showComponent(componentName) {
@@ -41,6 +41,7 @@ function showComponent(componentName) {
 </script>
 
 <style scoped>
+
 .Information-Panel {
   background-color: var(--color-rosado-claro);
   border: 0.5rem solid var(--color-rosado-claro-barras);
@@ -54,12 +55,13 @@ function showComponent(componentName) {
 
 }
 
-.Information-Panel a {
+.Information-Panel h2 {
   font-size: var(--tamaño-fuente-grande);
   font-weight: 800;
   color: var(--color-celeste-medio-oscuro);
   text-align: center;
   margin: 5%;
+  cursor: pointer;
 
 }
 
@@ -77,7 +79,10 @@ function showComponent(componentName) {
   padding: 12% 0;
   border-bottom: 0.2rem solid var(--color-rosado-claro-barras);
 }
-
+.Information-List li:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
 .Information-List li:last-child {
   border-bottom: none;
 }
@@ -93,5 +98,17 @@ li a {
 
 li a:hover {
   text-decoration: underline;
+}
+.Container {
+  background-color: var(--color-celeste-oscuro-op);
+  width: 700px;
+  height: auto;
+  border-radius: 0.5rem;
+  padding: 2% 4% 2%;
+  color: var(--color-blanco);
+  word-wrap: break-word;
+  overflow: auto;
+  position: relative;
+  text-overflow: ellipsis;
 }
 </style>

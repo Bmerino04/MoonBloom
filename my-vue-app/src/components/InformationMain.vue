@@ -1,5 +1,5 @@
 <template>
-  <article class="Text-Panel shadow-md">
+  <article class="Text-Panel">
     <h2>¡Descubre más sobre tu salud menstrual y reproductiva!</h2>
     <div class="Text-Container">
       <p>Entender tu ciclo menstrual es clave para tomar decisiones informadas sobre tu bienestar. Aprende sobre los
@@ -21,17 +21,7 @@
 </script>
 
 <style scoped>
-.Text-Panel {
-  background-color: var(--color-celeste-oscuro-op);
-  width: 700px;
-  height: auto;
-  border-radius: 0.5rem;
-  padding: 2% 4% 2%;
-  color: var(--color-blanco);
-  word-wrap: break-word;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+
 
 .Text-Panel h2 {
   font-size: var(--tamaño-fuente-grande);

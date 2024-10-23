@@ -1,6 +1,5 @@
 <template>
     <article class="Text-Panel">
-
         <div class="Text-Container">
             <h2>El Ciclo Menstrual</h2>
             <img src="../assets/icon/menstrual.png">
