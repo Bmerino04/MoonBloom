@@ -6,6 +6,7 @@ import UserInfo from './views/user_info.vue'
 import PassRecovery from './views/pass_recovery.vue'
 import Statistics from './views/Statistics.vue'
 import Information from './views/Information.vue'
+import Main from './views/Main.vue'
 
 const routes = [
   { path: '/', redirect: '/login' },
@@ -14,7 +15,9 @@ const routes = [
   { path: '/userInfo', component: UserInfo },
   { path: '/passRecovery', component: PassRecovery },
   { path: '/statistics', component: Statistics },
-  { path: '/information', component: Information}
+  { path: '/information', component: Information},
+  { path: '/main', component: Main}
+
 ];
 
 
