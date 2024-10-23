@@ -6,7 +6,7 @@
       <UserProfilePanel v-if="userData" :userData="userData" />
   
       <div class="Text-panel-container">
-        <TextPanel 
+        <TextPanel class="textPanel1"
           title="Anticonceptivos Internos"
           content="Los métodos anticonceptivos internos pueden afectar el ciclo menstrual de diferentes maneras."
         >
@@ -27,8 +27,8 @@
           </TextPanel>
   
           <TextPanel title="Actualmente estás usando:">
-            <p>Estás usando: {{ userData.anticonceptive_method }}. Este método suele hacer que las menstruaciones sean más ligeras y menos dolorosas.</p>
-            <p class="note">Nota: El método anticonceptivo se tomará en cuenta para futuras predicciones.</p>
+            <p>Estás usando: {{ userData.anticonceptive_method }}. {{ selectedMethodSummary }}</p>
+            <p class="Note">Nota: El método anticonceptivo se tomará en cuenta para futuras predicciones.</p>
           </TextPanel>
         </div>
       </div>
@@ -49,6 +49,8 @@ import Modal from '../components/Modal.vue';
 const isModalOpen = ref(false);
 const selectedMethod = ref(null);
 const userData = ref({});
+const contraceptiveMethods = ref([]);
+const selectedMethodSummary = ref('');
 
 function openModal() {
   isModalOpen.value = true;
@@ -56,6 +58,13 @@ function openModal() {
 
 function closeModal() {
   isModalOpen.value = false;
+}
+
+function getMethodSummary(methodName) {
+  const method = contraceptiveMethods.value.find(
+    method => method.method_name === methodName
+  );
+  return method ? method.summary : 'No se encontró información sobre este método.';
 }
 
 onMounted(async () => {
@@ -78,6 +87,16 @@ onMounted(async () => {
         anticonceptive_method: user.anticonceptive_method,
       };
     }
+
+    // Carga de métodos anticonceptivos
+    const contraceptiveResponse = await axios.get('http://localhost:3000/contraceptive_methods');
+    contraceptiveMethods.value = contraceptiveResponse.data;
+    
+    // Obtiene el resumen del método anticonceptivo del usuario
+    if (user) {
+      selectedMethodSummary.value = getMethodSummary(user.anticonceptive_method);
+    }
+
   } catch (error) {
     console.error('Error al cargar los datos:', error);
   }
@@ -96,13 +115,13 @@ function calculateBMI(weight, height) {
 }
 
 .Text-panel-container {
-  padding-left: 10%;
+  padding-left: 5%;
   flex: 1;
 }
 
 .text-panel-sub-container {
   display: flex;
-  gap: 16px;
+  gap: 2%;
   width: 100%;
 }
 
@@ -111,9 +130,7 @@ function calculateBMI(weight, height) {
   min-width: 0;
 }
 
-
-body{
-    
+.body{
     font-family: var(--fuente-principal);
     background-color: var(--color-celeste-fondo) ;
 }
@@ -125,7 +142,7 @@ body{
     flex-wrap: wrap;
     padding: 5% 5%;
     width: 100%;
-    max-width: 1200px;
+    max-width: 85%;
     font-family: var(--fuente-principal);
 }
 
@@ -134,7 +151,7 @@ body{
     border:8px solid var(--color-rosado-claro-barras);
     border-radius: 8px;
     height: 60%;
-    width: 25%;
+    width: 20%;
     padding: 20px;
 }
 
@@ -143,14 +160,15 @@ body{
     flex-direction: column;
     gap: 20px;
     width: 60%;
+    
 }
 
 
 .method-btn {
     background-color: var(--color-celeste-oscuro);
     border: 8px solid var(--color-celeste-oscuro);
-    width: 200px;
-    height: 100px;
+    width: 30%;
+    height: 30%;
     border-radius: 8px;
     color: white;
     text-decoration: none;
@@ -179,8 +197,8 @@ body{
 }
 .text-panel-sub-container {
     display: flex;
-    gap: 20px;
-    width: 100%;
+    gap: 5%;
+    width: 105%;
 }
 
 .text-panel-sub-container .Panel-Texto {
