@@ -157,7 +157,7 @@ function logout() {
 
 .IMC-pointer {
   position: absolute;
-  top: 0;
+  top: 100%;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
