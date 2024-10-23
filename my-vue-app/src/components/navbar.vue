@@ -27,7 +27,6 @@
           buttonView="perfil" 
         />
       </div>
-      
     </nav>
 </template>
   
@@ -62,17 +61,18 @@ nav{
   display: flex;
   font-family: 'Raleway', sans-serif;
   width: 100%;
-  height: 80px;
+  height: 70px;
   align-items: center;
   justify-content: space-between;  
 }
 .Logotipo{
     display: flex;
     align-items: center; 
+    margin-left: 1.5%;
     gap:3%;
 }
 .Logotipo img{
-    width: 70px;
+    width: 12%;
     height: auto;
 }
 .Logotipo h1{
@@ -82,7 +82,7 @@ nav{
     letter-spacing: 0.20em;
 }
 .Buttons-Navigation{
-    height: 80px;
+    height: 70px;
     display: flex ;
     gap: 3px;
     justify-content: flex-end;

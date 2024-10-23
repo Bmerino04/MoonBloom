@@ -77,6 +77,7 @@ div{
   .active-button {
     background-color: #348188;
     width: 200px;
+    height: 100%;
   }
   .active-text {
   color: #2C5D5B; /* Cambia esto al color verde que usas para los íconos activos */
