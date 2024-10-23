@@ -1,62 +1,133 @@
-[
-    {
-        "user_name": "ana_garcia",
-        "email": "ana.garcia@example.com",
-        "password": "ana12345",
-        "security_question": "Nombre de tu primera mascota",
-        "security_answer": "Olivia",
-        "weight": 60,
-        "height": 1.65,
-        "imc": 22.04,
-        "start_last_period": "2024-09-12",
-        "end_last_period": "2024-09-17",
-        "cycle_duration_est": 28,
-        "period_duration_est": 5,
-        "anticonceptive_method": "Inyecciones anticonceptivas"
-    },
-    {
-        "user_name": "maria_fernandez",
-        "email": "maria.fernandez@example.com",
-        "password": "maria2024!",
-        "security_question": "Ciudad donde naciste",
-        "security_answer": "Santiago",
-        "weight": 68,
-        "height": 1.72,
-        "imc": 22.98,
-        "start_last_period": "2024-10-05",
-        "end_last_period": "2024-10-10",
-        "cycle_duration_est": 30,
-        "period_duration_est": 6,
-        "anticonceptive_method": "DIU de cobre"
-    },
-    {
-        "user_name": "sofia_lopez",
-        "email": "sofia.lopez@example.com",
-        "password": "sofia789",
-        "security_question": "Nombre de tu mejor amigo de la infancia",
-        "security_answer": "Ana Garcia",
-        "weight": 55,
-        "height": 1.60,
-        "imc": 21.48,
-        "start_last_period": "2024-09-20",
-        "end_last_period": "2024-09-24",
-        "cycle_duration_est": 27,
-        "period_duration_est": 4,
-        "anticonceptive_method": "Implante anticonceptivo"
-    },
-    {
-        "user_name": "laura_rodriguez",
-        "email": "laura.rodriguez@example.com",
-        "password": "laura54321",
-        "security_question": "Comida favorita",
-        "security_answer": "Handroll de salmon queso palta",
-        "weight": 72,
-        "height": 1.68,
-        "imc": 25.51,
-        "start_last_period": "2024-09-15",
-        "end_last_period": "2024-09-19",
-        "cycle_duration_est": 29,
-        "period_duration_est": 5,
-        "anticonceptive_method": "Ninguna"
-    }
-]
+{
+    "users": [
+        {
+            "user_name": "ana_garcia",
+            "email": "ana.garcia@example.com",
+            "weight": 60,
+            "height": 1.65,
+            "imc": 22.04,
+            "anticonceptive_method": "Inyecciones anticonceptivas",
+        
+            "cycle_data": {
+                "cycles_registered": [28, 29, 26, 32],  
+                "cycle_intervals": [
+                    "01 Ene - 28 Ene", 
+                    "29 Ene - 26 Feb", 
+                    "27 Feb - 24 Mar", 
+                    "25 Mar - 26 Abr"
+                  ],
+                "avg_cycle_duration": 28.5, 
+                "cycle_variation": 3,  
+                "cycle_anomalies": "No hay anomalías registradas" 
+            },
+        
+            "menstrual_phase_data": {
+                "menstrual_phase_durations": [5, 4, 7, 5],  
+                "avg_menstrual_phase_duration": 5,  
+                "menstrual_phase_variation": 2,  
+                "menstrual_phase_anomalies": "No hay anomalías registradas"  
+            },
+        
+            "ovulation_data": {
+                "day_of_ovulation": [12, 13, 14, 12],  
+                "avg_day_of_ovulation": 12.75,  
+                "ovulation_variation": 2,  
+                "ovulation_anomalies": "No hay anomalías registradas"  
+            },
+        
+            "sexual_activity_data": {
+                "cycles_registered": [
+                    {
+                      "cycle_dates": "10 Junio - 7 Julio",
+                      "protected_sex": {
+                        "menstrual": 1,
+                        "folicular": 2,
+                        "ovulatoria": 4,
+                        "lutea": 2
+                      },
+                      "unprotected_sex": {
+                        "menstrual": 2,
+                        "folicular": 1,
+                        "ovulatoria": 0,
+                        "lutea": 1
+                      },
+                      "total_activity": 10,
+                      "most_active_phase": "folicular",
+                      "protected_sex_total": 8,
+                      "unprotected_sex_total": 2,
+                      "trendMessage": "R.S protegidas es lo más frecuente."
+                    },
+                    {
+                      "cycle_dates": "8 Julio - 4 Agosto",
+                      "protected_sex": {
+                        "menstrual": 3,
+                        "folicular": 1,
+                        "ovulatoria": 2,
+                        "lutea": 3
+                      },
+                      "unprotected_sex": {
+                        "menstrual": 0,
+                        "folicular": 2,
+                        "ovulatoria": 1,
+                        "lutea": 1
+                      },
+                      "total_activity": 13,
+                      "most_active_phase": "lutea",
+                      "protected_sex_total": 9,
+                      "unprotected_sex_total": 4,
+                      "trendMessage": "R.S protegidas es lo más frecuente."
+                    }
+                  ]
+            }
+        },
+        
+        {
+            "user_name": "maria_fernandez",
+            "email": "maria.fernandez@example.com",
+            "password": "maria2024!",
+            "security_question": "Ciudad donde naciste",
+            "security_answer": "Santiago",
+            "weight": 68,
+            "height": 1.72,
+            "imc": 22.98,
+            "start_last_period": "2024-10-05",
+            "end_last_period": "2024-10-10",
+            "cycle_duration_est": 30,
+            "period_duration_est": 6,
+            "anticonceptive_method": "DIU de cobre"
+        },
+        {
+            "user_name": "sofia_lopez",
+            "email": "sofia.lopez@example.com",
+            "password": "sofia789",
+            "security_question": "Nombre de tu mejor amigo de la infancia",
+            "security_answer": "Ana Garcia",
+            "weight": 55,
+            "height": 1.60,
+            "imc": 21.48,
+            "start_last_period": "2024-09-20",
+            "end_last_period": "2024-09-24",
+            "cycle_duration_est": 27,
+            "period_duration_est": 4,
+            "anticonceptive_method": "Implante anticonceptivo"
+        },
+        {
+            "user_name": "laura_rodriguez",
+            "email": "laura.rodriguez@example.com",
+            "password": "laura54321",
+            "security_question": "Comida favorita",
+            "security_answer": "Handroll de salmon queso palta",
+            "weight": 72,
+            "height": 1.68,
+            "imc": 25.51,
+            "start_last_period": "2024-09-15",
+            "end_last_period": "2024-09-19",
+            "cycle_duration_est": 29,
+            "period_duration_est": 5,
+            "anticonceptive_method": "Ninguna"
+        }
+    
+    
+    ]
+}      
+    
