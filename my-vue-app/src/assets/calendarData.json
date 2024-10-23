@@ -6,8 +6,12 @@
         "weekDays": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
         "phases": {
             "menstrual": [8, 9, 10, 11],
+            "folicular":[12,13,14,15,16,17,18,19],
             "fertile": [20, 21, 22, 23, 24, 25],
-            "ovulation": [22, 23]}
+            "ovulation": [22, 23],
+            "luteal":[26,27,28,29,30,31,1,2,3,4,5,6,7]
+            
+        }
 
     },
     

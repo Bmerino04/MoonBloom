@@ -21,7 +21,8 @@
           @click="openPopup" />
       </div>
     </div>
-    <CalendarPopup :day="selectedDay" :month="selectedMonth" :weekDay="selectedDayOfWeek" :visible="isPopupVisible"
+    <CalendarPopup :day="selectedDay" :month="selectedMonth" :weekDay="selectedDayOfWeek" :visible="isPopupVisible"     :cyclePhase="cyclePhase" 
+    :cyclePhaseClass="cyclePhaseClass" 
       @close="isPopupVisible = false" />
   </div>
 </template>
@@ -36,18 +37,19 @@ const months = ref([]);
 const daysInMonths = ref([]);
 const firstDays = ref([]);
 const weekDays = ref({});
-const phases = ref({ 
-  menstrual: [],
-  fertile: [],
-  ovulation: []
+const phases = ref({
+
 });
 
 const currentMonthIndex = ref(6);
 
 const isPopupVisible = ref(false);
-const selectedDay = ref(null); 
-const selectedMonth = ref(''); 
+const selectedDay = ref(null);
+const selectedMonth = ref('');
 const selectedDayOfWeek = ref('');
+const cyclePhase = ref('');          // Nueva ref para la fase
+const cyclePhaseClass = ref('');     // Nueva ref para la clase de la fase
+
 
 const loadCalendarData = async () => {
   try {
@@ -58,7 +60,7 @@ const loadCalendarData = async () => {
     daysInMonths.value = data.daysInMonths;
     firstDays.value = data.firstDays;
     weekDays.value = data.weekDays;
-    phases.value = data.phases; 
+    phases.value = data.phases;
   } catch (error) {
     console.error("Error al cargar los datos del calendario:", error);
   }
@@ -94,7 +96,7 @@ const days = computed(() => {
     daysArray.push({ day: i, className });
   }
 
-  // Días del mes siguiente
+
   const totalDays = firstDays.value[currentMonthIndex.value] + daysInMonths.value[currentMonthIndex.value];
   const remainingCells = totalDays % 7 === 0 ? 0 : 7 - (totalDays % 7);
 
@@ -121,7 +123,34 @@ const openPopup = (day) => {
   selectedDay.value = day;
   selectedMonth.value = months.value[currentMonthIndex.value];
 
+  let phaseClass = 'Normal-Phase'; 
+  let phaseTitle = 'Fase Normal'; 
+
+  if (phases.value.menstrual.includes(day)) {
+    phaseClass = 'Menstrual-Phase';
+    phaseTitle = 'Fase Menstrual';
+  } else if (phases.value.fertile.includes(day)) {
+    phaseClass = 'Ovulatory-Phase';
+    phaseTitle = 'Fase Ovulatoria ';
+  } else if (phases.value.ovulation.includes(day)) {
+    phaseClass = 'Ovulatory-Phase';
+    phaseTitle = 'Fase Ovulatoria';
+  } else if (phases.value.folicular.includes(day)) {
+    phaseClass = 'Folicular-Phase';
+    phaseTitle = 'Fase Folicular';
+  } else {
+    phaseClass = 'Luteal-Phase';
+    phaseTitle = 'Fase Lútea';
+  }
+
+
+  cyclePhase.value = phaseTitle;
+  cyclePhaseClass.value = phaseClass; 
+
+
   isPopupVisible.value = true;
+
+
 };
 
 </script>

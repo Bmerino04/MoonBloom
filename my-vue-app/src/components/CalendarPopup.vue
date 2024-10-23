@@ -3,7 +3,7 @@
         <div class="popup-content" @click.stop>
             <div class="Head-Popup">
                 <h2 class="Popup-Date">{{ weekDay }} {{ day }} de {{ month }}, 2024</h2>
-                <h3 class="Cycle-Phase">{{ cyclePhase }}</h3>
+                <h3 :class = "cyclePhaseClass" class="Cycle-Phase">{{ cyclePhase }}</h3>
             </div>
 
             <div class="Checkboxes">
@@ -37,7 +37,10 @@ const props = defineProps({
     weekDay : String,
     day: Number,
     month: String,
-    visible: Boolean
+    cyclePhase: String,
+    visible: Boolean,
+    cyclePhase: String, // Nueva prop para la fase
+    cyclePhaseClass: String
 });
 
 const emit = defineEmits(['close']);
@@ -82,11 +85,11 @@ const closePopup = () => {
 .Head-Popup h3{
     font-size: 2rem;         
     font-weight: bold;          
-    width: 100%; 
+    width: 25rem; 
     padding:1.5rem 0 1.5rem;    
 }
 .Checkboxes{
-    padding: 1.5rem 2rem 1.5rem;       
+    padding-bottom: 2rem;       
     display: grid;             
     row-gap: 0.5rem; 
     font-size: var(--tamaño-fuente-texto);           
@@ -119,5 +122,23 @@ const closePopup = () => {
 }
 .Exit-Button:hover{
     background-color: var(--color-rosado-claro-barras);
+
+}
+
+.Ovulatory-Phase{          
+    color: var(--color-celeste-medio); 
+    background-color:#48a09e81 ;  
+}
+.Menstrual-Phase{          
+    color: var(--color-rosado-oscuro); 
+    background-color: #ff2d5383;  
+}
+.Folicular-Phase{          
+    color: var(--color-celeste-fondo); 
+    background-color:#a6c4c280;  
+}
+.Luteal-Phase{          
+    color:#FE9FA3; 
+    background-color: var(--color-rosado-claro);  
 }
 </style>
