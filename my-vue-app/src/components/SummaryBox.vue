@@ -8,8 +8,18 @@
       </ul>
       <h5>Variaciones:</h5>
       <ul>
-        <li>En el ciclo {{ data.shortestCycle }} se registró una menor duración.</li>
-        <li>Durante el ciclo {{ data.longestCycle }} se registró una mayor duración.</li>
+        <li v-if="phaseTitle === 'Día a Ovular'">
+          El día {{ data.longestCycle }} fue la ovulación más tardía registrada.
+        </li>
+        <li v-if="phaseTitle === 'Día a Ovular'">
+          El día {{ data.shortestCycle }} fue la ovulación más temprana registrada.
+        </li>
+        <li v-else>
+          En el ciclo {{ data.shortestCycle }} se registró una menor duración.
+        </li>
+        <li v-else>
+          Durante el ciclo {{ data.longestCycle }} se registró una mayor duración.
+        </li>
       </ul>
       <h5>Anomalía:</h5>
       <ul>
@@ -83,5 +93,8 @@ const props = defineProps({
     list-style-type: disc; 
     margin-left: 1%;
     margin-right: 0.5%;
+}
+.Summary li{
+  margin-bottom: 2%;
 }
 </style>
