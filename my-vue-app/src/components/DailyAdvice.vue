@@ -1,17 +1,37 @@
 <template>
     <div class="Daily-Advice">
         <h3>CONSEJO DEL DIA</h3>
-        <p>
-            Mantente hidratada, come alimentos ricos en antioxidantes y escucha a tu cuerpo si sientes molestias.
-        </p>
+        <p>{{ advice }} </p>
     </div>
 </template>
+<script setup>
+import { ref, onMounted } from 'vue';
+import { getadviceData } from '../Services/dailyAdviceServices';
+
+const advice = ref("");
+
+const loadAdviceData = async () => {
+  try {
+    const data = await getadviceData();
+
+    advice.value = data.content;
+
+  } catch (error) {
+    console.error("Error al cargar los datos del consejo:", error);
+  }
+};
+onMounted(() => {
+  loadAdviceData();
+});
+
+
+</script>
 <style scoped>
 .Daily-Advice{
    
     background-color: var(--color-celeste-oscuro-op);
     border-radius: 0.5rem;
-    padding: 1% 3% 1%;
+    padding: 0 3% 1%;
     text-align: justify;
     
 }
