@@ -1,51 +1,93 @@
 package com.moonbloom.backend;
 
-package com.moonbloom.backend;
+import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class UserData implements Serializable {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userDataId;
+    private int userId;
 
-    private int weight;
+    private String name;
 
-    private float height;
+    @Column(unique = true, nullable = false)
+    private String email;
 
-    @Enumerated(EnumType.STRING) // Usamos ENUM para contraceptiveMethod
-    private ContraceptiveMethod contraceptiveMethod;
+    private String password;
+
+    private String profilePicture;
+
+    private String securityQuestion;
+
+    private String securityAnswer;
+
+    @OneToOne(cascade = CascadeType.ALL) // Relación 1:1
+    @JoinColumn(name = "user_data_id", referencedColumnName = "userDataId")
+    private UserData userData;
 
     // Getters y setters
-    public int getUserDataId() {
-        return userDataId;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUserDataId(int userDataId) {
-        this.userDataId = userDataId;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public int getWeight() {
-        return weight;
+    public String getName() {
+        return name;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public float getHeight() {
-        return height;
+    public String getEmail() {
+        return email;
     }
 
-    public void setHeight(float height) {
-        this.height = height;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public ContraceptiveMethod getContraceptiveMethod() {
-        return contraceptiveMethod;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraceptiveMethod(ContraceptiveMethod contraceptiveMethod) {
-        this.contraceptiveMethod = contraceptiveMethod;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
+
+    public String getSecurityQuestion() {
+        return securityQuestion;
+    }
+
+    public void setSecurityQuestion(String securityQuestion) {
+        this.securityQuestion = securityQuestion;
+    }
+
+    public String getSecurityAnswer() {
+        return securityAnswer;
+    }
+
+    public void setSecurityAnswer(String securityAnswer) {
+        this.securityAnswer = securityAnswer;
+    }
+
+    public UserData getUserData() {
+        return userData;
+    }
+
+    public void setUserData(UserData userData) {
+        this.userData = userData;
     }
 }
