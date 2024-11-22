@@ -1,4 +1,4 @@
-package com.moonbloom.backend;
+package com.moonbloom.backend.entities;
 
 public enum ContraceptiveMethod {
     INYECCION("Inyecciones anticonceptivas", "Método hormonal aplicado mediante inyección."),
