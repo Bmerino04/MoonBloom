@@ -2,8 +2,6 @@ package com.moonbloom.backend.entities;
 
 import java.io.Serializable;
 
-import com.moonbloom.backend.ContraceptiveMethod;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
