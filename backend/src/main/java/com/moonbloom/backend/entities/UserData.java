@@ -1,7 +1,15 @@
-package com.moonbloom.backend;
+package com.moonbloom.backend.entities;
 
-import jakarta.persistence.*;
 import java.io.Serializable;
+
+import com.moonbloom.backend.ContraceptiveMethod;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class UserData implements Serializable {
@@ -49,3 +57,5 @@ public class UserData implements Serializable {
         this.contraceptiveMethod = contraceptiveMethod;
     }
 }
+
+

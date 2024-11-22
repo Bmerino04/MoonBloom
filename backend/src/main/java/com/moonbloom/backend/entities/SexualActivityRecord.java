@@ -1,4 +1,4 @@
-package com.moonbloom.backend;
+package com.moonbloom.backend.entities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
