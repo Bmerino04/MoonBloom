@@ -13,4 +13,4 @@ public interface CycleDataRepository extends JpaRepository<Cycle, Long> {
     Cycle findTopByUser_UserIdOrderByLastPeriodDateDesc(int userId);
     List<Cycle> findByLastPeriodDateBetween(LocalDate startDate, LocalDate endDate);
 }
-}
+
