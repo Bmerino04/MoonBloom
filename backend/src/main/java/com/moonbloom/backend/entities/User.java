@@ -98,4 +98,11 @@ public class User implements Serializable {
     public void setUserData(UserData userData) {
         this.userData = userData;
     }
+
+    public float getIMC() {
+        if (userData != null) {
+            return userData.getIMC();
+        }
+        return 0;
+    }
 }
