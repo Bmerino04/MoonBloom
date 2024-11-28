@@ -31,7 +31,10 @@ public class CyclePredictionService {
                 .orElseThrow(() -> new IllegalStateException("Error al calcular la duración promedio del ciclo."));
     }
     private double predictPeriodLength(List<Cycle> cycles) {
-        return 0;
+        return (int) cycles.stream()
+                .mapToInt(Cycle::getPeriodDuration)
+                .average()
+                .orElseThrow(() -> new IllegalStateException("Error al calcular la duración promedio del periodo."));
     }
     private int predictOvulationDay(double avgCycleLength) {
 
