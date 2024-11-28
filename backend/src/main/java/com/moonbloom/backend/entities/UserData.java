@@ -54,6 +54,15 @@ public class UserData implements Serializable {
     public void setContraceptiveMethod(ContraceptiveMethod contraceptiveMethod) {
         this.contraceptiveMethod = contraceptiveMethod;
     }
+
+    public float getIMC() {
+        if (height > 0) {
+            return weight / (height * height); // Fórmula del IMC: peso / (altura^2)
+        } else {
+            return 0;
+        }
+    }
+
 }
 
 
