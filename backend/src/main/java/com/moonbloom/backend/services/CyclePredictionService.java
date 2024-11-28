@@ -37,8 +37,6 @@ public class CyclePredictionService {
                 .orElseThrow(() -> new IllegalStateException("Error al calcular la duración promedio del periodo."));
     }
     private int predictOvulationDay(double avgCycleLength) {
-
-        return 0;
+        return (int) (avgCycleLength - 14);
     }
-
 }
