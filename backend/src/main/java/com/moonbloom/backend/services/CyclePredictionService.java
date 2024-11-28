@@ -5,6 +5,7 @@ import com.moonbloom.backend.repositories.CycleDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,10 +19,17 @@ public class CyclePredictionService {
             throw new IllegalArgumentException("No hay ciclos registrados para este usuario.");
         }
         double avgCycleLength = predictCycleLength(cycles);
-        double avgMenstrualPhaseDuration = predictPeriodLength(cycles);
+        double avgPeriodLength = predictPeriodLength(cycles);
         int avgDayOfOvulation = predictOvulationDay(avgCycleLength);
 
-        return null;
+        return prediction(avgCycleLength, avgPeriodLength, avgDayOfOvulation);
+    }
+    private Map<String, Object> prediction(double avgCycleLength, double avgPeriodLength, int avgDayOfOvulation) {
+        Map<String, Object> predictionMap = new HashMap<>();
+        predictionMap.put("avgCycleLength", avgCycleLength);
+        predictionMap.put("avgPeriodLength", avgPeriodLength);
+        predictionMap.put("avgDayOfOvulation", avgDayOfOvulation);
+        return predictionMap;
     }
 
     private double predictCycleLength(List<Cycle> cycles) {
