@@ -1,7 +1,7 @@
-package com.moonbloom.backend.service;
+package com.moonbloom.backend.services;
 
 import com.moonbloom.backend.entities.Cycle;
-import com.moonbloom.backend.repository.CycleDataRepository;
+import com.moonbloom.backend.repositories.CycleDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ public class CyclePredictionService {
 
         return null;
     }
-    
+
     private double calculateAverageCycleLength(List<Cycle> cycles) {
         return 0;
     }

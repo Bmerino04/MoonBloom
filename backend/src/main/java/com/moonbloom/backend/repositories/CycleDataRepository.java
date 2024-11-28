@@ -1,4 +1,4 @@
-package com.moonbloom.backend.repository;
+package com.moonbloom.backend.repositories;
 
 import com.moonbloom.backend.entities.Cycle;
 import org.springframework.data.jpa.repository.JpaRepository;
