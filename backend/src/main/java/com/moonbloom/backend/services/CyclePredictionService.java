@@ -14,21 +14,27 @@ public class CyclePredictionService {
     private CycleDataRepository cycleDataRepository;
     public Map<String, Object> predictCycleDetails(Long userId) {
         List<Cycle> cycles = cycleDataRepository.findByUserId(userId);
-
-        double avgCycleLength = calculateAverageCycleLength(cycles);
-        double avgMenstrualPhaseDuration = calculateAverageMenstrualPhaseDuration(cycles);
-        int avgDayOfOvulation = calculateAverageDayOfOvulation(avgCycleLength);
+        if (cycles.isEmpty()) {
+            throw new IllegalArgumentException("No hay ciclos registrados para este usuario.");
+        }
+        double avgCycleLength = predictCycleLength(cycles);
+        double avgMenstrualPhaseDuration = predictPeriodLength(cycles);
+        int avgDayOfOvulation = predictOvulationDay(avgCycleLength);
 
         return null;
     }
 
-    private double calculateAverageCycleLength(List<Cycle> cycles) {
+    private double predictCycleLength(List<Cycle> cycles) {
+        return (int) cycles.stream()
+                .mapToInt(Cycle::getCycleLength)
+                .average()
+                .orElseThrow(() -> new IllegalStateException("Error al calcular la duración promedio del ciclo."));
+    }
+    private double predictPeriodLength(List<Cycle> cycles) {
         return 0;
     }
-    private double calculateAverageMenstrualPhaseDuration(List<Cycle> cycles) {
-        return 0;
-    }
-    private int calculateAverageDayOfOvulation(double avgCycleLength) {
+    private int predictOvulationDay(double avgCycleLength) {
+
         return 0;
     }
 
