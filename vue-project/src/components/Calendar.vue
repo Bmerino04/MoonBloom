@@ -37,7 +37,7 @@ const months = ref([]);
 const daysInMonths = ref([]);
 const firstDays = ref([]);
 const weekDays = ref({});
-const phases = ref({});
+const phasesByMonth = ref({});
 
 const currentMonthIndex = ref(0);
 const actualMonth=ref(0);
@@ -57,9 +57,12 @@ const loadCalendarData = async () => {
     daysInMonths.value = data.daysInMonths;
     firstDays.value = data.firstDays;
     weekDays.value = data.weekDays;
-    phases.value = data.phases;
+    phasesByMonth.value = data.phasesByMonth;
+    console.log("Fases por mes cargadas:", phasesByMonth.value);
     currentMonthIndex.value = data.actualMonth;
     actualMonth.value = data.actualMonth;
+    console.log(actualMonth.value)
+    console.log(currentMonthIndex.value)
 
   } catch (error) {
     console.error("Error al cargar los datos del calendario:", error);
@@ -72,6 +75,7 @@ onMounted(() => {
 
 const days = computed(() => {
   const daysArray = [];
+  const currentMonthPhases = phasesByMonth.value[currentMonthIndex.value] || {};
 
 
   for (let i = 0; i < firstDays.value[currentMonthIndex.value]; i++) {
@@ -81,18 +85,13 @@ const days = computed(() => {
   for (let i = 1; i <= daysInMonths.value[currentMonthIndex.value]; i++) {
     let className = 'Normal-Day';
 
-    if (phases.value.menstrual.includes(i)) {
+    if (currentMonthPhases.menstrual?.includes(i)) {
       className = 'Menstrual-Day';
-    } else if (phases.value.fertile.includes(i)) {
+    } else if (currentMonthPhases.fertile?.includes(i)) {
       className = 'Fertile-Day';
-    }
-    if (phases.value.ovulation.includes(i)) {
+    } else if (currentMonthPhases.ovulation?.includes(i)) {
       className = 'Ovulation-Day';
     }
-    if (i === phases.value.currentDay && currentMonthIndex.value === actualMonth.value) { 
-      className = 'Current-Day';
-    }
-
     daysArray.push({ day: i, className });
   }
 
@@ -116,7 +115,7 @@ const nextMonth = () => {
 };
 
 const openPopup = (day) => {
-
+  const currentMonthPhases = phasesByMonth.value[currentMonthIndex.value] || {};
   const firstDayMonth = firstDays.value[currentMonthIndex.value];
   const DayOfWeek = (firstDayMonth + (day - 1)) % 7;
   selectedDayOfWeek.value = weekDays.value[DayOfWeek];
@@ -124,32 +123,29 @@ const openPopup = (day) => {
   selectedMonth.value = months.value[currentMonthIndex.value];
 
   let phaseClass = 'Normal-Phase'; 
-  let phaseTitle = 'Fase Normal'; 
+  let phaseTitle = 'Fase Normal';
 
-  if (phases.value.menstrual.includes(day)) {
+  if (currentMonthPhases.menstrual?.includes(day)) {
     phaseClass = 'Menstrual-Phase';
     phaseTitle = 'Fase Menstrual';
-  } else if (phases.value.fertile.includes(day)) {
-    phaseClass = 'Ovulatory-Phase';
-    phaseTitle = 'Fase Ovulatoria ';
-  } else if (phases.value.ovulation.includes(day)) {
+  } else if (currentMonthPhases.fertile?.includes(day)) {
     phaseClass = 'Ovulatory-Phase';
     phaseTitle = 'Fase Ovulatoria';
-  } else if (phases.value.folicular.includes(day)) {
+  } else if (currentMonthPhases.ovulation?.includes(day)) {
+    phaseClass = 'Ovulatory-Phase';
+    phaseTitle = 'Fase Ovulatoria';
+  } else if (currentMonthPhases.folicular?.includes(day)) {
     phaseClass = 'Folicular-Phase';
     phaseTitle = 'Fase Folicular';
-  } else {
+  } else if (currentMonthPhases.luteal?.includes(day)) {
     phaseClass = 'Luteal-Phase';
     phaseTitle = 'Fase Lútea';
   }
 
-
   cyclePhase.value = phaseTitle;
-  cyclePhaseClass.value = phaseClass; 
-
+  cyclePhaseClass.value = phaseClass;
 
   isPopupVisible.value = true;
-
 
 };
 
