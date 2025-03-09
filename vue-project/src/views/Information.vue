@@ -16,7 +16,7 @@ import InformationPanel from '../components/InformationPanel.vue';
     font-family: var(--fuente-principal);
     display: flex;
     align-items: flex-start;
-    padding-top: 2.5%;
+    padding-top: 90px;
     justify-content: center;
     gap: 5rem;
     width: 100%;

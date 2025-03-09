@@ -110,6 +110,10 @@ function calculateBMI(weight, height) {
 
 <style scoped>
 
+.User-info-page {
+    padding-top: 90px;
+}
+
 .User-info-page{
   background-color: var(--color-celeste-fondo);
 }

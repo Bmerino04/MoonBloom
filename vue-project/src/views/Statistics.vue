@@ -1,4 +1,3 @@
-
 <script setup>
  import Navbar from '../components/navbar.vue'
  import Slider from '../components/PhasesSlider.vue'
@@ -13,5 +12,6 @@
 <style scoped>
 .Statistics-page{
     background-color: #A6C4C2;
+    padding-top: 90px;
 }
 </style>
